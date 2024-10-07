@@ -1,6 +1,8 @@
+'use client'
+
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent } from "../../../components/ui/card";
-
+import Link from "next/link";
 
 export default function Commoncard({name , credits, incharge}) {
   return (
@@ -11,13 +13,14 @@ export default function Commoncard({name , credits, incharge}) {
           <p>{credits}</p>
         </CardTitle>
         <CardDescription className="mt-3 text-gray-600">
-          <p>{incharge}</p>       
+          {incharge}       
         </CardDescription>
       </CardHeader>
       <CardFooter className="p-0">
-        <Button>
+        <Button onClick={() => window.open("https://drive.google.com/drive/folders/1iajYljye_F7gUp2pQOGwlrJjn8cGN_v-", "_blank", "noopener,noreferrer")}>
           View
         </Button>
+
       </CardFooter> 
     </Card>
 
