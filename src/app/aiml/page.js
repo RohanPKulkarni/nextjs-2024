@@ -8,13 +8,11 @@ export default function Aids(){
 
   return (
     <div className="flex flex-col ">
-      <Semdropdown branch = {"aids"}/>
-      <Semester branch = {"aids"}/>
-      <Calender />
-
-      
-  </div>
-    
-    
+      <Semdropdown branch = {"aiml"}/>
+      <Semester branch = {"aiml"}/>
+      <Calender />    
+    </div>
+     
   );
 }
+
