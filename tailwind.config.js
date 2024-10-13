@@ -50,6 +50,9 @@ module.exports = {
   				'5': 'hsl(var(--chart-5))'
   			}
   		},
+			width: {
+        '9/10': '90%', // Add custom width
+      },
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
@@ -58,4 +61,5 @@ module.exports = {
   	}
   },
   plugins: [require("tailwindcss-animate")],
+	
 };

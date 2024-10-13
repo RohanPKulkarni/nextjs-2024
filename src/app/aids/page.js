@@ -11,8 +11,7 @@ export default function Aids(){
       <Semdropdown branch = {"aids"}/>
       <Semester branch = {"aids"}/>
       <Calender />
-
-      
+           
   </div>
     
     

@@ -13,19 +13,20 @@ export function Semester({ branch }) {
   const { seminfo } = useContext(SemInfoContext);
 
   return (
-    <div className="lg:grid grid-cols-3 gap-4">
+    <div className="md:grid-cols-2 lg:grid-cols-3 grid gap-4 ">
       {
         branch === "aids" ? (
           aidssemesters
             .filter((semester) => semester.number === seminfo) // Filter the semesters
             .flatMap((semester) => semester.subjects) // Flatten the subjects array
             .map((course) => (
-              <div key={course.name}> {/* Add a unique key for each course */}
+              <div key={course.code}> {/* Add a unique key for each course */}
                 <Commoncard 
                   name={course.name} 
                   credits={course.credits} 
                   incharge={course.incharge} 
                   linker={course.linker}
+                  code = {course.code}
                 />
               </div>
             ))
@@ -34,12 +35,13 @@ export function Semester({ branch }) {
             .filter((semester) => semester.number === seminfo) // Filter the semesters
             .flatMap((semester) => semester.subjects) // Flatten the subjects array
             .map((course) => (
-              <div key={course.name}> {/* Add a unique key for each course */}
+              <div key={course.code}> {/* Add a unique key for each course */}
                 <Commoncard 
                   name={course.name} 
                   credits={course.credits} 
                   incharge={course.incharge} 
                   linker={course.linker}
+                  code = {course.code}
                 />
               </div>
             ))
