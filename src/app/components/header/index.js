@@ -22,14 +22,12 @@ function Header() {
   const [inputcourse , setInputcourse] = useState("");
   const [isFocused, setIsFocused] = useState(false);
   const [branchdrop, setBranchdrop] = useState('Branch');
-  const [hasMounted, setHasMounted] = useState(false);
 
   const { setSeminfo } = useContext(SemInfoContext);
   
   const router = useRouter();
 
   useEffect(() => {
-    setHasMounted(true);
     if (typeof window !== 'undefined') {
       const storedBranch = localStorage.getItem('branchdrop');
       if (storedBranch) {
@@ -44,9 +42,7 @@ function Header() {
     }
   }, [branchdrop]);
 
-  if (!hasMounted) {
-    return null; 
-  }
+  
   
   const menuItems = [
     
@@ -98,13 +94,14 @@ function Header() {
   ];
 
   const filteredCourses = useMemo(() => {
-    if (!inputcourse.trim()) return []; 
+    if (!inputcourse.trim()) return []; // Safely return empty array when input is blank
+    
     return [...aidssemesters, ...aimlsemesters]
       .flatMap((semester) => semester.subjects)
       .filter((course) => 
         course?.name?.toLowerCase().indexOf(inputcourse.toLowerCase()) !== -1
       );
-  }, [inputcourse]);
+  }, [inputcourse]); // Always called, regardless of the input
   
 
   function handlesearch(courseCode){
