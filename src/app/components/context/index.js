@@ -5,6 +5,8 @@ export const SemInfoContext = createContext();
 
 export function SemInfoProvider({ children }) {
   const [seminfo, setSeminfo] = useState('3rd');
+  const [selectedCourse, setSelectedCourse] = useState(null);
+  const [openDialog, setOpenDialog] = useState(false);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -24,7 +26,7 @@ export function SemInfoProvider({ children }) {
   
 
   return (
-    <SemInfoContext.Provider value={{ seminfo, setSeminfo }}>
+    <SemInfoContext.Provider value={{ seminfo, setSeminfo ,selectedCourse ,setSelectedCourse,openDialog,setOpenDialog}}>
       {children}
     </SemInfoContext.Provider>
   );

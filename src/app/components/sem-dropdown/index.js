@@ -454,9 +454,7 @@ export function Semdropdown({branch}){
 
   const {  setSeminfo,seminfo } = useContext(SemInfoContext);
 
-  function handlesem(sem){    
-    setSeminfo(sem);
-  }
+  
   return (
     <div className="mx-auto mb-4">
   <DropdownMenu>
@@ -475,7 +473,7 @@ export function Semdropdown({branch}){
           <DropdownMenuItem 
             key={sem.number} 
             className="p-3 relative text-black text-xl font-bold transition-all duration-200 cursor-pointer"
-            onClick={() => handlesem(sem.number)}
+            onClick={() => setSeminfo(sem.number)}
           >
             <div className="mx-auto">
               {sem.number}

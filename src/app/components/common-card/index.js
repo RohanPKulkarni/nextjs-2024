@@ -4,10 +4,15 @@ import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent } from "../../../components/ui/card";
 import Link from "next/link";
 import {Dialog,DialogContent,DialogDescription,DialogFooter,DialogHeader,DialogTitle,DialogTrigger} from "../../../components/ui/dialog";
+import { SemInfoContext } from "../context";
+import { useContext } from "react";
 
 export default function Commoncard({name , credits, incharge, linker, code}) {
+
+  const {openDialog ,setOpenDialog} = useContext(SemInfoContext);
+
   return (
-    <Dialog >
+    <Dialog open={openDialog} onOpenChange={setOpenDialog}>
       <DialogTrigger asChild>
         <Card className="flex flex-col gap-8 rounded-2xl p-2 py-6 transition duration-300 hover:shadow-2xl hover:shadow-gray-600/10 cursor-pointer transform hover:-translate-y-2 bg-transparent border-4 border-black sm:p-8 md:p-8 lg:p-8">
         <CardHeader className="p-0 mx-auto">
