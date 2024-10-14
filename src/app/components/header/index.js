@@ -1,8 +1,8 @@
 'use client'
 
 
-import Link from "next/link";
-import { Sheet, SheetContent, SheetTrigger } from "../../../components/ui/sheet";
+import Link from "next/link";  
+import { Sheet, SheetContent, SheetTrigger ,SheetHeader ,SheetTitle ,SheetClose} from "../../../components/ui/sheet";
 import { Button } from "../../../components/ui/button";
 import { AlignJustify, Moon , House , ChevronDown , Search} from "lucide-react";
 import {  DropdownMenu,DropdownMenuTrigger,DropdownMenuContent,DropdownMenuItem } from "../../../components/ui/dropdown-menu";
@@ -11,8 +11,7 @@ import { useState,useMemo,useEffect } from 'react';
 import { aidssemesters , aimlsemesters } from "../sem-dropdown";
 import { useContext } from 'react';
 import { SemInfoContext } from "../context";
-import { useRouter } from "next/router";
-
+import { useRouter } from "next/navigation";
 
 
 
@@ -24,6 +23,7 @@ function Header() {
 
   const { setSeminfo } = useContext(SemInfoContext);
   
+  const router = useRouter();
 
   const [branchdrop, setBranchdrop] = useState(
     () => localStorage.getItem('branchdrop') || 'Branch'
@@ -64,52 +64,50 @@ function Header() {
 
   const optionsItems = [
     {
-      label : "login",
-      path : "/login"
+      label : "News & info",
+      path : "/news"
     },
     {
-      label : "sign-up",
-      path : "/sign-up"
+      label : "Projects",
+      path : "/projects"
     },
     {
-      label : "settings",
-      path : "/settings"
+      label : "Source code",
+      path : "/sourcecode"
     },
     {
-      label : "contribute",
+      label : "Contribute",
       path : "/contribute"
     },
     
   ];
 
   const filteredCourses = useMemo(() => {
-    if (!inputcourse.trim()) return []; // Return empty array if search input is blank
-
+    if (!inputcourse.trim()) return []; 
     return [...aidssemesters, ...aimlsemesters]
       .flatMap((semester) => semester.subjects)
       .filter((course) => 
-        course?.name?.toLowerCase().includes(inputcourse.toLowerCase())
+        course?.name?.toLowerCase().indexOf(inputcourse.toLowerCase()) !== -1
       );
-  }, [inputcourse]); // Recompute only when inputcourse changes
+  }, [inputcourse]);
+  
 
   function handlesearch(courseCode){
-    const datasets = [aidssemesters, aimlsemesters]; // Combine both datasets
-    const router = useRouter();
+    const datasets = [aidssemesters, aimlsemesters]; 
 
     for (const dataset of datasets) {
       for (const semester of dataset) {
         const course = semester.subjects.find((subject) => subject.code === courseCode);
         if (course) {
           setSeminfo(semester.number);
-          const path = semester.path; // Get the path
+          const path = semester.path;
+          setBranchdrop(path === "/aids" ? "AI&DS" : "AI&ML");
           router.push(path);
-          return; // Exit loop if found
+          return; 
         }
       }
     }
   }
-
- 
 
   return (
     <div>
@@ -135,7 +133,11 @@ function Header() {
       value={inputcourse}
       onChange={(event) => setInputcourse(event.target.value)}
       onFocus={() => setIsFocused(true)}
-      onBlur={() => setIsFocused(false)}
+      onBlur={() => {
+        setTimeout(() => {
+          setIsFocused(false);
+        }, 300); 
+      }}  
       className="w-full p-3 bg-transparent border-2 border-black rounded-md shadow-sm focus:outline-none focus:border-gray-600 focus:ring-0 placeholder-black-800"
     />
     <button className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-800 hover:bg-gray-700 text-white p-2 rounded-full shadow-sm transition duration-200">
@@ -143,20 +145,25 @@ function Header() {
     </button>
   </div>
   
-  {isFocused && inputcourse && (
-   <div  onClick = {() => console.log("hi")} className="absolute top-full mt-2 w-full bg-gradient-to-r from-blue-400 to-green-300 border-2 border-black px-4 pt-1 rounded-md shadow-lg min-h-[50px] max-h-[180px] overflow-y-auto max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg z-10">
-   {filteredCourses.length === 0 ? (
-     <div className="text-black-600 pt-2"  onClick = {() => console.log("hi")}>No such course found</div>
-   ) : (
-     filteredCourses.map((filteredCourse) => (
-      <div key={filteredCourse.name} onClick = {() => console.log("hi")} className= "py-2 border-b-2 border-black bg-red-500 text-black-800 hover:text-gray-500 transition duration-200 hover:cursor-pointer z-20">
-         {filteredCourse.name}
-       </div>
-    
-     ))
-   )}
- </div>
-  )}
+    {isFocused && inputcourse && (
+      <div className="absolute top-full mt-2 w-full bg-gradient-to-r from-blue-400 to-green-300 border-2 border-black px-4 pt-1 rounded-md shadow-lg min-h-[50px] max-h-[180px] overflow-y-auto max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg z-10">
+      {filteredCourses.length === 0 ? (
+        <div className="text-black-600 pt-2 pb-1">No such course found</div>
+      ) : (
+        filteredCourses.map((filteredCourse) => (
+         <div key={filteredCourse.code} onClick = {() => handlesearch(filteredCourse.code)} className= "flex flex-row py-2 border-b-2 border-black text-black-800 hover:text-gray-500 transition duration-200 hover:cursor-pointer z-20">
+           <div>
+             {filteredCourse.name}
+           </div>
+           <div className = "ml-1 text-gray-500 ">
+             {filteredCourse.code}
+           </div>
+          </div>
+        ))
+      )}
+    </div>
+     )}
+  
 </div>
 
 <div className="flex shrink-0 items-center ml-auto">
@@ -181,8 +188,7 @@ function Header() {
                 <div className="h-full p-2 text-black font-bold text-xl transition duration-200">
                   {branchItem.label}
                 </div>
-                {/* Render the border div only if this is not the last item */}
-                {index < array.length - 1 && ( // Check if it's not the last index
+                {index < array.length - 1 && ( 
                   <div className="absolute left-1/2 transform -translate-x-1/2 w-9/10 border-b-2 border-black mt-14" />
                 )}
               </DropdownMenuItem>
@@ -213,13 +219,16 @@ function Header() {
       <SheetTrigger asChild>
         <AlignJustify className="lg:hidden h-8 w-8 text-gray-800" />
       </SheetTrigger>
-      <SheetContent side="right" className="bg-white border border-black rounded-md shadow-lg">
+      <SheetContent side="right" className="bg-gradient-to-r from-blue-400 to-green-300 border border-black rounded-md shadow-lg">
+      <SheetHeader>
+            <SheetTitle className = "2xl">Menu</SheetTitle>
+        </SheetHeader>
         <div className="grid gap-2 py-6">
           {optionsItems.map((optionsItem) => (
             <Link
               key={optionsItem.label}
               href={optionsItem.path}
-              className="flex w-full items-center py-2 text-lg font-semibold text-gray-800 hover:bg-gray-200 transition duration-200"
+              className="flex w-full items-center py-2 text-lg font-semibold text-gray-800 hover:text-gray-500 transition duration-200 pl-4"
             >
               {optionsItem.label}
             </Link>
@@ -234,13 +243,16 @@ function Header() {
           <div>Menu</div>
         </div>
       </SheetTrigger>
-      <SheetContent side="right" className="bg-white border border-black rounded-md shadow-lg">
+      <SheetContent side="right" className="bg-gradient-to-r from-blue-400 to-green-300 border border-black rounded-md shadow-lg focus:outline-none ">
+        <SheetHeader>
+            <SheetTitle className = "2xl">Menu</SheetTitle>
+        </SheetHeader>
         <div className="grid gap-2 py-6">
-          {optionsItems.map((optionsItem) => (
+          {optionsItems.map((optionsItem, index, array) => (
             <Link
               key={optionsItem.label}
               href={optionsItem.path}
-              className="flex w-full items-center py-2 text-lg font-semibold text-gray-800 hover:bg-gray-200 transition duration-200"
+              className="flex w-full items-center py-2 text-lg font-semibold text-gray-800 hover:text-gray-500 transition duration-200 pl-4"
             >
               {optionsItem.label}
             </Link>

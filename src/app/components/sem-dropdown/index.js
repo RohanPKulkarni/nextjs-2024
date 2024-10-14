@@ -485,7 +485,7 @@ export function Semdropdown({branch}){
     {branch === "aids" ? (
         aidssemesters
         .filter((sem) => sem.number !== seminfo)
-        .map((sem, index, array) => ( // Add index and array parameters
+        .map((sem, index, array) => ( 
           <DropdownMenuItem 
             key={sem.number} 
             className="p-3 relative text-black text-xl font-bold transition-all duration-200 cursor-pointer"
@@ -494,16 +494,15 @@ export function Semdropdown({branch}){
             <div className="mx-auto">
               {sem.number}
             </div>
-            {/* Render the border div only if this is not the last item */}
-            {index < array.length - 1 && ( // Check if it's not the last index
+            {index < array.length - 1 && ( 
               <div className="absolute left-1/2 transform -translate-x-1/2 w-9/10 border-b-2 border-black mt-12" />
             )}
           </DropdownMenuItem>
         ))
 ) : (
   aimlsemesters
-  .filter((sem) => sem.number !== seminfo) // Exclude the selected semester
-  .map((sem, index, array) => ( // Add index and array parameters
+  .filter((sem) => sem.number !== seminfo) 
+  .map((sem, index, array) => ( 
     <DropdownMenuItem 
       key={sem.number} 
       className="p-3 relative text-black font-bold text-xl transition-all duration-200 cursor-pointer"
@@ -512,8 +511,7 @@ export function Semdropdown({branch}){
       <div className="mx-auto">
         {sem.number} 
       </div>
-      {/* Render the border div only if this is not the last item */}
-      {index < array.length - 1 && ( // Check if it's not the last index
+      {index < array.length - 1 && ( 
         <div className="absolute left-1/2 transform -translate-x-1/2 w-9/10 border-b-2 border-black mt-[52px]" />
       )}
     </DropdownMenuItem>
