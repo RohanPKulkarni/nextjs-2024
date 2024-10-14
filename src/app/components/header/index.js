@@ -137,11 +137,11 @@ function Header() {
   </div>
 </div>    
 
-<div className="relative flex flex-col items-center lg:items-start lg:ml-80 ml-8 sm:ml-32 md:ml-32">
+<div className="relative flex flex-col items-center lg:items-start lg:ml-80 ml-2 sm:ml-32 md:ml-32">
   <div className="relative w-full w-xs sm:w-sm md:w-[280px] lg:w-[380px]">
     <Input
       type="text"
-      placeholder="Search for a course"
+      placeholder="Search course"
       value={inputcourse}
       onChange={(event) => setInputcourse(event.target.value)}
       onFocus={() => setIsFocused(true)}
