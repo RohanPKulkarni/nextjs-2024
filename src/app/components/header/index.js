@@ -16,23 +16,32 @@ import { useRouter } from "next/navigation";
 
 
 
+
 function Header() {
 
   const [inputcourse , setInputcourse] = useState("");
   const [isFocused, setIsFocused] = useState(false);
+  const [branchdrop, setBranchdrop] = useState('Branch');
 
   const { setSeminfo } = useContext(SemInfoContext);
   
   const router = useRouter();
 
-  const [branchdrop, setBranchdrop] = useState(
-    () => localStorage.getItem('branchdrop') || 'Branch'
-  );
-  
   useEffect(() => {
-    localStorage.setItem('branchdrop', branchdrop);
-  }, [branchdrop]);
+    if (typeof window !== 'undefined') {
+      const storedBranch = localStorage.getItem('branchdrop');
+      if (storedBranch) {
+        setBranchdrop(storedBranch);
+      }
+    }
+  }, []);
 
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('branchdrop', branchdrop);
+    }
+  }, [branchdrop]);
+  
   const menuItems = [
     
     {

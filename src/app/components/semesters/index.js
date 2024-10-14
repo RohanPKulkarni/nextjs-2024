@@ -1,4 +1,5 @@
 'use client'
+
 import { aidssemesters } from "../sem-dropdown"
 import { aimlsemesters } from "../sem-dropdown";
 import Commoncard from "../common-card";
