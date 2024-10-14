@@ -138,7 +138,7 @@ function Header() {
 </div>    
 
 <div className="relative flex flex-col items-center lg:items-start lg:ml-80 ml-2 sm:ml-32 md:ml-32">
-  <div className="relative w-40 sm:w-sm md:w-[280px] lg:w-[380px]">
+  <div className="relative w-44 sm:w-sm md:w-[280px] lg:w-[380px]">
     <Input
       type="text"
       placeholder="Search course"
@@ -179,7 +179,7 @@ function Header() {
 </div>
 
 <div className="flex shrink-0 items-center ml-auto">
-  <div className="mr-1 sm:mr-2 md:mr-4 ">
+  <div className="mr-2 sm:mr-2 md:mr-4 ">
     <DropdownMenu>
       <DropdownMenuTrigger className="font-bold text-2xl lg:flex text-gray-900 hover:text-gray-700 focus:outline-none">
         <div className="flex shrink-0 items-center ">
