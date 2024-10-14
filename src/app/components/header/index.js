@@ -22,12 +22,14 @@ function Header() {
   const [inputcourse , setInputcourse] = useState("");
   const [isFocused, setIsFocused] = useState(false);
   const [branchdrop, setBranchdrop] = useState('Branch');
+  const [hasMounted, setHasMounted] = useState(false);
 
   const { setSeminfo } = useContext(SemInfoContext);
   
   const router = useRouter();
 
   useEffect(() => {
+    setHasMounted(true);
     if (typeof window !== 'undefined') {
       const storedBranch = localStorage.getItem('branchdrop');
       if (storedBranch) {
@@ -41,6 +43,10 @@ function Header() {
       localStorage.setItem('branchdrop', branchdrop);
     }
   }, [branchdrop]);
+
+  if (!hasMounted) {
+    return null; 
+  }
   
   const menuItems = [
     
