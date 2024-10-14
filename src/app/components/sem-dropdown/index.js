@@ -70,13 +70,6 @@ export const aidssemesters = [
         "linker": "https://drive.google.com/drive/folders/1HmOXyH5STGgOlWi9cn-b7eHkwUhmMVCi?usp=drive_link"
       },
       {
-        "name": "Data Engineering with Hadoop (22 BATCH)",
-        "code": "ADAEC39",
-        "credits": "0:0:1",
-        "incharge": "Dr Siddesh G M",
-        "linker": "https://drive.google.com/drive/folders/1VUX7eUJCvyu_nNNr4u31OVBb-CvuE1fM?usp=drive_link"
-      },
-      {
         "name": "Data Visualisation using POWER BI (23 BATCH)",
         "code": "ADAEC39",
         "credits": "0:0:1",
@@ -296,14 +289,7 @@ export const aimlsemesters = [
         "credits": "2:0:0",
         "incharge": "Smt Aishwarya M F Prabhakar",
         "linker": "https://drive.google.com/drive/folders/1HmOXyH5STGgOlWi9cn-b7eHkwUhmMVCi?usp=drive_link"
-      },
-      {
-        "name": "Data Engineering with Hadoop (22 BATCH)",
-        "code": "AIAEC39",
-        "credits": "0:0:1",
-        "incharge": "Dr Siddesh G M",
-        "linker": "https://drive.google.com/drive/folders/1VUX7eUJCvyu_nNNr4u31OVBb-CvuE1fM?usp=drive_link"
-      },
+      }, 
       {
         "name": "Data Visualisation using POWER BI (23 BATCH)",
         "code": "AIAEC39",
