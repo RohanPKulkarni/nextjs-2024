@@ -138,7 +138,7 @@ function Header() {
 </div>    
 
 <div className="relative flex flex-col items-center lg:items-start lg:ml-80 ml-2 sm:ml-32 md:ml-32">
-  <div className="relative w-full w-xs sm:w-sm md:w-[280px] lg:w-[380px]">
+  <div className="relative w-40 sm:w-sm md:w-[280px] lg:w-[380px]">
     <Input
       type="text"
       placeholder="Search course"

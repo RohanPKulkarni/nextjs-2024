@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Commoncard({name , credits, incharge, linker, code}) {
   return (
-    <Card className="flex flex-col gap-8 rounded-2xl p-2 py-2 transition duration-300 hover:shadow-2xl hover:shadow-gray-600/10 cursor-pointer transform hover:-translate-y-2 bg-transparent border-4 border-black sm:p-8 md:p-8 lg:p-8">
+    <Card className="flex flex-col gap-8 rounded-2xl p-2 py-8 transition duration-300 hover:shadow-2xl hover:shadow-gray-600/10 cursor-pointer transform hover:-translate-y-2 bg-transparent border-4 border-black sm:p-8 md:p-8 lg:p-8">
   <CardHeader className="p-0 mx-auto">
     <CardTitle className="text-xl max-w-[300px] truncate font-bold text-black">
       <p className = "overflow-hidden overflow-ellipsis whitespace-nowrap">{name}</p>
