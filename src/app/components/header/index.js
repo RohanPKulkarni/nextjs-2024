@@ -179,7 +179,7 @@ function Header() {
 </div>
 
 <div className="flex shrink-0 items-center ml-auto">
-  <div className="mr-3 sm:mr-2 md:mr-4">
+  <div className="mr-1 sm:mr-2 md:mr-4 ">
     <DropdownMenu>
       <DropdownMenuTrigger className="font-bold text-2xl lg:flex text-gray-900 hover:text-gray-700 focus:outline-none">
         <div className="flex shrink-0 items-center ">
