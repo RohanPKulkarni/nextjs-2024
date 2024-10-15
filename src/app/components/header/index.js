@@ -21,26 +21,12 @@ function Header() {
 
   const [inputcourse , setInputcourse] = useState("");
   const [isFocused, setIsFocused] = useState(false);
-  const [branchdrop, setBranchdrop] = useState('Branch');
 
-  const { setSelectedCardData,setOpenDialog,setSeminfo } = useContext(SemInfoContext);
+  const { setSelectedCardData,setOpenDialog,setSeminfo,branchdrop,setBranchdrop } = useContext(SemInfoContext);
   
   const router = useRouter();
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const storedBranch = localStorage.getItem('branchdrop');
-      if (storedBranch) {
-        setBranchdrop(storedBranch);
-      }
-    }
-  }, []);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('branchdrop', branchdrop);
-    }
-  }, [branchdrop]);
+  
 
   
   
@@ -94,14 +80,14 @@ function Header() {
   ];
 
   const filteredCourses = useMemo(() => {
-    if (!inputcourse.trim()) return []; // Safely return empty array when input is blank
+    if (!inputcourse.trim()) return []; 
     
     return [...aidssemesters, ...aimlsemesters]
       .flatMap((semester) => semester.subjects)
       .filter((course) => 
         course?.name?.toLowerCase().indexOf(inputcourse.toLowerCase()) !== -1
       );
-  }, [inputcourse]); // Always called, regardless of the input
+  }, [inputcourse]); 
   
 
   function handlesearch(courseCode){
@@ -111,6 +97,7 @@ function Header() {
       for (const semester of dataset) {
         const course = semester.subjects.find((subject) => subject.code === courseCode);
         if (course) {
+          setInputcourse("");
           setSelectedCardData({name:course.name,code:course.code,credits:course.credits,incharge:course.incharge,linker:course.linker});
           setOpenDialog(true);
           setSeminfo(semester.number);
@@ -139,7 +126,7 @@ function Header() {
   </div>
 </div>    
 
-<div className="relative flex flex-col items-center lg:items-start lg:ml-80 ml-2 sm:ml-32 md:ml-32">
+<div className="relative flex flex-col items-center lg:items-start mx-auto lg:ml-80 sm:ml-32 md:ml-32">
   <div className="relative w-40 sm:w-sm md:w-[280px] lg:w-[380px]">
     <Input
       type="text"

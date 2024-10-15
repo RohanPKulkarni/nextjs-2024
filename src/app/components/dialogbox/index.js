@@ -8,7 +8,6 @@ import { useContext } from "react";
 export default function Dialogbox() {
 
   const { openDialog, setOpenDialog, selectedCardData } = useContext(SemInfoContext);
-  console.log("dialog");
 
   return (
     <Dialog open = {openDialog} onOpenChange={setOpenDialog}>
