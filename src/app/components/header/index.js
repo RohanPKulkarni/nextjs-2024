@@ -61,22 +61,23 @@ function Header() {
 
   const optionsItems = [
     {
+      label : "Source code",
+      path : "https://github.com/RohanPKulkarni/nextjs-2024"
+    },
+    {
       label : "News & info",
-      path : "/news"
+      path : "/soon"
     },
     {
       label : "Projects",
-      path : "/projects"
-    },
-    {
-      label : "Source code",
-      path : "/sourcecode"
-    },
-    {
-      label : "Contribute",
-      path : "/contribute"
+      path : "/soon"
     },
     
+    {
+      label : "Contribute",
+      path : "/soon"
+    },
+
   ];
 
   const filteredCourses = useMemo(() => {
@@ -228,7 +229,7 @@ function Header() {
           {optionsItems.map((optionsItem) => (
             <Link
               key={optionsItem.label}
-              href={"/soon"}
+              href={optionsItem.path}
               className="flex w-full items-center py-2 text-lg font-semibold text-gray-800 hover:text-gray-500 transition duration-200 pl-4"
             >
               {optionsItem.label}
@@ -252,7 +253,7 @@ function Header() {
           {optionsItems.map((optionsItem, index, array) => (
             <Link
               key={optionsItem.label}
-              href={"/soon"}
+              href={optionsItem.path}
               className="flex w-full items-center py-2 text-lg font-semibold text-gray-800 hover:text-gray-500 transition duration-200 pl-4"
             >
               {optionsItem.label}
