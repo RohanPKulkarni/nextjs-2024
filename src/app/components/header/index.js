@@ -23,7 +23,7 @@ function Header() {
   const [isFocused, setIsFocused] = useState(false);
   const [branchdrop, setBranchdrop] = useState('Branch');
 
-  const { setSeminfo,setSelectedCourse,setOpenDialog } = useContext(SemInfoContext);
+  const { setSelectedCardData,setOpenDialog,setSeminfo } = useContext(SemInfoContext);
   
   const router = useRouter();
 
@@ -106,12 +106,12 @@ function Header() {
 
   function handlesearch(courseCode){
     const datasets = [aidssemesters, aimlsemesters]; 
-    setSelectedCourse(courseCode);
 
     for (const dataset of datasets) {
       for (const semester of dataset) {
         const course = semester.subjects.find((subject) => subject.code === courseCode);
         if (course) {
+          setSelectedCardData({name:course.name,code:course.code,credits:course.credits,incharge:course.incharge,linker:course.linker});
           setOpenDialog(true);
           setSeminfo(semester.number);
           const path = semester.path;

@@ -490,7 +490,7 @@ export function Semdropdown({branch}){
     <DropdownMenuItem 
       key={sem.number} 
       className="p-3 relative text-black font-bold text-xl transition-all duration-200 cursor-pointer"
-      onClick={() => handlesem(sem.number)}
+      onClick={() => setSeminfo(sem.number)}
     >
       <div className="mx-auto">
         {sem.number} 

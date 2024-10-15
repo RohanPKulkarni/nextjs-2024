@@ -2,6 +2,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import CommonLayout from "./components/common-layout";
 import { SemInfoProvider } from "./components/context";
+import Dialogbox from "./components/dialogbox";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
           <CommonLayout
             children={children}
           />
+          <Dialogbox/>
         </SemInfoProvider>
         
       </body>

@@ -5,7 +5,6 @@ export const SemInfoContext = createContext();
 
 export function SemInfoProvider({ children }) {
   const [seminfo, setSeminfo] = useState('3rd');
-  const [selectedCourse, setSelectedCourse] = useState(null);
   const [openDialog, setOpenDialog] = useState(false);
   const [selectedCardData, setSelectedCardData] = useState({
     name: '',
@@ -33,7 +32,7 @@ export function SemInfoProvider({ children }) {
   
 
   return (
-    <SemInfoContext.Provider value={{ seminfo, setSeminfo ,selectedCourse ,setSelectedCourse,openDialog,setOpenDialog,selectedCardData, setSelectedCardData}}>
+    <SemInfoContext.Provider value={{ seminfo, setSeminfo ,openDialog,setOpenDialog,selectedCardData, setSelectedCardData}}>
       {children}
     </SemInfoContext.Provider>
   );
