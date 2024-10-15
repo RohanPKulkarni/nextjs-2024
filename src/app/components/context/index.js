@@ -12,7 +12,8 @@ export function SemInfoProvider({ children }) {
     credits: '',
     incharge: '',
     linker: '',
-    code: ''
+    code: '',
+    pyqlink : ''
   });
 
   const [isClient, setIsClient] = useState(false); 

@@ -27,6 +27,7 @@ export function Semester({ branch }) {
                   incharge={course.incharge} 
                   linker={course.linker}
                   code = {course.code}
+                  pyqlink = {course.pyqlink}
                 />
               </div>
             ))
@@ -42,6 +43,7 @@ export function Semester({ branch }) {
                   incharge={course.incharge} 
                   linker={course.linker}
                   code = {course.code}
+                  pyqlink = {course.pyqlink }
                 />
               </div>
             ))
