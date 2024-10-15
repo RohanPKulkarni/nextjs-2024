@@ -14,9 +14,6 @@ import { SemInfoContext } from "../context";
 import { useRouter } from "next/navigation";
 
 
-
-
-
 function Header() {
 
   const [inputcourse , setInputcourse] = useState("");
@@ -28,6 +25,26 @@ function Header() {
 
   
 
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const handleRouteChange = (url) => {
+        if (url === '/') {
+          setBranchdrop('Branch');
+        }
+      };
+  
+      if (router?.events) {
+        router.events.on('routeChangeComplete', handleRouteChange);
+      }
+  
+      return () => {
+        if (router?.events) {
+          router.events.off('routeChangeComplete', handleRouteChange);
+        }
+      };
+    }
+  }, [router, setBranchdrop]);
+  
   
   
   const menuItems = [
@@ -250,7 +267,7 @@ function Header() {
             <SheetTitle className = "2xl">Menu</SheetTitle>
         </SheetHeader>
         <div className="grid gap-2 py-6">
-          {optionsItems.map((optionsItem, index, array) => (
+          {optionsItems.map((optionsItem, ) => (
             <Link
               key={optionsItem.label}
               href={optionsItem.path}
