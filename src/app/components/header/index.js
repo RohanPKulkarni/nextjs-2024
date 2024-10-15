@@ -134,7 +134,7 @@ function Header() {
 
 <div onClick={() => setBranchdrop("Branch")}> 
   <Link href={"/"} className="lg:hidden transition duration-200">
-    <House className="h-8 w-8" />
+    <House className="h-9 w-9" />
   </Link>
 
   <div onClick={() => setBranchdrop("Branch")}>
