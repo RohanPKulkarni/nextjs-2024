@@ -7,6 +7,13 @@ export function SemInfoProvider({ children }) {
   const [seminfo, setSeminfo] = useState('3rd');
   const [selectedCourse, setSelectedCourse] = useState(null);
   const [openDialog, setOpenDialog] = useState(false);
+  const [selectedCardData, setSelectedCardData] = useState({
+    name: '',
+    credits: '',
+    incharge: '',
+    linker: '',
+    code: ''
+  });
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -26,7 +33,7 @@ export function SemInfoProvider({ children }) {
   
 
   return (
-    <SemInfoContext.Provider value={{ seminfo, setSeminfo ,selectedCourse ,setSelectedCourse,openDialog,setOpenDialog}}>
+    <SemInfoContext.Provider value={{ seminfo, setSeminfo ,selectedCourse ,setSelectedCourse,openDialog,setOpenDialog,selectedCardData, setSelectedCardData}}>
       {children}
     </SemInfoContext.Provider>
   );
