@@ -9,6 +9,11 @@ export default function Dialogbox() {
 
   const { openDialog, setOpenDialog, selectedCardData } = useContext(SemInfoContext);
 
+  function handledialog(dialoglink){
+    window.open(dialoglink, "_blank", "noopener,noreferrer");
+    setOpenDialog(false);
+  }
+
   return (
     <Dialog open = {openDialog} onOpenChange={setOpenDialog}>
       <DialogContent className=" bg-gradient-to-r from-blue-500 to-green-400 border-4 border-gray-900 sm:max-w-[425px] max-w-[340px] lg:max-w-[500px] dark:bg-gray-800 p-6 rounded-lg shadow-lg">
@@ -26,18 +31,18 @@ export default function Dialogbox() {
       </div>
       
       <div className="mt-6 flex justify-between">
-          <Button onClick={() => window.open(selectedCardData.pyqlink, "_blank", "noopener,noreferrer")} 
+          <Button onClick={() => handledialog(selectedCardData.pyqlink)} 
                   className="custom-shadow ml-1 border-2 border-black bg-transparent hover:bg-transparent text-black hover:text-gray-700 shadow-md transition-all px-4 py-2 rounded-lg font-semibold focus:outline-none">
             PYQs
           </Button>
         {selectedCardData.lablink ? (
-          <Button onClick={() => window.open(selectedCardData.lablink, "_blank", "noopener,noreferrer")}
+          <Button onClick={() => handledialog(selectedCardData.lablink)}
               className="custom-shadow ml-1 border-2 border-black bg-transparent hover:bg-transparent text-black hover:text-gray-700 shadow-md transition-all px-4 py-2 rounded-lg font-semibold focus:outline-none">
                 Lab Code
           </Button>
         ) : null}
         
-          <Button onClick={() => window.open(selectedCardData.linker, "_blank", "noopener,noreferrer")}
+          <Button onClick={() => handledialog(selectedCardData.linker)}
                   className="custom-shadow mr-2 border-2 border-black bg-transparent hover:bg-transparent text-black hover:text-gray-700 shadow-md transition-all px-4 py-2 rounded-lg font-semibold focus:outline-none">
             Notes
           </Button>
