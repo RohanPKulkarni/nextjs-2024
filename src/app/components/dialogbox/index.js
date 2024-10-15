@@ -26,18 +26,21 @@ export default function Dialogbox() {
       </div>
       
       <div className="mt-6 flex justify-between">
-        <Button onClick={() => window.open(selectedCardData.linker, "_blank", "noopener,noreferrer")}
-                className="ml-3 border-2 border-black bg-transparent hover:bg-transparent text-black hover:text-gray-700 shadow-md transition-all px-4 py-2 rounded-lg font-semibold focus:outline-none">
-          Lab Code
-        </Button>
-        <Button onClick={() => window.open(selectedCardData.pyqlink, "_blank", "noopener,noreferrer")} 
-                className="border-2 border-black bg-transparent hover:bg-transparent text-black hover:text-gray-700 shadow-md transition-all px-4 py-2 rounded-lg font-semibold focus:outline-none">
-          PYQs
-        </Button>
-        <Button onClick={() => window.open(selectedCardData.linker, "_blank", "noopener,noreferrer")}
-                className="mr-3 border-2 border-black bg-transparent hover:bg-transparent text-black hover:text-gray-700 shadow-md transition-all px-4 py-2 rounded-lg font-semibold focus:outline-none">
-          Notes
-        </Button>
+          <Button onClick={() => window.open(selectedCardData.pyqlink, "_blank", "noopener,noreferrer")} 
+                  className="border-2 border-black bg-transparent hover:bg-transparent text-black hover:text-gray-700 shadow-md transition-all px-4 py-2 rounded-lg font-semibold focus:outline-none">
+            PYQs
+          </Button>
+        {selectedCardData.lablink ? (
+          <Button onClick={() => window.open(selectedCardData.lablink, "_blank", "noopener,noreferrer")}
+              className="ml-3 border-2 border-black bg-transparent hover:bg-transparent text-black hover:text-gray-700 shadow-md transition-all px-4 py-2 rounded-lg font-semibold focus:outline-none">
+                Lab Code
+          </Button>
+        ) : null}
+        
+          <Button onClick={() => window.open(selectedCardData.linker, "_blank", "noopener,noreferrer")}
+                  className="mr-3 border-2 border-black bg-transparent hover:bg-transparent text-black hover:text-gray-700 shadow-md transition-all px-4 py-2 rounded-lg font-semibold focus:outline-none">
+            Notes
+          </Button>
       </div>
       </DialogContent>
 

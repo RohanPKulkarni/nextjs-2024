@@ -6,12 +6,12 @@ import Link from "next/link";
 import { SemInfoContext } from "../context";
 import { useContext } from "react";
 
-export default function Commoncard({name , credits, incharge, linker, code, pyqlink}) {
+export default function Commoncard({name , credits, incharge, linker, code, pyqlink, lablink}) {
 
   const {setOpenDialog, setSelectedCardData} = useContext(SemInfoContext);
 
   function handleCardClick() {
-    setSelectedCardData({ name, credits, incharge, linker, code , pyqlink});
+    setSelectedCardData({ name, credits, incharge, linker, code , pyqlink, lablink});
     setOpenDialog(true);
   }
   
@@ -33,14 +33,18 @@ export default function Commoncard({name , credits, incharge, linker, code, pyql
           </CardDescription>
         </CardHeader>
         <CardFooter className="p-0 justify-between">
-          <Button onClick={() => window.open(linker, "_blank", "noopener,noreferrer")} 
-                  className="ml-3 border-2 border-black bg-transparent hover:bg-transparent text-black hover:text-gray-700 shadow-md transition-all px-4 py-2 rounded-lg font-semibold ">
-            Lab code
-          </Button>
           <Button onClick={() => window.open(pyqlink, "_blank", "noopener,noreferrer")} 
                   className="border-2 border-black bg-transparent hover:bg-transparent text-black hover:text-gray-700 shadow-md transition-all px-4 py-2 rounded-lg font-semibold">
             PYQs
           </Button>
+          {lablink ? (
+          <Button 
+            onClick={() => window.open(lablink, "_blank", "noopener,noreferrer")} 
+            className="ml-3 border-2 border-black bg-transparent hover:bg-transparent text-black hover:text-gray-700 shadow-md transition-all px-4 py-2 rounded-lg font-semibold"
+          >
+            Lab Code
+          </Button>
+        ) : null}
           <Button onClick={() => window.open(linker, "_blank", "noopener,noreferrer")} 
                   className="mr-3 border-2 border-black bg-transparent hover:bg-transparent text-black hover:text-gray-700 shadow-md transition-all px-4 py-2 rounded-lg font-semibold">
             Notes

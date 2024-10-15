@@ -159,7 +159,9 @@ export const aidssemesters = [
           "credits": "0:0:1",
           "incharge": "Smt Swetha B N, Dr Sowmya B J, Dr Vinay T R",
           "linker": "https://drive.google.com/drive/folders/1N6C5mKoj7oIEdCX8N6yxhy3T4z8Xzbe1?usp=drive_link",
-          "pyqlink" : "https://drive.google.com/drive/folders/10HNdxcdNNxqec49ZI2N6Dcvm0rZ-tWcf?usp=drive_link"
+          "pyqlink" : "https://drive.google.com/drive/folders/10HNdxcdNNxqec49ZI2N6Dcvm0rZ-tWcf?usp=drive_link",
+          "lablink" : "https://github.com/n-chinmaya/Data-Modeling-and-Visualisation-Laboratory-ADL48"
+
         },
         {
           "name": "Data Processing with SPARK",
@@ -277,7 +279,6 @@ export const aimlsemesters = [
         "incharge": "TBA",
         "linker": "https://drive.google.com/drive/folders/1pYXixf1_JLQ6JgjkmLFfUlsESt3s9WDQ?usp=drive_link",
         "pyqlink" : "https://drive.google.com/drive/folders/1-C3MCJBF9NlXzPAdJvG534tvjoh_ULG0?usp=drive_link",
-
 
       },
       {
