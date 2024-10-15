@@ -1,4 +1,4 @@
-
+import { Analytics } from "@vercel/analytics/react";
 export default function Home() {
   return (
     <section class="max-w-3xl bg-transparent mx-auto p-8 lg:custom-shadow1 rounded-lg mt-6 lg:mt-12 md:mt-8 hover:shadow-xl transition-shadow duration-300 border-2 border-black ">
