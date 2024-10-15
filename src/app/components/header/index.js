@@ -228,7 +228,7 @@ function Header() {
           {optionsItems.map((optionsItem) => (
             <Link
               key={optionsItem.label}
-              href={optionsItem.path}
+              href={"/soon"}
               className="flex w-full items-center py-2 text-lg font-semibold text-gray-800 hover:text-gray-500 transition duration-200 pl-4"
             >
               {optionsItem.label}
@@ -252,7 +252,7 @@ function Header() {
           {optionsItems.map((optionsItem, index, array) => (
             <Link
               key={optionsItem.label}
-              href={optionsItem.path}
+              href={"/soon"}
               className="flex w-full items-center py-2 text-lg font-semibold text-gray-800 hover:text-gray-500 transition duration-200 pl-4"
             >
               {optionsItem.label}
