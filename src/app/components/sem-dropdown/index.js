@@ -201,7 +201,7 @@ export const aidssemesters = [
         "credits": "3:0:0",
         "incharge": "X1",
         "linker": "https://drive.google.com/drive/folders/1vVTRpXJDl3ueH27CD9kbshzw_v37JGN2?usp=drive_link",
-        "pyqlink" : ""
+        "pyqlink" : "https://drive.google.com/drive/folders/1dpgOOcMW5aIDXWsrGHmP2CLNRJJaPzfp?usp=drive_link"
       },
       {
         "name": "Fundamentals of Data Science",
@@ -209,7 +209,7 @@ export const aidssemesters = [
         "credits": "3:1:0",
         "incharge": "Smt Swetha B N, Dr Meeradevi A K, Dr Swathi Mugada",
         "linker": "https://drive.google.com/drive/folders/1_Y2pZxcnOmEbSEf2W21aBhCpRN7tmUxy?usp=drive_link",
-        "pyqlink" : "https://drive.google.com/drive/folders/10iPiEFD9Up3oDw5Qk1maMkWzQEvi69_U?usp=drive_link"
+        "pyqlink" : "https://drive.google.com/drive/folders/1tcy5mQ9Gu7I7Ke3k2DNqKthWoHqgjNBc?usp=drive_link"
       },
       {
         "name": "Computer Organisation & Architecture",
@@ -217,7 +217,7 @@ export const aidssemesters = [
         "credits": "3:0:0",
         "incharge": "Dr Swathi Mugada",
         "linker": "https://drive.google.com/drive/folders/1LKwgMD_sknjNkvoe5WEedRFZ73diTw5o?usp=drive_link",
-        "pyqlink" : "https://drive.google.com/drive/folders/10kQ0-9po-cOIHoEKtSjlFRLOcaXc-YLK?usp=drive_link"
+        "pyqlink" : "https://drive.google.com/drive/folders/1PgFLATQwNJA5vC4r5Aw-Vr3KSXh5x9Ao?usp=drive_link"
       },
       {
         "name": "Machine Learning Laboratory",
@@ -451,7 +451,7 @@ export const aimlsemesters = [
         "credits": "3:1:0",
         "incharge": "Dr Meeradevi A K",
         "linker": "https://drive.google.com/drive/folders/13B1AxfdmuJQ7AjgdQSc1B9TaXV7zsVZf?usp=drive_link",
-        "pyqlink" : "https://drive.google.com/drive/folders/195oX3BWVX5NJ1YoQepbybfe7iol9vYb9?usp=drive_link"
+        "pyqlink" : "https://drive.google.com/drive/folders/1tcy5mQ9Gu7I7Ke3k2DNqKthWoHqgjNBc?usp=drive_link"
       },
       {
         "name": "Operating Systems",
@@ -483,7 +483,7 @@ export const aimlsemesters = [
         "credits": "3:0:0",
         "incharge": "Dr Swathi Mugada",
         "linker": "https://drive.google.com/drive/folders/1LKwgMD_sknjNkvoe5WEedRFZ73diTw5o?usp=drive_link",
-        "pyqlink" : "https://drive.google.com/drive/folders/10kQ0-9po-cOIHoEKtSjlFRLOcaXc-YLK?usp=drive_link"
+        "pyqlink" : "https://drive.google.com/drive/folders/1PgFLATQwNJA5vC4r5Aw-Vr3KSXh5x9Ao?usp=drive_link"
       },
       {
         "name": "Natural Language Processing Laboratory",
@@ -499,7 +499,7 @@ export const aimlsemesters = [
         "credits": "0:0:1",
         "incharge": "Dr Manasa S M, Dr Meeradevi A K, Smt Aishwarya M F Prabhakar, Dr Kusuma T",
         "linker": "https://drive.google.com/drive/folders/13Ju4QKiC2_bTD4W5HiSI_AxV8s-7Vrkv?usp=drive_link",
-        "pyqlink" : "https://drive.google.com/drive/folders/11-Ae7XLCNnHobOQYIKXcHIxmQ0qhw0Af?usp=drive_link"
+        "pyqlink" : "https://drive.google.com/drive/folders/1QkTFyehqDamZdn8vRABfFwlX6p2-DMwO?usp=drive_link"
       },
       {
         "name": "Research Methodology & Intellectual Property Rights",
