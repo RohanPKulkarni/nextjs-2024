@@ -185,7 +185,7 @@ export const aidssemesters = [
         "credits": "3:0:0",
         "incharge": "Dr Sowmya B J",
         "linker": "https://drive.google.com/drive/folders/1vFu8sY9FUpRDK96tjEsAJNDcnnQ6hF9c?usp=drive_link",
-        "pyqlink" : "https://drive.google.com/drive/folders/10YR4_P7yQ4Ibs5LtxhmqnaiEYIdJLhRG?usp=drive_link"
+        "pyqlink" : "https://drive.google.com/drive/folders/10f6WNjVO_1sGJDZ0p_O7CKJ429U33DxI"
       },
       {
         "name": "Operating Systems",
