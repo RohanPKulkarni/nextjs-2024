@@ -18,6 +18,7 @@ function Header() {
 
   const [inputcourse , setInputcourse] = useState("");
   const [isFocused, setIsFocused] = useState(false);
+  const [openSheet,setOpenSheet] = useState(false);
 
   const { setSelectedCardData,setOpenDialog,setSeminfo,branchdrop,setBranchdrop } = useContext(SemInfoContext);
   
@@ -91,8 +92,8 @@ function Header() {
     },
     
     {
-      label : "Contribute",
-      path : "/soon"
+      label : "Contact",
+      path : "/contribute"
     },
 
   ];
@@ -234,7 +235,7 @@ function Header() {
   </div>
 
   <div>
-    <Sheet>
+    <Sheet open = {openSheet} onOpenChange={setOpenSheet}>
       <SheetTrigger asChild>
         <AlignJustify className="lg:hidden h-8 w-8 text-gray-800" />
       </SheetTrigger>
@@ -247,6 +248,7 @@ function Header() {
             <Link
               key={optionsItem.label}
               href={optionsItem.path}
+              onClick={() => setOpenSheet(false)}
               className="flex w-full items-center py-2 text-lg font-semibold text-gray-800 hover:text-gray-500 transition duration-200 pl-4"
             >
               {optionsItem.label}
@@ -256,7 +258,7 @@ function Header() {
       </SheetContent>
     </Sheet>
 
-    <Sheet>
+    <Sheet open = {openSheet} onOpenChange={setOpenSheet}>
       <SheetTrigger asChild>
         <div className="ml-10 hidden font-bold text-2xl lg:flex hover:cursor-pointer text-gray-900 hover:text-gray-700 focus:outline-none">
           <div>Menu</div>
@@ -271,6 +273,7 @@ function Header() {
             <Link
               key={optionsItem.label}
               href={optionsItem.path}
+              onClick={() => setOpenSheet(false)}
               className="flex w-full items-center py-2 text-lg font-semibold text-gray-800 hover:text-gray-500 transition duration-200 pl-4"
             >
               {optionsItem.label}
