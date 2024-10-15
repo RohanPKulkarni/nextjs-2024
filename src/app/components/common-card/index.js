@@ -34,7 +34,7 @@ export default function Commoncard({name , credits, incharge, linker, code, pyql
         </CardHeader>
         <CardFooter className="p-0 justify-between">
           <Button onClick={() => window.open(pyqlink, "_blank", "noopener,noreferrer")} 
-                  className="ml-2 border-2 border-black bg-transparent hover:bg-transparent text-black hover:text-gray-700 shadow-md transition-all px-4 py-2 rounded-lg font-semibold">
+                  className="ml-3 border-2 border-black bg-transparent hover:bg-transparent text-black hover:text-gray-700 shadow-md transition-all px-4 py-2 rounded-lg font-semibold">
             PYQs
           </Button>
           {lablink ? (

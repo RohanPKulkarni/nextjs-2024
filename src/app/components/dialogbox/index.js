@@ -27,7 +27,7 @@ export default function Dialogbox() {
       
       <div className="mt-6 flex justify-between">
           <Button onClick={() => window.open(selectedCardData.pyqlink, "_blank", "noopener,noreferrer")} 
-                  className="ml-2 border-2 border-black bg-transparent hover:bg-transparent text-black hover:text-gray-700 shadow-md transition-all px-4 py-2 rounded-lg font-semibold focus:outline-none">
+                  className="ml-3 border-2 border-black bg-transparent hover:bg-transparent text-black hover:text-gray-700 shadow-md transition-all px-4 py-2 rounded-lg font-semibold focus:outline-none">
             PYQs
           </Button>
         {selectedCardData.lablink ? (
