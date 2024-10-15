@@ -170,7 +170,7 @@ function Header() {
 <div className="flex shrink-0 items-center ml-auto">
   <div className="mr-3 sm:mr-2 md:mr-4 ">
     <DropdownMenu>
-      <DropdownMenuTrigger className="font-bold text-2xl lg:flex text-gray-900 hover:text-gray-700 focus:outline-none">
+      <DropdownMenuTrigger className="font-bold text-2xl lg:flex text-gray-900 hover:text-gray-700 focus:outline-none border-2 border-black shadow-md transition-all p-1 rounded-lg">
         <div className="flex shrink-0 items-center ">
           <p className="text-black bg-transparent hover:text-gray-700">{branchdrop}</p>
           <ChevronDown className="h-4 w-4" /> 
@@ -183,7 +183,7 @@ function Header() {
           branchItems.map((branchItem, index, array) => (
             <Link href={branchItem.path} passHref key={branchItem.label}>  
               <DropdownMenuItem 
-                className="flex justify-center items-center cursor-pointer relative" 
+                className="flex justify-center items-center cursor-pointer relative " 
                 onClick={() => setBranchdrop(branchItem.label)}
               >
                 <div className="h-full p-2 text-black font-bold text-xl transition duration-200">

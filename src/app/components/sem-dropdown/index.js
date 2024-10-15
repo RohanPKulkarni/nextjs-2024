@@ -458,7 +458,7 @@ export function Semdropdown({branch}){
   return (
     <div className="mx-auto mb-4">
   <DropdownMenu>
-    <DropdownMenuTrigger className="font-bold text-2xl lg:flex focus:outline-none">
+    <DropdownMenuTrigger className="font-bold text-2xl lg:flex focus:outline-none hover:text-gray-700 border-2 border-black shadow-md transition-all p-1 rounded-lg">
       <div className="flex shrink-0 items-center focus:outline-none">
         <p>{seminfo} Semester</p>
         <ChevronDown className="h-4 w-4 ml-2" /> 

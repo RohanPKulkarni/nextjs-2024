@@ -11,33 +11,35 @@ export default function Dialogbox() {
 
   return (
     <Dialog open = {openDialog} onOpenChange={setOpenDialog}>
-      <DialogContent className="sm:max-w-[425px] max-w-[320px] lg:max-w-[500px] bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+      <DialogContent className=" bg-gradient-to-r from-blue-500 to-green-400 border-4 border-gray-900 sm:max-w-[425px] max-w-[320px] lg:max-w-[500px] dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+    
       <DialogHeader>
-        <DialogTitle className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">{selectedCardData.name}</DialogTitle>
+        <DialogTitle className="text-xl font-bold text-gray-900 dark:text-gray-100">{selectedCardData.name}</DialogTitle>
         <DialogDescription>
-          <p className="text-gray-700 dark:text-gray-300 mb-1">{selectedCardData.code}</p>
-          <p className="text-gray-700 dark:text-gray-300">{selectedCardData.credits}</p>
+          <p className="text-gray-900 text-xl font-bold dark:text-gray-900 mb-1">{selectedCardData.code}</p>
+          <p className="text-gray-900 text-xl font-bold dark:text-gray-900">{selectedCardData.credits}</p>
         </DialogDescription>
       </DialogHeader>
       
-      <div className="mt-4 text-gray-800 dark:text-gray-200">
+      <div className="mt-2 text-lg font-bold text-gray-900 dark:text-gray-900">
       {selectedCardData.incharge}
       </div>
       
-      <DialogFooter className="mt-6 flex justify-between">
-        <Button className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg">
+      <div className="mt-6 flex justify-between">
+        <Button className="ml-3 border-2 border-black bg-transparent hover:bg-transparent text-black hover:text-gray-700 shadow-md transition-all px-4 py-2 rounded-lg font-semibold focus:outline-none">
           Lab Code
         </Button>
-        <Button className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg">
+        <Button className="border-2 border-black bg-transparent hover:bg-transparent text-black hover:text-gray-700 shadow-md transition-all px-4 py-2 rounded-lg font-semibold focus:outline-none">
           PYQs
         </Button>
-        <Button className="bg-purple-500 hover:bg-purple-600 text-white py-2 px-4 rounded-lg">
+        <Button className="mr-3 border-2 border-black bg-transparent hover:bg-transparent text-black hover:text-gray-700 shadow-md transition-all px-4 py-2 rounded-lg font-semibold focus:outline-none">
           Notes
         </Button>
-      </DialogFooter>
+      </div>
       </DialogContent>
 
     </Dialog>
+
   );
 }
 
