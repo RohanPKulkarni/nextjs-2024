@@ -19,6 +19,8 @@ export default function Home() {
         Students can also contribute by sharing their own notes, fostering a collaborative learning 
         environment. Together, let's build a strong foundation in AI and beyond.Stay tuned, as many more features are on the way!
       </p>
+
+      <Analytics/>
     </section>
   );
 }
