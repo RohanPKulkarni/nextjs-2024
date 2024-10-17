@@ -11,14 +11,13 @@ export default function Commoncard({name , credits, incharge, linker, code, pyql
   const {setOpenDialog, setSelectedCardData} = useContext(SemInfoContext);
 
   function handleCardClick() {
-    setSelectedCardData({ name, credits, incharge, linker, code , pyqlink, lablink});
     setOpenDialog(true);
+    setSelectedCardData({ name, credits, incharge, linker, code , pyqlink, lablink});
   }
 
-  function handledialog(dialoglink){
+  function handledialog2(dialoglink2){
+    window.open(dialoglink2, "_blank", "noopener,noreferrer");
     setOpenDialog(false);
-    window.open(dialoglink, "_blank", "noopener,noreferrer");
-    
   }
   
   return (
@@ -39,19 +38,19 @@ export default function Commoncard({name , credits, incharge, linker, code, pyql
           </CardDescription>
         </CardHeader>
         <CardFooter className="p-0 justify-between">
-          <Button onClick={() => handledialog(pyqlink)} 
+          <Button onClick={() => handledialog2(pyqlink)} 
                   className="custom-shadow ml-3 border-2 border-black bg-transparent hover:bg-transparent text-black hover:text-gray-700 shadow-md transition-all px-4 py-2 rounded-lg font-semibold">
             PYQs
           </Button>
           {lablink ? (
           <Button 
-            onClick={() => handledialog(lablink)} 
+            onClick={() => handledialog2(lablink)} 
             className="custom-shadow ml-2 border-2 border-black bg-transparent hover:bg-transparent text-black hover:text-gray-700 shadow-md transition-all px-4 py-2 rounded-lg font-semibold"
           >
             Lab Code
           </Button>
         ) : null}
-          <Button onClick={() => handledialog(linker)} 
+          <Button onClick={() => handledialog2(linker)} 
                   className="custom-shadow mr-3 border-2 border-black bg-transparent hover:bg-transparent text-black hover:text-gray-700 shadow-md transition-all px-4 py-2 rounded-lg font-semibold">
             Notes
           </Button>

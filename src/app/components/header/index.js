@@ -107,6 +107,8 @@ function Header() {
         course?.name?.toLowerCase().indexOf(inputcourse.toLowerCase()) !== -1
       );
   }, [inputcourse]); 
+
+
   
 
   function handlesearch(courseCode){
@@ -160,14 +162,18 @@ function Header() {
       }}  
       className="w-full p-3 bg-transparent border-2 border-black rounded-md shadow-sm focus:outline-none focus:border-gray-600 focus:ring-0 placeholder-black-800"
     />
-    <button className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-800 hover:bg-gray-700 text-white p-2 rounded-full shadow-sm transition duration-200">
+    <button onClick={() =>  {
+    if (filteredCourses.length > 0) {
+      handlesearch(filteredCourses[0].code);
+    }
+    }} className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-800 hover:bg-gray-700 text-white p-2 rounded-full shadow-sm transition duration-200">
       <Search className="h-4 w-4"/>
     </button>
   </div>
   
     {isFocused && inputcourse && (
       <div className="absolute top-full mt-2 w-full bg-gradient-to-r from-blue-400 to-green-300 border-2 border-black px-4 pt-1 rounded-md shadow-lg min-h-[50px] max-h-[180px] overflow-y-auto max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg z-10">
-      {filteredCourses.length === 0 ? (
+        {filteredCourses.length === 0 ? (
         <div className="text-black-600 pt-2 pb-1">No such course found</div>
       ) : (
         filteredCourses.map((filteredCourse) => (
