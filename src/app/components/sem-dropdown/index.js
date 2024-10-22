@@ -364,7 +364,7 @@ export const aimlsemesters = [
       },
       {
         "name": "Universal Human Values",
-        "code": "UHV38",
+        "code": "UHV38(AI)",
         "credits": "2:0:0",
         "incharge": "Smt Aishwarya M F Prabhakar",
         "linker": "https://drive.google.com/drive/folders/1HmOXyH5STGgOlWi9cn-b7eHkwUhmMVCi?usp=drive_link",
@@ -541,7 +541,7 @@ export const aimlsemesters = [
       },
       {
         "name": "Research Methodology & Intellectual Property Rights",
-        "code": "AL58",
+        "code": "AL58(AI)",
         "credits": "3:0:0",
         "incharge": "Dr Vijaya Kumar B P, Dr Bhavya M",
         "linker": "https://drive.google.com/drive/folders/1qxzoWsqUh_PWqG28TG17UFQ17u278YCy?usp=drive_link",
@@ -557,7 +557,7 @@ export const aimlsemesters = [
       },
       {
         "name": "Environmental Studies",
-        "code": "HS510",
+        "code": "HS510(AI)",
         "credits": "0:0:0",
         "incharge": "TBA",
         "linker": "https://drive.google.com/drive/folders/1Apy5AEfQ_tRI09YrEuBw5-727yGZuauQ?usp=drive_link",
