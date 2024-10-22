@@ -9,11 +9,16 @@ body {
 }
 
 .custom-shadow {
-  box-shadow: 4px 4px 5px rgba(255, 0, 0, 0.5); 
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.7); 
 }
 
 .custom-shadow1 {
-  box-shadow: 8px 8px 20px rgba(255, 0, 0, 0.5); 
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.7); 
+}
+
+
+.bg-slate-custom {
+  background-color: rgb(176, 188, 205);
 }
 
 

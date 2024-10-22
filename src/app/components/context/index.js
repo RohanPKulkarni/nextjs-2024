@@ -7,6 +7,8 @@ export function SemInfoProvider({ children }) {
   const [branchdrop, setBranchdrop] = useState('Branch');
   const [seminfo, setSeminfo] = useState('3rd'); 
   const [openDialog, setOpenDialog] = useState(false);
+  const [openDialog2, setOpenDialog2] = useState(false);
+  const [imgsrc, setImgSrc] = useState("");
   const [selectedCardData, setSelectedCardData] = useState({
     name: '',
     credits: '',
@@ -56,7 +58,7 @@ export function SemInfoProvider({ children }) {
   
 
   return (
-    <SemInfoContext.Provider value={{ seminfo, setSeminfo ,openDialog,setOpenDialog,selectedCardData, setSelectedCardData,branchdrop,setBranchdrop}}>
+    <SemInfoContext.Provider value={{ seminfo, setSeminfo ,openDialog,setOpenDialog,selectedCardData, setSelectedCardData,branchdrop,setBranchdrop,openDialog2, setOpenDialog2,imgsrc,setImgSrc}}>
       {children}
     </SemInfoContext.Provider>
   );

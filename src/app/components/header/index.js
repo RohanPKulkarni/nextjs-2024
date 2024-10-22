@@ -148,7 +148,7 @@ function Header() {
 </div>    
 
 <div className="relative flex flex-col items-center lg:items-start mx-auto lg:ml-80 sm:ml-32 md:ml-32">
-  <div className="relative w-40 sm:w-sm md:w-[280px] lg:w-[380px]">
+  <div className="relative w-36 sm:w-sm md:w-[280px] lg:w-[380px]">
     <Input
       type="text"
       placeholder="Search course"
@@ -172,7 +172,7 @@ function Header() {
   </div>
   
     {isFocused && inputcourse && (
-      <div className="absolute top-full mt-2 w-full bg-gradient-to-r from-blue-400 to-green-300 border-2 border-black px-4 pt-1 rounded-md shadow-lg min-h-[50px] max-h-[180px] overflow-y-auto max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg z-10">
+      <div className="absolute top-full mt-2 w-full bg-slate-400 border-2 border-black px-4 pt-1 rounded-md shadow-lg min-h-[50px] max-h-[180px] overflow-y-auto max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg z-10">
         {filteredCourses.length === 0 ? (
         <div className="text-black-600 pt-2 pb-1">No such course found</div>
       ) : (
@@ -181,7 +181,7 @@ function Header() {
            <div>
              {filteredCourse.name}
            </div>
-           <div className = "ml-1 text-gray-500 ">
+           <div className = "ml-1 text-gray-600 ">
              {filteredCourse.code}
            </div>
           </div>
@@ -193,17 +193,17 @@ function Header() {
 </div>
 
 <div className="flex shrink-0 items-center ml-auto">
-  <div className="mr-2 sm:mr-2 md:mr-4 ">
+  <div className="mr-3 sm:mr-3 md:mr-4 ">
     <DropdownMenu>
       <DropdownMenuTrigger className="font-bold text-2xl lg:flex text-gray-900 hover:text-gray-700 focus:outline-none border-2 border-black shadow-md transition-all p-1 rounded-lg">
         <div className="flex shrink-0 items-center ">
           <p className="text-black bg-transparent hover:text-gray-700">{branchdrop}</p>
-          <ChevronDown className="h-4 w-4" /> 
+          <ChevronDown className="h-4 w-4 ml-1" /> 
         </div>
       </DropdownMenuTrigger>
       
       
-      <DropdownMenuContent className="max-h-48 overflow-y-auto bg-gradient-to-r from-blue-400 to-green-300 rounded-md shadow-lg border border-black ">
+      <DropdownMenuContent className="max-h-48 overflow-y-auto bg-slate-400 rounded-md shadow-lg border border-black ">
       {branchdrop === "Branch" ? (
           branchItems.map((branchItem, index, array) => (
             <Link href={branchItem.path} passHref key={branchItem.label}>  
@@ -245,7 +245,7 @@ function Header() {
       <SheetTrigger asChild>
         <AlignJustify className="lg:hidden h-8 w-8 text-gray-800" />
       </SheetTrigger>
-      <SheetContent side="right" className="bg-gradient-to-r from-blue-400 to-green-300 border border-black rounded-md shadow-lg">
+      <SheetContent side="right" className="bg-slate-400 border border-black rounded-md shadow-lg">
       <SheetHeader>
             <SheetTitle className = "2xl">Menu</SheetTitle>
         </SheetHeader>
@@ -270,7 +270,7 @@ function Header() {
           <div>Menu</div>
         </div>
       </SheetTrigger>
-      <SheetContent side="right" className="bg-gradient-to-r from-blue-400 to-green-300 border border-black rounded-md shadow-lg focus:outline-none ">
+      <SheetContent side="right" className="bg-slate-400 border border-black rounded-md shadow-lg focus:outline-none ">
         <SheetHeader>
             <SheetTitle className = "2xl">Menu</SheetTitle>
         </SheetHeader>

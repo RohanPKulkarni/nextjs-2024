@@ -1,6 +1,7 @@
 import { Semester } from "../components/semesters";
 import { Semdropdown } from "../components/sem-dropdown";
 import { Calender } from "../components/calender";
+import { DialogImage } from "../components/dialogimage";
 
 import Head from 'next/head';
 
@@ -28,6 +29,7 @@ export default function Aids(){
           <Semdropdown branch = {"aids"}/>
           <Semester branch = {"aids"}/>
           <Calender />
+          <DialogImage/>
               
       </div>
     </>

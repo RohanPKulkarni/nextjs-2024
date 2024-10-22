@@ -17,11 +17,13 @@ export default function Commoncard({name , credits, incharge, linker, code, pyql
 
   function handledialog2(dialoglink2){
     window.open(dialoglink2, "_blank", "noopener,noreferrer");
-    setOpenDialog(false);
+    setTimeout(() => {
+      setOpenDialog(false); 
+    }, 1000);
   }
   
   return (
-    <Card onClick={() => handleCardClick()} className="shadow-sm shadow-red-500 flex flex-col gap-8 rounded-2xl p-2 py-6 transition duration-300 hover:shadow-2xl hover:shadow-gray-600/10 cursor-pointer transform hover:-translate-y-2 bg-transparent border-4 border-black sm:p-8 md:p-8 lg:p-8">
+    <Card onClick={() => handleCardClick()} className="shadow-sm shadow-slate-500 flex flex-col gap-8 rounded-2xl p-2 py-6 transition duration-300 hover:shadow-2xl hover:shadow-gray-600/10 cursor-pointer transform hover:-translate-y-2 bg-transparent border-4 border-black sm:p-8 md:p-8 lg:p-8">
         <CardHeader className="p-0 mx-auto">
           <CardTitle className="text-xl max-w-[300px] truncate font-bold text-black">
             <p className = "overflow-hidden overflow-ellipsis whitespace-nowrap">{name}</p>

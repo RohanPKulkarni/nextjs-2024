@@ -13,12 +13,6 @@ export default function Home() {
       Here, you'll find class notes, lab codes and previous years' questions (PYQs) to aid your learning experience. Stay updated 
       with the latest branch news, important dates, and events through our calendar.
       </p>
-      
-      
-      <p className="text-lg text-black-600 leading-relaxed">
-        Students can also contribute by sharing their own notes, fostering a collaborative learning 
-        environment. Together, let's build a strong foundation in AI and beyond.Stay tuned, as many more features are on the way!
-      </p>
 
       <Analytics/>
     </section>
