@@ -119,7 +119,15 @@ function Header() {
         const course = semester.subjects.find((subject) => subject.code === courseCode);
         if (course) {
           setInputcourse("");
-          setSelectedCardData({name:course.name,code:course.code,credits:course.credits,incharge:course.incharge,linker:course.linker});
+          setSelectedCardData({
+            name: course.name,
+            code: course.code,
+            credits: course.credits,
+            incharge: course.incharge,
+            linker: course.linker,
+            ...(course.pyqlink && { pyqlink: course.pyqlink }),
+            ...(course.lablink && { lablink: course.lablink }),
+          });          
           setOpenDialog(true);
           setSeminfo(semester.number);
           const path = semester.path;
