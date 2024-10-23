@@ -251,7 +251,7 @@ function Header() {
   <div>
     <Sheet open = {openSheet} onOpenChange={setOpenSheet}>
       <SheetTrigger asChild>
-        <AlignJustify className="lg:hidden h-8 w-8 text-gray-800" />
+        <AlignJustify className="hover:cursor-pointer lg:hidden h-8 w-8 text-gray-800" />
       </SheetTrigger>
       <SheetContent side="right" className="bg-slate-400 border border-black rounded-md shadow-lg">
       <SheetHeader>

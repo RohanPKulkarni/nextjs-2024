@@ -17,6 +17,7 @@ export const aidssemesters = [
     imagelinks : {
       timetable : "/images/3rdsemaids.jpg",
       calender : "/images/academiccalender.jpg",
+      syllabus : "/documents/aids2ndyear.docx",
       cie1 : "",
       cie2 : "",
       see : ""
@@ -105,6 +106,7 @@ export const aidssemesters = [
     imagelinks : {
       timetable : "/images/4thsemaids.jpg",
       calender : "/images/academiccalender.jpg",
+      syllabus : "/documents/aids2ndyear.docx",
       cie1 : "",
       cie2 : "",
       see : ""
@@ -197,6 +199,7 @@ export const aidssemesters = [
     imagelinks : {
       timetable : "/images/5thsemaids.jpg",
       calender : "/images/academiccalender.jpg",
+      syllabus : "/documents/aids3rdyear.docx",
       cie1 : "",
       cie2 : "",
       see : ""
@@ -297,6 +300,7 @@ export const aimlsemesters = [
     imagelinks : {
       timetable : "/images/3rdsemaiml.jpg",
       calender : "/images/academiccalender.jpg",
+      syllabus : "/documents/aiml2ndyear.pdf",
       cie1 : "",
       cie2 : "",
       see : ""
@@ -393,6 +397,7 @@ export const aimlsemesters = [
     imagelinks : {
       timetable : "/images/4thsemaiml.jpg",
       calender : "/images/academiccalender.jpg",
+      syllabus : "/documents/aiml2ndyear.pdf",
       cie1 : "",
       cie2 : "",
       see : ""
@@ -484,6 +489,7 @@ export const aimlsemesters = [
     imagelinks : {
       timetable : "/images/5thsemaiml.jpg",
       calender : "/images/academiccalender.jpg",
+      syllabus : "/documents/aiml3rdyear.pdf",
       cie1 : "",
       cie2 : "",
       see : ""
@@ -585,6 +591,10 @@ const scheduledropdown = [
     caller : "calender"
   },
   {
+    label : "Syllabus",
+    caller : "syllabus"
+  },
+  {
     label : "CIE1 Schedule",
     caller : "cie1"
   },
@@ -606,6 +616,20 @@ export function Semdropdown({branch}){
   const {  setSeminfo,seminfo,openDialog2,setOpenDialog2 ,setImgSrc,imgsrc } = useContext(SemInfoContext);
    
   function handleimage(call) {
+    if (call === "syllabus") {
+      let syllabusURL = "";
+      
+      if (branch === "aids") {
+        syllabusURL = aidssemesters
+          .filter((sem) => sem.number === seminfo)
+          .map((sem) => sem.imagelinks[call]);
+      } else {
+        syllabusURL = aimlsemesters
+          .filter((sem) => sem.number === seminfo)
+          .map((sem) => sem.imagelinks[call]);
+      }
+      window.open(syllabusURL, "_blank");
+    } else 
     if (branch === "aids") {
       aidssemesters
         .filter((sem) => sem.number === seminfo)
@@ -685,7 +709,7 @@ export function Semdropdown({branch}){
       </div>
     </DropdownMenuTrigger>
 
-    <DropdownMenuContent className="w-full max-h-72 bg-slate-400 rounded-md shadow-lg border border-black overflow-y-auto p-2 min-w-[200px]">
+    <DropdownMenuContent className="w-full max-h-56 bg-slate-400 rounded-md shadow-lg border border-black overflow-y-auto p-2 min-w-[200px]">
       {scheduledropdown.map((item, index, array) => (
         <DropdownMenuItem
           key={item.label}
