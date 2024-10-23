@@ -16,6 +16,7 @@ export const aidssemesters = [
     path : "/aids",
     imagelinks : {
       timetable : "/images/3rdsemaids.jpg",
+      calender : "/images/academiccalender.jpg",
       cie1 : "",
       cie2 : "",
       see : ""
@@ -103,6 +104,7 @@ export const aidssemesters = [
     path : "/aids",
     imagelinks : {
       timetable : "/images/4thsemaids.jpg",
+      calender : "/images/academiccalender.jpg",
       cie1 : "",
       cie2 : "",
       see : ""
@@ -194,6 +196,7 @@ export const aidssemesters = [
     path : "/aids",
     imagelinks : {
       timetable : "/images/5thsemaids.jpg",
+      calender : "/images/academiccalender.jpg",
       cie1 : "",
       cie2 : "",
       see : ""
@@ -293,6 +296,7 @@ export const aimlsemesters = [
     path : "/aiml",
     imagelinks : {
       timetable : "/images/3rdsemaiml.jpg",
+      calender : "/images/academiccalender.jpg",
       cie1 : "",
       cie2 : "",
       see : ""
@@ -388,6 +392,7 @@ export const aimlsemesters = [
     path : "/aiml",
     imagelinks : {
       timetable : "/images/4thsemaiml.jpg",
+      calender : "/images/academiccalender.jpg",
       cie1 : "",
       cie2 : "",
       see : ""
@@ -478,6 +483,7 @@ export const aimlsemesters = [
     path : "/aiml",
     imagelinks : {
       timetable : "/images/5thsemaiml.jpg",
+      calender : "/images/academiccalender.jpg",
       cie1 : "",
       cie2 : "",
       see : ""
@@ -573,6 +579,10 @@ const scheduledropdown = [
   {
     label : "Class Time Table",
     caller : "timetable"
+  },
+  {
+    label : "Academic Calender",
+    caller : "calender"
   },
   {
     label : "CIE1 Schedule",
