@@ -1,6 +1,9 @@
 import { Analytics } from "@vercel/analytics/react";
 import Homecard from "./components/card2";
 import * as React from "react"
+import Link from "next/link";
+import { Plus, CirclePlus} from "lucide-react";
+
  
 import { Card, CardContent } from "@/components/ui/card"
 import {
@@ -45,6 +48,23 @@ export default function Home() {
           </div>
         ))}
       </div>
+
+      <div className="flex flex-col items-center justify-center p-4 bg-transparent rounded-lg shadow-md">
+        <p className="text-lg text-white mb-2 text-center">
+          Feel free to contribute your notes to help your fellow students!
+        </p>
+        <Link
+          href={"https://drive.google.com/drive/folders/14u5lS7nOaCMHUVJFboj6ZLKpYlKtxaPq"}
+          className="mt-1 flex items-center bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-200"
+          target="_blank"
+          rel="noopener noreferrer" 
+        >
+          <p className="mr-2">Add</p>
+          <Plus className="h-5 w-5" />
+        </Link>
+      </div>
+
+
 
       
       <Analytics />
