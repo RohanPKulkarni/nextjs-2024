@@ -2,7 +2,7 @@
 
 export function Calender() {
   return (
-    <div className="flex flex-col mt-4 bg-gray-900 p-6 rounded-lg shadow-lg">
+    <div className="flex flex-col mt-4 bg-slate-900 border border-white p-6 rounded-lg shadow-lg">
       <p className="font-bold text-2xl text-white text-center mb-4">
         Event Calendar
       </p>

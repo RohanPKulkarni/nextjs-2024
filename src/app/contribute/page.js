@@ -2,8 +2,8 @@
 export default function Soon() {
   return (
     <div className="flex flex-col items-center p-6 bg-transparent">
-    <h1 className="text-2xl font-bold text-gray-800">Contact Us</h1>
-    <p className="mt-2 text-lg text-gray-600">Feel free to reach out via email:</p>
+    <h1 className="text-2xl font-bold text-white">Contact Us</h1>
+    <p className="mt-2 text-lg text-white">Feel free to reach out via email:</p>
     <div className="mt-4 space-y-2 flex flex-col">
       <a 
         href="mailto:chinmayanarmdeshwar@gmail.com" 

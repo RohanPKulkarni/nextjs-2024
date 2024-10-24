@@ -141,15 +141,17 @@ function Header() {
 
   return (
     <div>
-     <header className="flex h-16 w-full shrink-0 items-center justify-between border-b border-black shadow-sm m-0 pb-4 mb-4 bg-transparent">
+     <header className="flex h-16 w-full shrink-0 items-center justify-between border-b border-white shadow-sm m-0 pb-4 mb-4 bg-transparent">
 
 <div onClick={() => setBranchdrop("Branch")}> 
   <Link href={"/"} className="lg:hidden transition duration-200">
-    <House className="h-9 w-9" />
+    <div className="text-white">
+        <House className="h-9 w-9" />
+      </div>
   </Link>
 
   <div onClick={() => setBranchdrop("Branch")}>
-    <Link className="hidden font-bold text-2xl lg:flex mr-6 text-gray-900 hover:text-gray-700 transition duration-200" href={"/"}>
+    <Link className="hidden font-bold text-2xl lg:flex mr-6 text-white hover:text-gray-300 transition duration-200" href={"/"}>
       Home
     </Link>
   </div>
@@ -168,28 +170,28 @@ function Header() {
           setIsFocused(false);
         }, 300); 
       }}  
-      className="w-full p-3 bg-transparent border-2 border-black rounded-md shadow-sm focus:outline-none focus:border-gray-600 focus:ring-0 placeholder-black-800"
+      className="text-white w-full p-2 sm:p-3 md:p-3 lg:p-3 bg-transparent border-2 border-white rounded-md shadow-sm focus:outline-none focus:border-white focus:ring-0 placeholder:text-gray-300"
     />
     <button onClick={() =>  {
     if (filteredCourses.length > 0) {
       handlesearch(filteredCourses[0].code);
     }
-    }} className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-800 hover:bg-gray-700 text-white p-2 rounded-full shadow-sm transition duration-200">
-      <Search className="h-4 w-4"/>
+    }} className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white hover:bg-white text-white p-1.5 rounded-full shadow-sm transition duration-200">
+      <Search className="h-4 w-4 text-black"/>
     </button>
   </div>
   
     {isFocused && inputcourse && (
-      <div className="absolute top-full mt-2 w-full bg-slate-400 border-2 border-black px-4 pt-1 rounded-md shadow-lg min-h-[50px] max-h-[180px] overflow-y-auto max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg z-10">
+      <div className="absolute top-full mt-2 w-full bg-slate-900 border-2 border-white px-4 pt-1 rounded-md shadow-lg min-h-[50px] max-h-[200px] overflow-y-auto max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg z-10">
         {filteredCourses.length === 0 ? (
-        <div className="text-black-600 pt-2 pb-1">No such course found</div>
+        <div className="text-gray-300 pt-2 pb-1">No such course found</div>
       ) : (
         filteredCourses.map((filteredCourse) => (
-         <div key={filteredCourse.code} onClick = {() => handlesearch(filteredCourse.code)} className= "flex flex-row py-2 border-b-2 border-black text-black-800 hover:text-gray-500 transition duration-200 hover:cursor-pointer z-20">
+         <div key={filteredCourse.code} onClick = {() => handlesearch(filteredCourse.code)} className= "flex flex-row py-2 border-b-2 border-white text-white hover:text-gray-500 transition duration-200 hover:cursor-pointer z-20">
            <div>
              {filteredCourse.name}
            </div>
-           <div className = "ml-1 text-gray-600 ">
+           <div className = "ml-1 text-gray-500">
              {filteredCourse.code}
            </div>
           </div>
@@ -201,17 +203,17 @@ function Header() {
 </div>
 
 <div className="flex shrink-0 items-center ml-auto">
-  <div className="mr-3 sm:mr-3 md:mr-4 ">
+  <div className="mr-2 sm:mr-2 md:mr-4 ">
     <DropdownMenu>
-      <DropdownMenuTrigger className="font-bold text-2xl lg:flex text-gray-900 hover:text-gray-700 focus:outline-none border-2 border-black shadow-md transition-all p-1 rounded-lg">
+      <DropdownMenuTrigger className="font-bold text-2xl lg:flex text-white hover:text-gray-300 focus:outline-none border-2 border-white shadow-md transition-all p-1 rounded-lg">
         <div className="flex shrink-0 items-center ">
-          <p className="text-black bg-transparent hover:text-gray-700">{branchdrop}</p>
+          <p className="text-white bg-transparent hover:text-gray-300">{branchdrop}</p>
           <ChevronDown className="h-4 w-4 ml-1" /> 
         </div>
       </DropdownMenuTrigger>
       
       
-      <DropdownMenuContent className="max-h-48 overflow-y-auto bg-slate-400 rounded-md shadow-lg border border-black ">
+      <DropdownMenuContent className="max-h-48 overflow-y-auto bg-slate-900 rounded-md shadow-lg border border-white ">
       {branchdrop === "Branch" ? (
           branchItems.map((branchItem, index, array) => (
             <Link href={branchItem.path} passHref key={branchItem.label}>  
@@ -219,11 +221,11 @@ function Header() {
                 className="flex justify-center items-center cursor-pointer relative " 
                 onClick={() => setBranchdrop(branchItem.label)}
               >
-                <div className="h-full p-2 text-black font-bold text-xl transition duration-200">
+                <div className="h-full p-2 text-white font-bold text-xl transition duration-200 hover:text-gray-900">
                   {branchItem.label}
                 </div>
                 {index < array.length - 1 && ( 
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-9/10 border-b-2 border-black mt-14" />
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-9/10 border-b-2 border-white mt-14" />
                 )}
               </DropdownMenuItem>
             </Link>
@@ -233,10 +235,10 @@ function Header() {
             .filter((branchItem) => branchItem.label !== branchdrop)
             .map((branchItemm) => (
               <Link href={branchItemm.path} passHref>
-              <DropdownMenuItem className="flex justify-center cursor-pointer" key={branchItemm.label}>
+              <DropdownMenuItem className="flex justify-center cursor-pointer " key={branchItemm.label}>
                   <div 
                     onClick={() => setBranchdrop(branchItemm.label)} 
-                    className="p-2 text-black font-bold text-xl transition duration-200 "
+                    className="p-2 text-white font-bold text-xl transition duration-200 hover:text-gray-900"
                   >
                     {branchItemm.label}
                   </div>
@@ -251,9 +253,9 @@ function Header() {
   <div>
     <Sheet open = {openSheet} onOpenChange={setOpenSheet}>
       <SheetTrigger asChild>
-        <AlignJustify className="hover:cursor-pointer lg:hidden h-8 w-8 text-gray-800" />
+        <AlignJustify className="hover:cursor-pointer lg:hidden h-8 w-8 text-white" />
       </SheetTrigger>
-      <SheetContent side="right" className="bg-slate-400 border border-black rounded-md shadow-lg">
+      <SheetContent side="right" className="bg-slate-900 border border-white rounded-md shadow-lg">
       <SheetHeader>
             <SheetTitle className = "2xl">Menu</SheetTitle>
         </SheetHeader>
@@ -263,7 +265,7 @@ function Header() {
               key={optionsItem.label}
               href={optionsItem.path}
               onClick={() => setOpenSheet(false)}
-              className="flex w-full items-center py-2 text-lg font-semibold text-gray-800 hover:text-gray-500 transition duration-200 pl-4"
+              className="flex w-full items-center py-2 text-lg font-semibold text-gray-100 hover:text-gray-500 transition duration-200 pl-4"
             >
               {optionsItem.label}
             </Link>
@@ -274,13 +276,13 @@ function Header() {
 
     <Sheet open = {openSheet} onOpenChange={setOpenSheet}>
       <SheetTrigger asChild>
-        <div className="ml-10 hidden font-bold text-2xl lg:flex hover:cursor-pointer text-gray-900 hover:text-gray-700 focus:outline-none">
+        <div className="ml-10 hidden font-bold text-2xl lg:flex hover:cursor-pointer text-gray-100 hover:text-gray-500 focus:outline-none">
           <div>Menu</div>
         </div>
       </SheetTrigger>
-      <SheetContent side="right" className="bg-slate-400 border border-black rounded-md shadow-lg focus:outline-none ">
+      <SheetContent side="right" className="bg-slate-900 border border-white rounded-md shadow-lg focus:outline-none ">
         <SheetHeader>
-            <SheetTitle className = "2xl">Menu</SheetTitle>
+            <SheetTitle className = "2xl text-white">Menu</SheetTitle>
         </SheetHeader>
         <div className="grid gap-2 py-6">
           {optionsItems.map((optionsItem, ) => (
@@ -288,7 +290,7 @@ function Header() {
               key={optionsItem.label}
               href={optionsItem.path}
               onClick={() => setOpenSheet(false)}
-              className="flex w-full items-center py-2 text-lg font-semibold text-gray-800 hover:text-gray-500 transition duration-200 pl-4"
+              className="flex w-full items-center py-2 text-lg font-semibold text-gray-100 hover:text-gray-500 transition duration-200 pl-4"
             >
               {optionsItem.label}
             </Link>
