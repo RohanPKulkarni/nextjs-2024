@@ -51,7 +51,7 @@ export default function Home() {
 
       <div className="flex flex-col items-center justify-center p-4 bg-transparent rounded-lg shadow-md">
         <p className="text-lg text-white mb-2 text-center">
-          Feel free to contribute your notes to help your fellow students!
+          Feel free to contribute your notes and other resources to help your fellow students!
         </p>
         <Link
           href={"https://drive.google.com/drive/folders/14u5lS7nOaCMHUVJFboj6ZLKpYlKtxaPq"}
