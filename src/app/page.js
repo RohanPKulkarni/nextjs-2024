@@ -46,27 +46,7 @@ export default function Home() {
         ))}
       </div>
 
-      <div className="w-full mt-6">
-        <Carousel
-          className="max-w-full lg:max-w-lg mx-auto bg-transparent border-2 border-white rounded-lg relative"
-        >
-          <CarouselContent className="w-full">
-            {Array.from({ length: 5 }).map((_, index) => (
-              <CarouselItem key={index}>
-                <div className="p-1">
-                  <Card className="bg-transparent">
-                    <CardContent className="flex aspect-square items-center justify-center p-6">
-                      <span className="text-4xl text-white font-semibold">{index + 1}</span>
-                    </CardContent>
-                  </Card>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-200 p-2 rounded-full hover:bg-gray-400" />
-          <CarouselNext className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-200 p-2 rounded-full hover:bg-gray-400" />
-        </Carousel>
-      </div>
+      
       <Analytics />
     </div>
   );
