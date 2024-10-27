@@ -47,7 +47,7 @@ export function CarouselComponent(){
       if (nextButtonRef.current) {
         nextButtonRef.current.click(); 
       }
-    }, 7000); 
+    }, 6000); 
 
     return () => clearInterval(interval); 
   }, []);
