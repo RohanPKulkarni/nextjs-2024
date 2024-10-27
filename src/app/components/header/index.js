@@ -151,7 +151,7 @@ function Header() {
   </Link>
 
   <div onClick={() => setBranchdrop("Branch")}>
-    <Link className="hidden font-bold text-2xl lg:flex mr-6 text-white hover:text-gray-300 transition duration-200" href={"/"}>
+    <Link className="hidden font-bold text-2xl lg:flex mr-6 text-white hover:text-gray-500 transition duration-200" href={"/"}>
       Home
     </Link>
   </div>
@@ -205,9 +205,9 @@ function Header() {
 <div className="flex shrink-0 items-center ml-auto">
   <div className="mr-2 sm:mr-2 md:mr-4 ">
     <DropdownMenu>
-      <DropdownMenuTrigger className="font-bold text-2xl lg:flex text-white hover:text-gray-300 focus:outline-none border-2 border-white shadow-md transition-all p-1 rounded-lg">
+      <DropdownMenuTrigger className="font-bold text-2xl lg:flex text-white hover:text-gray-500 focus:outline-none border-2 border-white shadow-md transition-all p-1 rounded-lg">
         <div className="flex shrink-0 items-center ">
-          <p className="text-white bg-transparent hover:text-gray-300">{branchdrop}</p>
+          <p className="text-white bg-transparent hover:text-gray-500">{branchdrop}</p>
           <ChevronDown className="h-4 w-4 ml-1" /> 
         </div>
       </DropdownMenuTrigger>

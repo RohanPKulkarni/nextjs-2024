@@ -3,16 +3,9 @@ import Homecard from "./components/card2";
 import * as React from "react"
 import Link from "next/link";
 import { Plus, CirclePlus} from "lucide-react";
-
- 
-import { Card, CardContent } from "@/components/ui/card"
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
+import { CarouselComponent } from "./components/achievements";
+import { CarouselComponent2 } from "./components/newsinfo";
+import { DialogImage } from "./components/dialogimage";
 
 
 const commonlinks = [
@@ -27,8 +20,12 @@ const commonlinks = [
 ]
 
 export default function Home() {
+
   return (
     <div className="flex flex-col">
+
+      <CarouselComponent2/>
+
       <section className="max-w-full bg-transparent mx-auto p-4 lg:custom-shadow1 rounded-lg mt-6 lg:mt-12 md:mt-8 hover:shadow-xl transition-shadow duration-300 border-2 border-white lg:p-8 ">
         <h1 className="text-4xl font-bold text-center text-white mb-6">
           <span className="text-red-700">NoteRit</span> - AI Branch Portal
@@ -64,7 +61,8 @@ export default function Home() {
         </Link>
       </div>
 
-
+      <CarouselComponent/>
+      <DialogImage/>
 
       
       <Analytics />
