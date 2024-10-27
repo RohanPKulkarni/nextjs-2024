@@ -36,3 +36,4 @@ yarn-error.log*
 next-env.d.ts
 
 #Ignore any private folders
+/src/app/components/sem-dropdown/
