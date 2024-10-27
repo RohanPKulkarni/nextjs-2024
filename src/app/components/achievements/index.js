@@ -75,7 +75,7 @@ export function CarouselComponent(){
                     onClick = {() => handleimage(card.image)}
                   />
                     <span className="text-lg mx-auto text-red-500 font-semibold text-center">{card.title}</span>
-                    <span className="mt-2 text-xl text-white font-semibold">{card.name}</span>
+                    <span className="mt-2 text-xl text-white font-semibold text-center overflow-hidden whitespace-nowrap text-ellipsis max-w-full">{card.name}</span>
                     <p className="text-white">{card.branch}</p>
                     <p className="text-white">{card.sem}</p>
                 </CardContent>
