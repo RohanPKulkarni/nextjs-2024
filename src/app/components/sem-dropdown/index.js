@@ -703,7 +703,7 @@ export function Semdropdown({branch}){
   <DropdownMenu>
     <DropdownMenuTrigger className="font-bold text-white text-2xl flex focus:outline-none hover:text-gray-500 border-2 border-white shadow-md transition-all p-1 rounded-lg">
       <div className="flex shrink-0 items-center focus:outline-none">
-        <CalendarClock className="lg:hidden h-8 w-8" />
+        <CalendarClock className="lg:hidden h-8 w-8 mr-1" />
         <p className="hidden lg:flex">Schedule</p>
         <ChevronDown className="hidden lg:flex h-4 w-4 ml-1" />
       </div>
@@ -727,9 +727,6 @@ export function Semdropdown({branch}){
 </div>
 
 </div>
-
-
-
   
 
   );
