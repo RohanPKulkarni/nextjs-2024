@@ -32,19 +32,26 @@ export function CarouselComponent(){
       title : "GENAI Hackathon 2024 at KPR Institute of Technology"
     },
     {
+      image : "/images/suasdrone.jpg",
+      name : "Yogesh D",
+      branch : "AI & DS",
+      sem : "5th Sem",
+      title : "SUAS students unmanned aerial systems competition in USA Maryland hosted by Robonation"
+    },
+    {
       image : "/images/fantomcode.jpg",
       name : "Dhavala T S,Shriya B S,Sneha B",
       branch : "AI & DS",
       sem : "5th Sem",
       title : "FantomCode-2024 at RV Institute of Technology"
-    },
+    }, 
     {
-      image : "/images/suasdrone.jpg",
-      name : "Yogesh D",
+      image : "/images/chess.jpg",
+      name : "Vedant W",
       branch : "AI & DS",
       sem : "5th Sem",
-      title : " SUAS students unmanned aerial systems competition held in USA Maryland hosted by Robonation"
-    },
+      title : "Chess VTU Bangalore division and state level"
+    }
 
   ];
 

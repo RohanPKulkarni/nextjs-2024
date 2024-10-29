@@ -24,6 +24,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+          <title>noterit-AIDS&AIML</title>
+          <meta name="description" content="AI Branch portal" />
           <link rel="shortcut icon" href="/images/ai-image.webp" type="image/webp" />
           <meta property="og:title" content="noterit - MSRIT AIML & AIDS" />
           <meta property="og:description" content="Portal for AI students." />
