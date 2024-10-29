@@ -37,7 +37,15 @@ export function CarouselComponent(){
       branch : "AI & DS",
       sem : "5th Sem",
       title : "FantomCode-2024 at RV Institute of Technology"
-    }
+    },
+    {
+      image : "/images/suasdrone.jpg",
+      name : "Yogesh D",
+      branch : "AI & DS",
+      sem : "5th Sem",
+      title : " SUAS students unmanned aerial systems competition held in USA Maryland hosted by Robonation"
+    },
+
   ];
 
   const nextButtonRef = useRef(null); 
