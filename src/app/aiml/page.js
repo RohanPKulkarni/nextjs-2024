@@ -6,7 +6,7 @@ import EditorDialog from "../components/dialognew";
 
 async function fetchListOfSems() {
   try {
-    const apiResponse = await fetch("http://localhost:3000/api/getaiml-sem", {
+    const apiResponse = await fetch("/api/getaiml-sem", {
       method: "GET",
       cache: "no-store",
     });
