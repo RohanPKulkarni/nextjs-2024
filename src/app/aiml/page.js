@@ -12,10 +12,9 @@ async function fetchListOfSems() {
 
     const result = await apiResponse.json();
 
-    return result?.data || [];
+    return result?.data;
   } catch (error) {
     console.log(error);
-    return [];
   }
 }
 
