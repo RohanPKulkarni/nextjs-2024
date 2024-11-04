@@ -4,6 +4,8 @@ async function fetchListOfAidsSems() {
   try {
     const apiResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getaids-sem`, {
       method: "GET",
+      cache:"no-store"
+
     });
 
     const result = await apiResponse.json();
@@ -18,6 +20,8 @@ async function fetchListOfAimlSems() {
   try {
     const apiResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getaiml-sem`, {
       method: "GET",
+      cache:"no-store"
+
     });
 
     const result = await apiResponse.json();
