@@ -29,11 +29,17 @@ export default function EditorDialog(){
       await fetch(`https://noterit.vercel.app/api/addaids-sem?sem=${seminfo}`, {
         method: "POST",
         body: JSON.stringify(editorCardData),
+        headers: {
+          "Content-Type": "application/json"
+      }
       });
     }else{
       await fetch(`https://noterit.vercel.app/api/addaiml-sem?sem=${seminfo}`, {
         method: "POST",
         body: JSON.stringify(editorCardData),
+        headers: {
+          "Content-Type": "application/json"
+      }
       });
     }
   

@@ -18,6 +18,9 @@ export function Dialogdelete(){
       try {
         const apiResponse = await fetch(`https://noterit.vercel.app/api/deleteaids-sem?_id=${selectedCardData._id}&sem=${seminfo}`, {
           method: "DELETE",
+          headers: {
+            "Content-Type": "application/json"
+        }
         });
         const result = await apiResponse.json();
   
@@ -29,6 +32,9 @@ export function Dialogdelete(){
       try {
         const apiResponse = await fetch(`https://noterit.vercel.app/api/deleteaiml-sem?_id=${selectedCardData._id}&sem=${seminfo}`, {
           method: "DELETE",
+          headers: {
+            "Content-Type": "application/json"
+        }
         });
         const result = await apiResponse.json();
   

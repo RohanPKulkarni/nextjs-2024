@@ -28,11 +28,17 @@ export default function EditorDialog2(){
       await fetch(`https://noterit.vercel.app/api/updateaids-sem?sem=${seminfo}&_id=${editorCardData._id}`, {
         method: "PUT",
         body: JSON.stringify(editorCardData),
+        headers: {
+          "Content-Type": "application/json"
+      }
       });
     }else{
       await fetch(`https://noterit.vercel.app/api/updateaiml-sem?sem=${seminfo}&_id=${editorCardData._id}`, {
         method: "PUT",
         body: JSON.stringify(editorCardData),
+        headers: {
+          "Content-Type": "application/json"
+      }
       });
     }
     setOpenDialog4(false);
