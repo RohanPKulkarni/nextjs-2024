@@ -11,11 +11,10 @@ import { useState,useMemo,useEffect } from 'react';
 import { useContext } from 'react';
 import { SemInfoContext } from "../context";
 import { useRouter } from "next/navigation";
-import connectToDB from "@/database";
 
 
 function Header({aidssemesters,aimlsemesters}) {
-
+  
   const [inputcourse , setInputcourse] = useState("");
   const [isFocused, setIsFocused] = useState(false);
   const [openSheet,setOpenSheet] = useState(false);

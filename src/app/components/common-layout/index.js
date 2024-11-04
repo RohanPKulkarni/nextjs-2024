@@ -1,43 +1,37 @@
-
+'use client'
 import Header from "../header";
+import { useEffect,useState } from "react";
 
-async function fetchListOfAidsSems() {
-    try {
-      const apiResponse = await fetch("https://noterit.vercel.app/api/getaids-sem", {
-        method: "GET",
-      });
-  
-      const result = await apiResponse.json();
-  
-      return result?.data;
-    } catch (error) {
-      throw new Error(error);
+export default function CommonLayout({children}){
+
+  const [aidssemesters, setAidsSemesters] = useState([]);
+  const [aimlsemesters, setAimlSemesters] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const aidsResponse = await fetch("https://noterit.vercel.app/api/getaids-sem");
+        const aimlResponse = await fetch("https://noterit.vercel.app/api/getaiml-sem");
+
+        if (aidsResponse.ok) {
+          const aidsData = await aidsResponse.json();
+          setAidsSemesters(aidsData.data);
+        }
+        if (aimlResponse.ok) {
+          const aimlData = await aimlResponse.json();
+          setAimlSemesters(aimlData.data);
+        }
+      } catch (error) {
+        console.error("Error fetching semesters:", error);
+      }
     }
-  }
 
-  async function fetchListOfAimlSems() {
-    try {
-      const apiResponse = await fetch("https://noterit.vercel.app/api/getaiml-sem", {
-        method: "GET",
-      });
-  
-      const result = await apiResponse.json();
-  
-      return result?.data;
-    } catch (error) {
-      throw new Error(error);
-    }
-  }
-
-export default async function CommonLayout({children}){
-
-    const aidssemesters = await fetchListOfAidsSems();
-    const aimlsemesters = await fetchListOfAimlSems();
+    fetchData();
+  }, []);
 
     return(
         <div className="mx-auto max-w-7xl p-6 lg:px-8">
-            <Header aidssemesters = {aidssemesters} aimlsemesters = {aimlsemesters}/>
-
+            <Header aidssemesters={aidssemesters} aimlsemesters={aimlsemesters}/>
             <main>{children}</main>
 
         </div>
