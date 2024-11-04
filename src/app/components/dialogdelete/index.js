@@ -16,7 +16,7 @@ export function Dialogdelete(){
 
     if(branchdrop === "AI&DS"){
       try {
-        const apiResponse = await fetch(`https://noterit.vercel.app/api/deleteaids-sem?_id=${selectedCardData._id}&sem=${seminfo}`, {
+        const apiResponse = await fetch(`/api/deleteaids-sem?_id=${selectedCardData._id}&sem=${seminfo}`, {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json"
@@ -30,7 +30,7 @@ export function Dialogdelete(){
       }
     }else{
       try {
-        const apiResponse = await fetch(`https://noterit.vercel.app/api/deleteaiml-sem?_id=${selectedCardData._id}&sem=${seminfo}`, {
+        const apiResponse = await fetch(`/api/deleteaiml-sem?_id=${selectedCardData._id}&sem=${seminfo}`, {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json"
