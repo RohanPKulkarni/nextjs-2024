@@ -8,6 +8,7 @@ async function fetchListOfSems() {
   try {
     const apiResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getaiml-sem`, {
       method: "GET",
+      cache:"no-store"
     });
 
     const result = await apiResponse.json();
