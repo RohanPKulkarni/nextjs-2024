@@ -29,7 +29,7 @@ export default function LoginComponent(){
 
   function handlesubmit(){
     const {username,password} = logindetails;
-    const isauthenticated = username === "admin" && password === "admin123";
+    const isauthenticated = username === "admin" && password === "dsadminml";
     if (isauthenticated) {
       setIsAuthenticated(true); 
       alert('You are authenticated!');
