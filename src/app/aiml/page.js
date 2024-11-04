@@ -4,21 +4,23 @@ import { Calender } from "../components/calender";
 import { DialogImage } from "../components/dialogimage";
 import EditorDialog from "../components/dialognew";
 
-async function fetchListOfSems() {
-  try {
-    const apiResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getaiml-sem`, {
-      method: "GET",
-    });
 
-    const result = await apiResponse.json();
-
-    return result?.data;
-  } catch (error) {
-    console.log(error);
-  }
-}
 
 export default async function Aiml(){
+
+  async function fetchListOfSems() {
+    try {
+      const apiResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getaiml-sem`, {
+        method: "GET",
+      });
+  
+      const result = await apiResponse.json();
+  
+      return result?.data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   const aimlsemesters = await fetchListOfSems();
 
