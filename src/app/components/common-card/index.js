@@ -4,15 +4,19 @@ import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent } from "../../../components/ui/card";
 import Link from "next/link";
 import { SemInfoContext } from "../context";
-import { useContext } from "react";
+import { useContext,useEffect } from "react";
+import {Pencil,Trash} from "lucide-react";
+import EditorDialog2 from "../dialogedit";
+import { Dialogdelete } from "../dialogdelete";
 
-export default function Commoncard({name , credits, incharge, linker, code, pyqlink, lablink}) {
 
-  const {setOpenDialog, setSelectedCardData} = useContext(SemInfoContext);
+export default function Commoncard({name , credits, incharge, linker, code, pyqlink, lablink,_id}) {
+
+  const { setOpenDialog, setSelectedCardData,isauthenticated,branchdrop,seminfo,setEditorCardData,setOpenDialog4,editorCardData,setOpenDialog5 } = useContext(SemInfoContext);
 
   function handleCardClick() {
     setOpenDialog(true);
-    setSelectedCardData({ name, credits, incharge, linker, code , pyqlink, lablink});
+    setSelectedCardData({ name, credits, incharge, linker, code , pyqlink, lablink,_id});
   }
 
   function handledialog2(dialoglink2){
@@ -21,9 +25,47 @@ export default function Commoncard({name , credits, incharge, linker, code, pyql
       setOpenDialog(false); 
     }, 1000);
   }
+
+  function handleEdit(){
+
+    setEditorCardData({name,credits,code,incharge,linker,lablink,pyqlink,_id});
+    setOpenDialog4(true);
+    
+  }
+
+  function handleDelete(){
+    setSelectedCardData({ name, credits, incharge, linker, code , pyqlink, lablink,_id});
+    setOpenDialog5(true);
+
+  }
+
+  
   
   return (
-    <Card onClick={() => handleCardClick()} className="shadow-sm shadow-gray-100 flex flex-col gap-8 rounded-2xl p-2 py-6 transition duration-300 hover:shadow-2xl hover:shadow-gray-600/10 cursor-pointer transform hover:-translate-y-2 bg-transparent border-4 border-white sm:p-8 md:p-8 lg:p-8">
+    <div>
+      <Card onClick={() => handleCardClick()} className="shadow-sm shadow-gray-100 flex flex-col gap-8 rounded-2xl p-2 py-6 transition duration-300 hover:shadow-2xl hover:shadow-gray-600/10 cursor-pointer transform hover:-translate-y-2 bg-transparent border-4 border-white sm:p-8 md:p-8 lg:p-8">
+        {isauthenticated && (
+        <>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              handleEdit();
+            }}
+            className="absolute top-2 right-2 text-white hover:text-gray-500"
+          >
+            <Pencil />
+          </button>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              handleDelete(); 
+            }}
+            className="absolute top-2 left-2 text-white hover:text-gray-500"
+          >
+            <Trash />
+          </button>
+        </>
+      )}
         <CardHeader className="p-0 mx-auto">
           <CardTitle className="text-xl max-w-[300px] truncate font-bold text-white">
             <p className = "overflow-hidden overflow-ellipsis whitespace-nowrap">{name}</p>
@@ -40,23 +82,37 @@ export default function Commoncard({name , credits, incharge, linker, code, pyql
           </CardDescription>
         </CardHeader>
         <CardFooter className="p-0 justify-between">
-          <Button onClick={() => handledialog2(pyqlink)} 
-                  className="custom-shadow ml-3 border-2 border-white bg-transparent hover:bg-transparent text-white hover:text-gray-500 shadow-md transition-all px-4 py-2 rounded-lg font-semibold">
+          <Button onClick={(e) => {
+                  e.stopPropagation();
+                  handledialog2(pyqlink);
+                }} 
+                className="custom-shadow ml-3 border-2 border-white bg-transparent hover:bg-transparent text-white hover:text-gray-500 shadow-md transition-all px-4 py-2 rounded-lg font-semibold">
             PYQs
           </Button>
           {lablink ? (
           <Button 
-            onClick={() => handledialog2(lablink)} 
+            onClick={(e) => {
+              e.stopPropagation();
+              handledialog2(lablink);
+            }}
             className="custom-shadow ml-2 border-2 border-white bg-transparent hover:bg-transparent text-white hover:text-gray-500 shadow-md transition-all px-4 py-2 rounded-lg font-semibold"
           >
             Lab Code
           </Button>
         ) : null}
-          <Button onClick={() => handledialog2(linker)} 
+          <Button onClick={(e) => {
+                    e.stopPropagation();
+                    handledialog2(linker);
+                  }} 
                   className="custom-shadow mr-3 border-2 border-white bg-transparent hover:bg-transparent text-white hover:text-gray-500 shadow-md transition-all px-4 py-2 rounded-lg font-semibold">
             Notes
           </Button>
         </CardFooter>
-        </Card>
+      </Card>
+      <EditorDialog2/>
+      <Dialogdelete/>
+    </div>
+   
+        
   );
 }

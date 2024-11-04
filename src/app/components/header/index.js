@@ -2,51 +2,39 @@
 
 
 import Link from "next/link";  
-import { Sheet, SheetContent, SheetTrigger ,SheetHeader ,SheetTitle ,SheetClose} from "../../../components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger ,SheetHeader ,SheetTitle ,SheetClose,SheetFooter} from "../../../components/ui/sheet";
 import { Button } from "../../../components/ui/button";
 import { AlignJustify, Moon , House , ChevronDown , Search} from "lucide-react";
 import {  DropdownMenu,DropdownMenuTrigger,DropdownMenuContent,DropdownMenuItem } from "../../../components/ui/dropdown-menu";
 import { Input } from "../../../components/ui/input" ;
 import { useState,useMemo,useEffect } from 'react';
-import { aidssemesters , aimlsemesters } from "../sem-dropdown";
 import { useContext } from 'react';
 import { SemInfoContext } from "../context";
 import { useRouter } from "next/navigation";
+import connectToDB from "@/database";
 
 
-function Header() {
+function Header({aidssemesters,aimlsemesters}) {
 
   const [inputcourse , setInputcourse] = useState("");
   const [isFocused, setIsFocused] = useState(false);
   const [openSheet,setOpenSheet] = useState(false);
 
-  const { setSelectedCardData,setOpenDialog,setSeminfo,branchdrop,setBranchdrop } = useContext(SemInfoContext);
+  const { setSelectedCardData,setOpenDialog,setSeminfo,branchdrop,setBranchdrop,isauthenticated,setIsAuthenticated } = useContext(SemInfoContext);
   
   const router = useRouter();
 
-  
+  const filteredCourses = useMemo(() => {
+    if (!inputcourse.trim()) return [];
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const handleRouteChange = (url) => {
-        if (url === '/') {
-          setBranchdrop('Branch');
-        }
-      };
-  
-      if (router?.events) {
-        router.events.on('routeChangeComplete', handleRouteChange);
-      }
-  
-      return () => {
-        if (router?.events) {
-          router.events.off('routeChangeComplete', handleRouteChange);
-        }
-      };
-    }
-  }, [router, setBranchdrop]);
-  
-  
+    return [...aidssemesters, ...aimlsemesters]
+      .flatMap((semester) => semester.subjects)
+      .filter((course) =>
+        course?.name?.toLowerCase().includes(inputcourse.toLowerCase())
+      );
+  }, [inputcourse]);
+
+
   
   const menuItems = [
     
@@ -97,18 +85,6 @@ function Header() {
     },
 
   ];
-
-  const filteredCourses = useMemo(() => {
-    if (!inputcourse.trim()) return []; 
-    
-    return [...aidssemesters, ...aimlsemesters]
-      .flatMap((semester) => semester.subjects)
-      .filter((course) => 
-        course?.name?.toLowerCase().indexOf(inputcourse.toLowerCase()) !== -1
-      );
-  }, [inputcourse]); 
-
-
   
 
   function handlesearch(courseCode){
@@ -138,6 +114,7 @@ function Header() {
       }
     }
   }
+
 
   return (
     <div>
@@ -207,7 +184,7 @@ function Header() {
     <DropdownMenu>
       <DropdownMenuTrigger className="font-bold text-2xl lg:flex text-white hover:text-gray-500 focus:outline-none border-2 border-amber-400  shadow-md transition-all p-1 rounded-lg">
         <div className="flex shrink-0 items-center ">
-          <p className="text-white bg-transparent hover:text-gray-500">{branchdrop}</p>
+          <p>{branchdrop}</p>
           <ChevronDown className="h-4 w-4 ml-1" /> 
         </div>
       </DropdownMenuTrigger>
@@ -257,8 +234,10 @@ function Header() {
         <AlignJustify className="hover:cursor-pointer lg:hidden h-8 w-8 text-white" />
       </SheetTrigger>
       <SheetContent side="right" className="bg-slate-900 border border-white rounded-md shadow-lg">
-      <SheetHeader>
-            <SheetTitle className = "2xl">Menu</SheetTitle>
+        <SheetHeader>
+          <SheetTitle className="text-2xl text-white">
+              {isauthenticated ? "Editor" : "Guest"}
+          </SheetTitle>
         </SheetHeader>
         <div className="grid gap-2 py-6">
           {optionsItems.map((optionsItem) => (
@@ -272,6 +251,24 @@ function Header() {
             </Link>
           ))}
         </div>
+        <SheetFooter className="p-4 text-center">
+          {isauthenticated ? (
+            <Button
+              onClick={() => setIsAuthenticated(false)}
+              className="px-4 py-2 text-gray-100 bg-red-600 rounded-md hover:bg-red-700 transition duration-200"
+            >
+              Logout
+            </Button>
+          ) : (
+            <Link
+              href="/editor"
+              onClick = {() => setOpenSheet(false)}
+              className="text-gray-100 hover:text-blue-400 font-semibold transition duration-200"
+            >
+              Admin Login
+            </Link>
+          )}
+        </SheetFooter>
       </SheetContent>
     </Sheet>
 
@@ -283,8 +280,11 @@ function Header() {
       </SheetTrigger>
       <SheetContent side="right" className="bg-slate-900 border border-white rounded-md shadow-lg focus:outline-none ">
         <SheetHeader>
-            <SheetTitle className = "2xl text-white">Menu</SheetTitle>
+          <SheetTitle className="text-2xl text-white">
+            {isauthenticated ? "Editor" : "Guest"}
+          </SheetTitle>
         </SheetHeader>
+
         <div className="grid gap-2 py-6">
           {optionsItems.map((optionsItem, ) => (
             <Link
@@ -297,6 +297,26 @@ function Header() {
             </Link>
           ))}
         </div>
+        <SheetFooter className="p-4 text-center">
+          {isauthenticated ? (
+            <Button
+              onClick={() => setIsAuthenticated(false)}
+              className="px-4 py-2 text-gray-100 bg-red-600 rounded-md hover:bg-red-700 transition duration-200"
+            >
+              Logout
+            </Button>
+          ) : (
+            <Link
+              href="/editor"
+              onClick = {() => setOpenSheet(false)}
+              className="text-gray-100 hover:text-blue-400 font-semibold transition duration-200"
+            >
+              Admin Login
+            </Link>
+          )}
+        </SheetFooter>
+
+
       </SheetContent>
     </Sheet>   
   </div> 

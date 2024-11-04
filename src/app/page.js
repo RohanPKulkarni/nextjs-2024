@@ -6,6 +6,10 @@ import { Plus, CirclePlus} from "lucide-react";
 import { CarouselComponent } from "./components/achievements";
 import { CarouselComponent2 } from "./components/newsinfo";
 import { DialogImage } from "./components/dialogimage";
+import { Button } from "@/components/ui/button";
+import connectToDB from "@/database";
+import { initAIDSSemesters } from "@/models/initaidssem";
+import { initAIMLSemesters } from "@/models/initaimlsem";
 
 const commonlinks = [
   {
@@ -18,7 +22,12 @@ const commonlinks = [
   }
 ]
 
-export default function Home() {
+export default async function Home() {
+
+  await connectToDB();
+  await initAIDSSemesters();
+  await initAIMLSemesters();
+
 
   return (
     <div className="flex flex-col">

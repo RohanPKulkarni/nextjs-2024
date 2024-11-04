@@ -1,11 +1,44 @@
-'use client'
 
 import Header from "../header";
 
-export default function CommonLayout({children}){
+async function fetchListOfAidsSems() {
+    try {
+      const apiResponse = await fetch("http://localhost:3000/api/getaids-sem", {
+        method: "GET",
+        cache: "no-store",
+      });
+  
+      const result = await apiResponse.json();
+  
+      return result?.data;
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
+
+  async function fetchListOfAimlSems() {
+    try {
+      const apiResponse = await fetch("http://localhost:3000/api/getaiml-sem", {
+        method: "GET",
+        cache: "no-store",
+      });
+  
+      const result = await apiResponse.json();
+  
+      return result?.data;
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
+
+export default async function CommonLayout({children}){
+
+    const aidssemesters = await fetchListOfAidsSems();
+    const aimlsemesters = await fetchListOfAimlSems();
+
     return(
         <div className="mx-auto max-w-7xl p-6 lg:px-8">
-            <Header/>
+            <Header aidssemesters = {aidssemesters} aimlsemesters = {aimlsemesters}/>
 
             <main>{children}</main>
 
