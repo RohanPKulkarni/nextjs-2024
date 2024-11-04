@@ -8,7 +8,6 @@ async function fetchListOfSems() {
   try {
     const apiResponse = await fetch("https://noterit.vercel.app/api/getaids-sem", {
       method: "GET",
-      cache: "no-store",
     });
 
     const result = await apiResponse.json();
