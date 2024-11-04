@@ -26,12 +26,12 @@ export default function EditorDialog(){
 
   async function handlesave(){
     if (branchdrop === "AI&DS"){
-      await fetch(`/api/addaids-sem?sem=${seminfo}`, {
+      await fetch(`https://noterit.vercel.app/api/addaids-sem?sem=${seminfo}`, {
         method: "POST",
         body: JSON.stringify(editorCardData),
       });
     }else{
-      await fetch(`/api/addaiml-sem?sem=${seminfo}`, {
+      await fetch(`https://noterit.vercel.app/api/addaiml-sem?sem=${seminfo}`, {
         method: "POST",
         body: JSON.stringify(editorCardData),
       });
