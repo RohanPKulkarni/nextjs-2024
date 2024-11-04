@@ -2,7 +2,7 @@ import Header from "../header";
 
 async function fetchListOfAidsSems() {
   try {
-    const apiResponse = await fetch("https://noterit.vercel.app/api/getaids-sem/route.js", {
+    const apiResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getaids-sem`, {
       method: "GET",
     });
 
@@ -16,7 +16,7 @@ async function fetchListOfAidsSems() {
 
 async function fetchListOfAimlSems() {
   try {
-    const apiResponse = await fetch("https://noterit.vercel.app/api/getaiml-sem/route.js", {
+    const apiResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getaiml-sem`, {
       method: "GET",
     });
 

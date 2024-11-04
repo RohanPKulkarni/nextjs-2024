@@ -6,7 +6,7 @@ import EditorDialog from "../components/dialognew";
 
 async function fetchListOfSems() {
   try {
-    const apiResponse = await fetch("https://noterit.vercel.app/api/getaiml-sem/route.js", {
+    const apiResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getaiml-sem`, {
       method: "GET",
     });
 
