@@ -4,7 +4,6 @@ async function fetchListOfAidsSems() {
   try {
     const apiResponse = await fetch("/api/getaids-sem", {
       method: "GET",
-      cache: "no-store",
     });
 
     const result = await apiResponse.json();
@@ -14,11 +13,11 @@ async function fetchListOfAidsSems() {
     throw new Error(error);
   }
 }
+
 async function fetchListOfAimlSems() {
   try {
     const apiResponse = await fetch("/api/getaiml-sem", {
       method: "GET",
-      cache: "no-store",
     });
 
     const result = await apiResponse.json();
