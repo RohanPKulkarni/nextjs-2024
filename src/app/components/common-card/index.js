@@ -44,28 +44,6 @@ export default function Commoncard({name , credits, incharge, linker, code, pyql
   return (
     <div>
       <Card onClick={() => handleCardClick()} className="shadow-sm shadow-gray-100 flex flex-col gap-8 rounded-2xl p-2 py-6 transition duration-300 hover:shadow-2xl hover:shadow-gray-600/10 cursor-pointer transform hover:-translate-y-2 bg-transparent border-4 border-white sm:p-8 md:p-8 lg:p-8">
-        {isauthenticated && (
-        <>
-          <Button
-            onClick={(e) => {
-              e.stopPropagation();
-              handleEdit();
-            }}
-            className="absolute top-2 right-2 text-white hover:text-gray-500"
-          >
-            <Pencil />
-          </Button>
-          <Button
-            onClick={(e) => {
-              e.stopPropagation();
-              handleDelete(); 
-            }}
-            className="absolute top-2 left-2 text-white hover:text-gray-500"
-          >
-            <Trash />
-          </Button>
-        </>
-      )}
         <CardHeader className="p-0 mx-auto">
           <CardTitle className="text-xl max-w-[300px] truncate font-bold text-white">
             <p className = "overflow-hidden overflow-ellipsis whitespace-nowrap">{name}</p>
