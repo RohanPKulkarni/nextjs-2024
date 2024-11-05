@@ -7,7 +7,7 @@ import { fetchaidssemesters } from "@/actions";
 
 async function Aids(){
   
-    const aidssemesters = await fetchaidssemesters();
+  const aidssemesters = await fetchaidssemesters();
 
   return (
       

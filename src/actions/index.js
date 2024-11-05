@@ -15,7 +15,7 @@ export async function fetchaidssemesters() {
   try {
     await connectToDB();
 
-    const semesters = await AIMLSemester.find({}).lean();
+    const semesters = await AIDSSemester.find({}).lean();
 
     const plainSemesters = semesters.map((semester) => ({
       ...semester,
