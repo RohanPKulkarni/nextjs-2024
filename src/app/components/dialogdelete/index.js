@@ -5,6 +5,7 @@ import {Dialog,DialogContent,DialogDescription,DialogFooter,DialogHeader,DialogT
 import { SemInfoContext } from "../context";
 import { useContext } from "react";
 import { useRouter } from "next/navigation";
+import { deleteaidssemesters,deleteaimlsemesters } from "@/actions";
 
 export function Dialogdelete(){
 
@@ -15,31 +16,18 @@ export function Dialogdelete(){
   async function handledelete(){
 
     if(branchdrop === "AI&DS"){
-      try {
-        const apiResponse = await fetch(`/api/deleteaids-sem?_id=${selectedCardData._id}&sem=${seminfo}`, {
-          method: "DELETE",
-          headers: {
-            "Content-Type": "application/json"
-        }
-        });
-        const result = await apiResponse.json();
-  
-        if (result?.success) router.refresh();
-      } catch (e) {
-        console.log(e);
+      try{
+      const result = await deleteaidssemesters(selectedCardData._id,seminfo,"/aids");
       }
-    }else{
-      try {
-        const apiResponse = await fetch(`/api/deleteaiml-sem?_id=${selectedCardData._id}&sem=${seminfo}`, {
-          method: "DELETE",
-          headers: {
-            "Content-Type": "application/json"
+     catch(e){
+      console.log(e);
+    }
+    }
+    else{
+      try{
+      const result = await deleteaimlsemesters(selectedCardData._id,seminfo,"/aiml");
         }
-        });
-        const result = await apiResponse.json();
-  
-        if (result?.success) router.refresh();
-      } catch (e) {
+       catch(e){
         console.log(e);
       }
     }

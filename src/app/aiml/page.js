@@ -3,26 +3,12 @@ import { Semdropdown } from "../components/sem-dropdown";
 import { Calender } from "../components/calender";
 import { DialogImage } from "../components/dialogimage";
 import EditorDialog from "../components/dialognew";
+import { fetchaimlsemesters } from "@/actions";
+
+async function Aiml(){
 
 
-
-export default async function Aiml(){
-
-  async function fetchListOfSems() {
-    try {
-      const apiResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getaiml-sem`, {
-        method: "GET",
-      });
-  
-      const result = await apiResponse.json();
-  
-      return result?.data;
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  const aimlsemesters = await fetchListOfSems();
+  const aimlsemesters = await fetchaimlsemesters();
 
   return (
     <div className="flex flex-col ">
@@ -37,3 +23,4 @@ export default async function Aiml(){
   );
 }
 
+export default Aiml;

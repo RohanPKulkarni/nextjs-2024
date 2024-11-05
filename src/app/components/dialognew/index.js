@@ -7,6 +7,7 @@ import { SemInfoContext } from "../context";
 import { useContext } from "react";
 import {Pencil} from "lucide-react";
 import { useRouter } from "next/navigation";
+import { addnewaidssemesters,addnewaimlsemesters } from "@/actions";
 
 
 
@@ -26,25 +27,21 @@ export default function EditorDialog(){
 
   async function handlesave(){
     if (branchdrop === "AI&DS"){
-      await fetch(`/api/addaids-sem?sem=${seminfo}`, {
-        method: "POST",
-        body: JSON.stringify(editorCardData),
-        headers: {
-          "Content-Type": "application/json"
-      }
-      });
+      try{
+      const result = await addnewaidssemesters(editorCardData,seminfo,"/aids");
+          }
+         catch(e){
+          console.log(e);
+        }
     }else{
-      await fetch(`/api/addaiml-sem?sem=${seminfo}`, {
-        method: "POST",
-        body: JSON.stringify(editorCardData),
-        headers: {
-          "Content-Type": "application/json"
-      }
-      });
+      try{
+      const result = await addnewaimlsemesters(editorCardData,seminfo,"/aiml");
+            }
+           catch(e){
+            console.log(e);
+          }
     }
-  
     setOpenDialog3(false);
-    router.refresh();
   };
   
   function handlenewcourse(){

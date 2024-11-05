@@ -3,26 +3,11 @@ import { Semdropdown } from "../components/sem-dropdown";
 import { Calender } from "../components/calender";
 import { DialogImage } from "../components/dialogimage";
 import EditorDialog from "../components/dialognew";
+import { fetchaidssemesters } from "@/actions";
 
-
-
-export default async function Aids(){
-
-  async function fetchListOfSems() {
-    try {
-      const apiResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getaids-sem`, {
-        method: "GET",
-      });
+async function Aids(){
   
-      const result = await apiResponse.json();
-  
-      return result?.data;
-    } catch (error) {
-      console.log(error);
-    }
-  }
-  
-  const aidssemesters = await fetchListOfSems();
+    const aidssemesters = await fetchaidssemesters();
 
   return (
       
@@ -31,10 +16,10 @@ export default async function Aids(){
         <Semester semesters = {aidssemesters}/>
         <EditorDialog/>
         <Calender />
-        <DialogImage/>
-
-              
+        <DialogImage/>            
       </div>
     
   );
 }
+
+export default Aids;

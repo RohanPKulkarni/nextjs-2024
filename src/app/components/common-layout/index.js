@@ -1,45 +1,16 @@
 import Header from "../header";
-
-async function fetchListOfAidsSems() {
-  try {
-    const apiResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getaids-sem`, {
-      method: "GET",
-    });
-
-    const result = await apiResponse.json();
-
-    return result?.data;
-  } catch (error) {
-    throw new Error(error);
-  }
-}
-
-async function fetchListOfAimlSems() {
-  try {
-    const apiResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getaiml-sem`, {
-      method: "GET",
-    });
-
-    const result = await apiResponse.json();
-
-    return result?.data;
-  } catch (error) {
-    throw new Error(error);
-  }
-}
-
-
+import { fetchaidssemesters,fetchaimlsemesters } from "@/actions";
+   
 
 export default async function CommonLayout({children}){
 
-    const aidssemesters = await fetchListOfAidsSems();
-    const aimlsemesters = await fetchListOfAimlSems();
+    const aidssemesters = await fetchaidssemesters();
+    const aimlsemesters = await fetchaimlsemesters();
 
     return(
         <div className="mx-auto max-w-7xl p-6 lg:px-8">
             <Header aidssemesters={aidssemesters} aimlsemesters={aimlsemesters}/>
             <main>{children}</main>
-
         </div>
     );
 }

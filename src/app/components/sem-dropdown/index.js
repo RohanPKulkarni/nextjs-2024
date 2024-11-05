@@ -69,7 +69,7 @@ export function Semdropdown({semesters}){
         </div>
       </DropdownMenuTrigger>
       
-      <DropdownMenuContent className="w-full max-h-60 bg-slate-900 rounded-md shadow-lg border border-white overflow-y-auto p-2 min-w-[200px]">
+      <DropdownMenuContent className="w-full max-h-96 bg-slate-900 rounded-md shadow-lg border border-white overflow-y-auto p-2 min-w-[200px]">
           {semesters
           .filter((sem) => sem.number !== seminfo)
           .map((sem, index, array) => ( 

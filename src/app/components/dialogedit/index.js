@@ -6,6 +6,7 @@ import {Dialog,DialogContent,DialogDescription,DialogFooter,DialogHeader,DialogT
 import { SemInfoContext } from "../context";
 import { useContext } from "react";
 import { useRouter } from "next/navigation";
+import { updateaidssemesters,updateaimlsemesters } from "@/actions";
 
 
 
@@ -25,28 +26,23 @@ export default function EditorDialog2(){
 
   async function handleeditsave(){
     if (branchdrop === "AI&DS"){
-      await fetch(`/api/updateaids-sem?sem=${seminfo}&_id=${editorCardData._id}`, {
-        method: "PUT",
-        body: JSON.stringify(editorCardData),
-        headers: {
-          "Content-Type": "application/json"
+      try{
+      const result = await updateaidssemesters(editorCardData._id,seminfo,editorCardData,"/aids");
+        }
+       catch(e){
+        console.log(e);
       }
-      });
     }else{
-      await fetch(`/api/updateaiml-sem?sem=${seminfo}&_id=${editorCardData._id}`, {
-        method: "PUT",
-        body: JSON.stringify(editorCardData),
-        headers: {
-          "Content-Type": "application/json"
-      }
-      });
+      try{
+      const result = await updateaimlsemesters(editorCardData._id,seminfo,editorCardData,"/aiml");
+          }
+         catch(e){
+          console.log(e);
+        }
     }
     setOpenDialog4(false);
-    router.refresh();
 
   };
-  
-  
   
 
   return(
