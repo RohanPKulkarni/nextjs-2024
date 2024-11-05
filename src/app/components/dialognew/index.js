@@ -60,15 +60,17 @@ export default function EditorDialog(){
 
   return(
     <div>
-      <div className="mt-8 p-6  rounded-lg shadow-md transition duration-300 hover:shadow-lg">
-        <h2 className="text-2xl font-bold text-white mb-2">Add a New Course</h2>
-        <p className="text-lg text-gray-300 mb-2">
-          Click the button below to add a new course. 
-        </p>
-        <p className="text-lg text-gray-300">
-          Fill in the required details in the dialog that appears.
-        </p>
-      </div>
+      {isauthenticated && (
+        <div className="mt-8 p-6 rounded-lg shadow-md transition duration-300 hover:shadow-lg">
+          <h2 className="text-2xl font-bold text-white mb-2">Add a New Course</h2>
+          <p className="text-lg text-gray-300 mb-2">
+            Click the button below to add a new course. 
+          </p>
+          <p className="text-lg text-gray-300">
+            Fill in the required details in the dialog that appears.
+          </p>
+        </div>
+      )}
       <Dialog open={openDialog3} onOpenChange={setOpenDialog3}>
       <DialogTrigger onClick = {() => handlenewcourse()}>
       {isauthenticated && ( 

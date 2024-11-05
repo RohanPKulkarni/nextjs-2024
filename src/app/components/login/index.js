@@ -12,7 +12,7 @@ export default function LoginComponent(){
 
   const router = useRouter();
 
-  const { logindetails,setLoginDetails,isauthenticated,setIsAuthenticated } = useContext(SemInfoContext);
+  const { logindetails,setLoginDetails,setIsAuthenticated } = useContext(SemInfoContext);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -29,8 +29,8 @@ export default function LoginComponent(){
 
   function handlesubmit(){
     const {username,password} = logindetails;
-    const isauthenticated = username === "admin" && password === "dsadminml";
-    if (isauthenticated) {
+    const isauthenticateduser = username === "admin" && password === "dsadminml";
+    if (isauthenticateduser) {
       setIsAuthenticated(true); 
       alert('You are authenticated!');
       router.push('/');
