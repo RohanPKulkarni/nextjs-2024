@@ -70,11 +70,10 @@ export default function EditorDialog(){
         </p>
       </div>
       <Dialog open={openDialog3} onOpenChange={setOpenDialog3}>
-      <DialogTrigger>
+      <DialogTrigger onClick = {() => handlenewcourse()}>
       {isauthenticated && ( 
           <Button
             className="mb-8 ml-8 bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-300 flex items-center justify-center px-4 py-2 rounded-lg shadow-md"
-            onClick = {() => handlenewcourse()}
           >
             <Pencil className="mr-2" />
             Add Course
