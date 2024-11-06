@@ -114,6 +114,10 @@ function Header({aidssemesters,aimlsemesters}) {
     }
   }
 
+  const handleLogout = () => {
+    setIsAuthenticated(false);
+    localStorage.removeItem('isauthenticated'); 
+  };
 
   return (
     <div>
@@ -299,7 +303,7 @@ function Header({aidssemesters,aimlsemesters}) {
         <SheetFooter className="p-4 text-center">
           {isauthenticated ? (
             <Button
-              onClick={() => setIsAuthenticated(false)}
+              onClick={handleLogout}
               className="px-4 py-2 text-gray-100 bg-red-600 rounded-md hover:bg-red-700 transition duration-200"
             >
               Logout

@@ -26,18 +26,23 @@ export default function LoginComponent(){
     console.log(logindetails);
   }, [logindetails]);
 
+  useEffect(() => {
+    const storedAuthStatus = localStorage.getItem('isauthenticated');
+    setIsAuthenticated(storedAuthStatus === 'true');
+  }, []);
 
-  function handlesubmit(){
-    const {username,password} = logindetails;
-    const isauthenticateduser = username === "admin" && password === "dsadminml";
-    if (isauthenticateduser) {
-      setIsAuthenticated(true); 
+
+  const handlesubmit = () => {
+    const { username, password } = logindetails;
+    if (username === "admin" && password === "dsadminml"){
+      setIsAuthenticated(true);
+      localStorage.setItem('isauthenticated', 'true'); 
       alert('You are authenticated!');
-      router.push('/');
-    } else {
+      router.push('/'); 
+    }else {
       alert('Wrong password!');
     }
-  }
+  };
 
   return(  
          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 max-w-lg mx-auto p-6 bg-white shadow-lg rounded-lg">
