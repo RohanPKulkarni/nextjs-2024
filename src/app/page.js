@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import connectToDB from "@/database";
 import { initAIDSSemesters } from "@/models/initaidssem";
 import { initAIMLSemesters } from "@/models/initaimlsem";
+import Installation from "./components/installation";
 
 const commonlinks = [
   {
@@ -70,7 +71,7 @@ export default async function Home() {
       <CarouselComponent/>
       <DialogImage/>
 
-      
+      <Installation/>
       <Analytics />
     </div>
   );

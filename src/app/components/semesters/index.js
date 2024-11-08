@@ -15,7 +15,7 @@ export default function Semester({ semesters }) {
             .filter((semester) => semester.number === seminfo) 
             .flatMap((semester) => semester.subjects) 
             .map((course) => (
-              <div key={course.code}> 
+              <div key={course._id}> 
                 <Commoncard 
                   name={course.name} 
                   credits={course.credits} 
