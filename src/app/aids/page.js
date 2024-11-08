@@ -4,6 +4,9 @@ import { Calender } from "../components/calender";
 import { DialogImage } from "../components/dialogimage";
 import EditorDialog from "../components/dialognew";
 import { fetchaidssemesters } from "@/actions";
+import { CarouselComponent3 } from "../components/semnews";
+import NewsDialog from "../components/dialognewsinfo";
+import { DialogNews } from "../components/dialognewsdet";
 
 async function Aids(){
   
@@ -13,10 +16,14 @@ async function Aids(){
       
       <div className="flex flex-col ">
         <Semdropdown semesters = {aidssemesters}/>
+        <CarouselComponent3 semesters={aidssemesters}/>
+        <NewsDialog/>
         <Semester semesters = {aidssemesters}/>
         <EditorDialog/>
         <Calender />
-        <DialogImage/>            
+        <DialogImage/>     
+        <DialogNews/>
+               
       </div>
     
   );

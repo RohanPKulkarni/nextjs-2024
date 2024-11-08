@@ -11,6 +11,12 @@ const SemSchema = new mongoose.Schema({
       cie2 :  String,
       see :  String
     },
+  news : [
+    {
+      label : String,
+      link : String
+    }
+  ],
   subjects : [
     {
       name :  String,

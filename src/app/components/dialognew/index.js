@@ -6,7 +6,6 @@ import {Dialog,DialogContent,DialogDescription,DialogFooter,DialogHeader,DialogT
 import { SemInfoContext } from "../context";
 import { useContext } from "react";
 import {Pencil} from "lucide-react";
-import { useRouter } from "next/navigation";
 import { addnewaidssemesters,addnewaimlsemesters } from "@/actions";
 
 
@@ -15,7 +14,6 @@ export default function EditorDialog(){
 
   const { editorCardData,openDialog3,setOpenDialog3,branchdrop,seminfo,setEditorCardData,isauthenticated } = useContext(SemInfoContext);
 
-  const router = useRouter();
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -75,7 +73,7 @@ export default function EditorDialog(){
       <DialogTrigger onClick = {() => handlenewcourse()}>
       {isauthenticated && ( 
           <Button
-            className="mb-8 ml-8 bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-300 flex items-center justify-center px-4 py-2 rounded-lg shadow-md"
+            className="mb-8 ml-8 bg-blue-600 text-white hover:bg-blue-800 transition-colors duration-300 flex items-center justify-center px-4 py-2 rounded-lg shadow-md"
           >
             <Pencil className="mr-2" />
             Add Course

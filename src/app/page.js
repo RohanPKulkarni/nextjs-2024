@@ -8,6 +8,8 @@ import { CarouselComponent2 } from "./components/newsinfo";
 import { DialogImage } from "./components/dialogimage";
 import { Button } from "@/components/ui/button";
 import connectToDB from "@/database";
+import { initAIDSSemesters } from "@/models/initaidssem";
+import { initAIMLSemesters } from "@/models/initaimlsem";
 
 const commonlinks = [
   {
@@ -25,6 +27,7 @@ export default async function Home() {
   await connectToDB();
 
   return (
+
     <div className="flex flex-col">
 
       <CarouselComponent2/>

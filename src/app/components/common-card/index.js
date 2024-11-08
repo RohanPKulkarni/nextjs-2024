@@ -82,13 +82,15 @@ export default function Commoncard({name , credits, incharge, linker, code, pyql
           </CardDescription>
         </CardHeader>
         <CardFooter className="p-0 justify-between">
-          <Button onClick={(e) => {
-                  e.stopPropagation();
-                  handledialog2(pyqlink);
-                }} 
-                className="custom-shadow ml-3 border-2 border-white bg-transparent hover:bg-transparent text-white hover:text-gray-500 shadow-md transition-all px-4 py-2 rounded-lg font-semibold">
+          {pyqlink?(
+            <Button onClick={(e) => {
+              e.stopPropagation();
+              handledialog2(pyqlink);
+            }} 
+            className="custom-shadow ml-3 border-2 border-white bg-transparent hover:bg-transparent text-white hover:text-gray-500 shadow-md transition-all px-4 py-2 rounded-lg font-semibold">
             PYQs
           </Button>
+          ) : null}
           {lablink ? (
           <Button 
             onClick={(e) => {
@@ -100,13 +102,15 @@ export default function Commoncard({name , credits, incharge, linker, code, pyql
             Lab Code
           </Button>
         ) : null}
+        {linker?(
           <Button onClick={(e) => {
-                    e.stopPropagation();
-                    handledialog2(linker);
-                  }} 
-                  className="custom-shadow mr-3 border-2 border-white bg-transparent hover:bg-transparent text-white hover:text-gray-500 shadow-md transition-all px-4 py-2 rounded-lg font-semibold">
-            Notes
-          </Button>
+            e.stopPropagation();
+            handledialog2(linker);
+          }} 
+          className="custom-shadow mr-3 border-2 border-white bg-transparent hover:bg-transparent text-white hover:text-gray-500 shadow-md transition-all px-4 py-2 rounded-lg font-semibold">
+          Notes
+        </Button>
+        ) : null}     
         </CardFooter>
       </Card>
       <EditorDialog2/>

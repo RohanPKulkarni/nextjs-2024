@@ -9,7 +9,7 @@ export default function Semester({ semesters }) {
   const { seminfo } = useContext(SemInfoContext);
 
   return (
-    <div className="md:grid-cols-2 lg:grid-cols-3 grid gap-4 ">
+    <div className="md:grid-cols-2 lg:grid-cols-3 grid gap-4 mt-4">
       {
           semesters
             .filter((semester) => semester.number === seminfo) 

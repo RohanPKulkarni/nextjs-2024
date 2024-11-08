@@ -11,6 +11,190 @@ const AddNewCourse = Joi.object({
   code : Joi.string().required(),
 });
 
+const AddNewNews = Joi.object({
+  label : Joi.string().required(),
+});
+
+
+export async function addaidsnews(newsdata,getCurrentSem,pathToRevalidate){
+  try{
+  await connectToDB();
+
+  const { label } = newsdata;
+
+  const { error } = AddNewNews.validate({
+    label,
+  });
+
+  if (error) {
+    return {
+      success: false,
+      message: error.details[0].message,
+    };
+  }
+
+  const newlycreatednewsitem = await AIDSSemester.updateOne(
+    { number: getCurrentSem },             
+    { $push: { news : newsdata  } }        
+  );
+  
+
+  if (newlycreatednewsitem) {
+    revalidatePath(pathToRevalidate);
+    return {
+      success: true,
+      message: "News added successfully",
+    };
+  } else {
+    return {
+      success: false,
+      message: "Something went wrong ! Please try again",
+    };
+  }
+} catch (error) {
+  return {
+    success: false,
+    message: "Something went wrong ! Please try again",
+  };
+}
+
+
+}
+
+export async function addaimlnews(newsdata,getCurrentSem,pathToRevalidate){
+  try{
+  await connectToDB();
+
+  const { label } = newsdata;
+
+  const { error } = AddNewNews.validate({
+    label,
+  });
+
+  if (error) {
+    return {
+      success: false,
+      message: error.details[0].message,
+    };
+  }
+
+  const newlycreatednewsitem = await AIMLSemester.updateOne(
+    { number: getCurrentSem },             
+    { $push: { news:newsdata  } }        
+  );
+
+  if (newlycreatednewsitem) {
+    revalidatePath(pathToRevalidate);
+    return {
+      success: true,
+      message: "News added successfully",
+    };
+  } else {
+    return {
+      success: false,
+      message: "Something went wrong ! Please try again",
+    };
+  }
+} catch (error) {
+  return {
+    success: false,
+    message: "Something went wrong ! Please try again",
+  };
+}
+
+
+}
+
+export async function deleteaidsnews(getCurrentNewslabel,getCurrentSem,pathToRevalidate) {
+  try {
+    await connectToDB();
+
+
+    if (!getCurrentNewslabel) {
+      return {
+        success: false,
+        message: "News ID is required",
+      };
+    }
+
+    const deleteNewsByID = await AIDSSemester.findOneAndUpdate(
+      {
+        number: getCurrentSem, 
+      },
+      {
+        $pull: { 
+          news: { label : getCurrentNewslabel } 
+        }
+      },
+      { new: true } 
+    );
+
+
+    if (deleteNewsByID) {
+      revalidatePath(pathToRevalidate);
+      return {
+        success: true,
+        message: "News is deleted successfully",
+      };
+    }
+    return {
+      success: false,
+      message: "Something went wrong! Please try again",
+    };
+  } catch (error) {
+    console.log(error);
+    return {
+      success: false,
+      message: "Something went wrong! Please try again",
+    };
+  }
+}
+
+export async function deleteaimlnews(getCurrentNewslabel,getCurrentSem,pathToRevalidate) {
+  try {
+    await connectToDB();
+
+
+    if (!getCurrentNewslabel) {
+      return {
+        success: false,
+        message: "News ID is required",
+      };
+    }
+
+    const deleteNewsByID = await AIMLSemester.findOneAndUpdate(
+      {
+        number: getCurrentSem, 
+      },
+      {
+        $pull: { 
+          news: { label : getCurrentNewslabel } 
+        }
+      },
+      { new: true } 
+    );
+
+    if (deleteNewsByID) {
+      revalidatePath(pathToRevalidate);
+      return {
+        success: true,
+        message: "News is deleted successfully",
+      };
+    }
+    return {
+      success: false,
+      message: "Something went wrong! Please try again",
+    };
+  } catch (error) {
+    console.log(error);
+    return {
+      success: false,
+      message: "Something went wrong! Please try again",
+    };
+  }
+}
+
+
 export async function fetchaidssemesters() {
   try {
     await connectToDB();
@@ -24,7 +208,12 @@ export async function fetchaidssemesters() {
         ...subject,
         _id: subject._id.toString(),
       })),
+      news: semester.news.map((newsItem) => ({
+        ...newsItem,
+        _id: newsItem._id.toString(),
+      })),
     }));
+    
 
     return plainSemesters;
 
@@ -47,7 +236,12 @@ export async function fetchaimlsemesters() {
         ...subject,
         _id: subject._id.toString(),
       })),
+      news: semester.news.map((newsItem) => ({
+        ...newsItem,
+        _id: newsItem._id.toString(),
+      })),
     }));
+    
 
     return plainSemesters;
 

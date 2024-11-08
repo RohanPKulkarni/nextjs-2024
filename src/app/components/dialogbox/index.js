@@ -19,7 +19,6 @@ export default function Dialogbox() {
   return (
     <Dialog open = {openDialog} onOpenChange={setOpenDialog}>
       <DialogContent className=" bg-slate-900 border-4 border-white sm:max-w-[425px] max-w-[340px] lg:max-w-[500px] dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-    
       <DialogHeader>
         <DialogTitle className="text-xl font-bold text-white dark:text-gray-100">{selectedCardData.name}</DialogTitle>
         <DialogDescription>
@@ -36,11 +35,12 @@ export default function Dialogbox() {
       </div>
       
       <div className="mt-6 flex justify-between">
-          <Button onClick={() => handledialog(selectedCardData.pyqlink)} 
-                  className="focus:outline-none custom-shadow ml-1 border-2 border-white bg-transparent hover:bg-transparent text-white hover:text-gray-500 shadow-md transition-all px-4 py-2 rounded-lg font-semibold ">
-            PYQs
-          </Button>
-         
+        {selectedCardData.pyqlink?(
+            <Button onClick={() => handledialog(selectedCardData.pyqlink)} 
+            className="focus:outline-none custom-shadow ml-1 border-2 border-white bg-transparent hover:bg-transparent text-white hover:text-gray-500 shadow-md transition-all px-4 py-2 rounded-lg font-semibold ">
+              PYQs
+            </Button>
+        ) : null}
          
         {selectedCardData.lablink ? (
           <Button onClick={() => handledialog(selectedCardData.lablink)}
@@ -48,11 +48,12 @@ export default function Dialogbox() {
                 Lab Code
           </Button>
         ) : null}
-        
-          <Button onClick={() => handledialog(selectedCardData.linker)}
-                  className="focus:outline-none custom-shadow mr-2 border-2 border-white bg-transparent hover:bg-transparent text-white hover:text-gray-500 shadow-md transition-all px-4 py-2 rounded-lg font-semibold ">
-            Notes
-          </Button>
+        {selectedCardData.linker?(
+            <Button onClick={() => handledialog(selectedCardData.linker)}
+            className="focus:outline-none custom-shadow mr-2 border-2 border-white bg-transparent hover:bg-transparent text-white hover:text-gray-500 shadow-md transition-all px-4 py-2 rounded-lg font-semibold ">
+              Notes
+            </Button>
+        ) : null}
       </div>
       </DialogContent>
 
