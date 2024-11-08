@@ -11,6 +11,7 @@ import connectToDB from "@/database";
 import { initAIDSSemesters } from "@/models/initaidssem";
 import { initAIMLSemesters } from "@/models/initaimlsem";
 import Installation from "./components/installation";
+import Branchcard from "./components/branchcard";
 
 const commonlinks = [
   {
@@ -33,7 +34,7 @@ export default async function Home() {
 
       <CarouselComponent2/>
 
-      <section className="max-w-full bg-transparent mx-auto p-4 lg:custom-shadow1 rounded-lg mt-6 lg:mt-12 md:mt-8 hover:shadow-xl transition-shadow duration-300 border-2 border-white lg:p-8 ">
+      <section className="max-w-full bg-transparent mx-auto p-4 lg:custom-shadow1 rounded-lg mt-6 lg:mt-8 md:mt-8 hover:shadow-xl transition-shadow duration-300 border-2 border-white lg:p-8 ">
         <h1 className="text-4xl font-bold text-center text-white mb-6">
           <span className="text-red-700">NoteRit</span> - AI Branch Portal
         </h1>
@@ -45,15 +46,9 @@ export default async function Home() {
         </p>
       </section>
 
-      <div className="lg:mt-8 md:mt-4 mt-4 grid grid-cols-2 justify-items-stretch">
-        {commonlinks.map((card) => (
-          <div key={card.title} className="max-w-full">
-            <Homecard title={card.title} link={card.link} />
-          </div>
-        ))}
-      </div>
+      <Branchcard/>
 
-      <div className="flex flex-col items-center justify-center p-4 bg-transparent rounded-lg shadow-md">
+      <div className="flex flex-col mt-2 items-center justify-center p-4 bg-transparent rounded-lg shadow-md lg:mt-4">
         <p className="text-lg text-white mb-2 text-center">
           Feel free to contribute your notes and other resources to help your fellow students!
         </p>
@@ -66,6 +61,14 @@ export default async function Home() {
           <p className="mr-2">Add</p>
           <Plus className="h-5 w-5" />
         </Link>
+      </div>
+
+      <div className=" mt-2 grid grid-cols-2 justify-items-stretch">
+        {commonlinks.map((card) => (
+          <div key={card.title} className="max-w-full">
+            <Homecard title={card.title} link={card.link} />
+          </div>
+        ))}
       </div>
 
       <CarouselComponent/>

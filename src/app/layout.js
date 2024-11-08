@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-          <title>noterit-AIDS&AIML</title>
+          <title>Noterit</title>
           <meta name="description" content="AI Branch portal" />
           <link rel="shortcut icon" href="/images/applogo32.png" type="image/webp" />
           <meta property="og:image" content="/images/applologo32.png" />
