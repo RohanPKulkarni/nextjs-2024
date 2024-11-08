@@ -26,8 +26,8 @@ export default function RootLayout({ children }) {
       <head>
           <title>noterit-AIDS&AIML</title>
           <meta name="description" content="AI Branch portal" />
-          <link rel="shortcut icon" href="/images/ai-image.webp" type="image/webp" />
-          <meta property="og:image" content="/images/ai-image.webp" />
+          <link rel="shortcut icon" href="/images/applogo32.png" type="image/webp" />
+          <meta property="og:image" content="/images/applologo32.png" />
           <meta property="og:url" content="https://noterit.vercel.app" />
           <link rel="manifest" href="/manifest.json" />
           <meta name="theme-color" content="#000000" />
