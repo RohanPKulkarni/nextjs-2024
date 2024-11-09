@@ -66,10 +66,6 @@ function Header({aidssemesters,aimlsemesters}) {
 
   const optionsItems = [
     {
-      label : "News & info",
-      path : "/soon"
-    },
-    {
       label : "Projects",
       path : "/soon"
     },
