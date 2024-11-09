@@ -66,6 +66,10 @@ function Header({aidssemesters,aimlsemesters}) {
 
   const optionsItems = [
     {
+      label : "Source code",
+      path : "https://github.com/RohanPKulkarni/nextjs-2024"
+    },
+    {
       label : "Contact",
       path : "/contribute"
     },
