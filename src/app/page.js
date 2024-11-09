@@ -36,7 +36,7 @@ export default async function Home() {
 
       <section className="max-w-full bg-transparent mx-auto p-4 lg:custom-shadow1 rounded-lg mt-6 lg:mt-8 md:mt-8 hover:shadow-xl transition-shadow duration-300 border-2 border-white lg:p-8 ">
         <h1 className="text-4xl font-bold text-center text-white mb-6">
-          <span className="text-red-700">NoteRit</span> - AI Branch Portal
+          <span className="text-red-700">NoteRIT</span> - AI Branch Portal
         </h1>
 
         <p className="text-lg text-white mb-4 leading-relaxed">

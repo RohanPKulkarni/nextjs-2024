@@ -1,6 +1,6 @@
 {
   "name": "NoteRIT",
-  "short_name": "App",
+  "short_name": "NoteRIT",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
