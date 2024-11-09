@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
           <title>NoteRIT</title>
           <meta name="description" content="AI Branch portal" />
           <link rel="shortcut icon" href="/images/applogo32.png" type="image/png" />
-          <meta property="og:image" content="/images/applogo32.png" />
+          <meta property="og:image" content="/images/applogo32.png"/>
           <meta property="og:url" content="https://noterit.vercel.app" />
           <link rel="manifest" href="/manifest.json" />
           <meta name="theme-color" content="#000000" />
