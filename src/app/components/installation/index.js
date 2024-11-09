@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react';
+import { Button } from '@/components/ui/button';
 
 export default function Installation() {
   const [installPrompt, setInstallPrompt] = useState(null);
@@ -42,11 +43,14 @@ export default function Installation() {
   };
 
   return (
-    <div>
-      <h1>Welcome to Noterit</h1>
-      {!isInstalled && installPrompt && (
-        <button onClick={handleInstallClick}>Install App</button>
-      )}
+    <div className="flex flex-col items-center justify-center mt-8">
+      <Button
+        className="px-6 py-2 text-white underline border-2 border-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none"
+        onClick={handleInstallClick}
+      >
+        Download the App
+      </Button>
     </div>
+
   );
 }

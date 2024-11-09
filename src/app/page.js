@@ -48,13 +48,16 @@ export default async function Home() {
 
       <Branchcard/>
 
+      <Installation/>
+
+
       <div className="flex flex-col mt-2 items-center justify-center p-4 bg-transparent rounded-lg shadow-md lg:mt-4">
         <p className="text-lg text-white mb-2 text-center">
           Feel free to contribute your notes and other resources to help your fellow students!
         </p>
         <Link
           href={"https://drive.google.com/drive/folders/14u5lS7nOaCMHUVJFboj6ZLKpYlKtxaPq"}
-          className="mt-1 flex items-center bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-200"
+          className="mt-1 border-2 border-white flex items-center bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-200"
           target="_blank"
           rel="noopener noreferrer" 
         >
@@ -74,7 +77,6 @@ export default async function Home() {
       <CarouselComponent/>
       <DialogImage/>
 
-      <Installation/>
       <Analytics />
     </div>
   );
