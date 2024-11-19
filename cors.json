@@ -1,0 +1,8 @@
+[
+  {
+    "origin": ["http://localhost:3000", "https://noterit.vercel.app"],
+    "responseHeader": ["Content-Type"],
+    "method": ["GET", "POST", "PUT"],
+    "maxAgeSeconds": 3600
+  }
+]

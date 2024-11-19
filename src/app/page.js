@@ -50,7 +50,6 @@ export default async function Home() {
 
       <Installation/>
 
-
       <div className="flex flex-col mt-2 items-center justify-center p-4 bg-transparent rounded-lg shadow-md lg:mt-4">
         <p className="text-lg text-white mb-2 text-center">
           Feel free to contribute your notes and other resources to help your fellow students!

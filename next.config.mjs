@@ -7,4 +7,6 @@ const nextConfig = withPWA({
   },
 });
 
+
+
 export default nextConfig;

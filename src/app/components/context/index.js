@@ -7,6 +7,7 @@ export const SemInfoContext = createContext();
 export function SemInfoProvider({ children }) {
   const [branchdrop, setBranchdrop] = useState('Branch');
   const [seminfo, setSeminfo] = useState('3rd'); 
+  const [component, setComponent] = useState(''); 
   const [openDialog, setOpenDialog] = useState(false);
   const [openDialog2, setOpenDialog2] = useState(false);
   const [isauthenticated, setIsAuthenticated] = useState(false);
@@ -14,6 +15,7 @@ export function SemInfoProvider({ children }) {
   const [openDialog4,setOpenDialog4] = useState(false);
   const [openDialog5,setOpenDialog5] = useState(false);
   const [openDialog6,setOpenDialog6] = useState(false);
+  const [openDialog7,setOpenDialog7] = useState(false);
   const [imgsrc, setImgSrc] = useState("");
   const [selectedCardData, setSelectedCardData] = useState({
     name: '',
@@ -106,7 +108,7 @@ export function SemInfoProvider({ children }) {
   
 
   return (
-    <SemInfoContext.Provider value={{newsdetails2,setNewsDetails2,openDialog6,setOpenDialog6,newsdetails,setNewsDetails,isauthenticated,setIsAuthenticated,openDialog3,setOpenDialog3,openDialog4,setOpenDialog4,openDialog5,setOpenDialog5,editorCardData,setEditorCardData,seminfo, setSeminfo ,openDialog,setOpenDialog,selectedCardData, setSelectedCardData,branchdrop,setBranchdrop,openDialog2, setOpenDialog2,imgsrc,setImgSrc,logindetails,setLoginDetails}}>
+    <SemInfoContext.Provider value={{openDialog7,setOpenDialog7,component,setComponent,newsdetails2,setNewsDetails2,openDialog6,setOpenDialog6,newsdetails,setNewsDetails,isauthenticated,setIsAuthenticated,openDialog3,setOpenDialog3,openDialog4,setOpenDialog4,openDialog5,setOpenDialog5,editorCardData,setEditorCardData,seminfo, setSeminfo ,openDialog,setOpenDialog,selectedCardData, setSelectedCardData,branchdrop,setBranchdrop,openDialog2, setOpenDialog2,imgsrc,setImgSrc,logindetails,setLoginDetails}}>
       {children}
     </SemInfoContext.Provider>
   );

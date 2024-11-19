@@ -29,7 +29,6 @@ export default function NewsDialog(){
 
   async function handlesave(){
     if (branchdrop === "AI&DS"){
-      console.log("inside func");
       console.log(newsdetails);
       try{
       const result = await addaidsnews(newsdetails,seminfo,"/aids");

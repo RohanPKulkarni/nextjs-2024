@@ -38,9 +38,10 @@ const scheduledropdown = [
 
 export function Semdropdown({semesters}){
 
-  const {  setSeminfo,seminfo,openDialog2,setOpenDialog2 ,setImgSrc,imgsrc } = useContext(SemInfoContext);
+  const {  setSeminfo,seminfo,openDialog2,setOpenDialog2 ,setImgSrc,imgsrc,setComponent } = useContext(SemInfoContext);
    
   function handleimage(call) {
+    setComponent(call);
     if (call === "syllabus") {
       let syllabusURL = "";    
         syllabusURL = semesters

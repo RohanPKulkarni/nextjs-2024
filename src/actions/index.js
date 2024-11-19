@@ -554,3 +554,84 @@ export async function deleteaimlsemesters(getCurrentCourseID,getCurrentSem,pathT
     };
   }
 }
+
+export async function uploadImageToAIDSSemester(
+  semesterNumber,
+  component,
+  downloadURL,
+  pathToRevalidate
+) {
+  try {
+      await connectToDB();
+      console.log(semesterNumber,component,downloadURL,pathToRevalidate);
+
+      const updatedSemester = await AIDSSemester.findOneAndUpdate(
+          { number: semesterNumber },
+          { $set: { [`imagelinks.${component}`]: downloadURL } },
+          { new: true, upsert: true }
+      ).lean();
+
+      if (updatedSemester) {
+        revalidatePath(pathToRevalidate);
+        return {
+          success: true,
+          message: "Image uploaded and AIDSSemester updated successfully",
+      };     
+      }else{
+        return {
+          success: false,
+          message: "AIDSSemester not found",
+      };
+      }
+
+      
+  } catch (error) {
+      console.error("Error in uploadImageToAIDSSemester:", error);
+      return {
+          success: false,
+          message: "Internal server error",
+          error: error.message,
+      };
+  }
+}
+
+export async function uploadImageToAIMLSemester(
+  semesterNumber,
+  component,
+  downloadURL,
+  pathToRevalidate
+) {
+  try {
+      await connectToDB();
+      console.log(semesterNumber,component,downloadURL,pathToRevalidate);
+
+      const updatedSemester = await AIMLSemester.findOneAndUpdate(
+          { number: semesterNumber },
+          { $set: { [`imagelinks.${component}`]: downloadURL } },
+          { new: true, upsert: true }
+      ).lean();
+
+      if (updatedSemester) {
+      revalidatePath(pathToRevalidate);
+      return {
+          success: true,
+          message: "Image uploaded and AIDSSemester updated successfully",
+      };
+      }else{
+        return {
+          success: false,
+          message: "AIMLSemester not found",
+      };
+      }
+
+      
+  } catch (error) {
+      console.error("Error in uploadImageToAIDSSemester:", error);
+      return {
+          success: false,
+          message: "Internal server error",
+          error: error.message,
+      };
+  }
+}
+
