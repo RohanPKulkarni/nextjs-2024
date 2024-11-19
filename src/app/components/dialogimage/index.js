@@ -9,7 +9,7 @@ import ImageUploadDialog from "../dialogupload";
 
 export function DialogImage() {
 
-  const { openDialog2, setOpenDialog2,imgsrc,setOpenDialog7 } = useContext(SemInfoContext);
+  const { openDialog2, setOpenDialog2,imgsrc,setOpenDialog7,isauthenticated } = useContext(SemInfoContext);
   
 
   return (
@@ -32,14 +32,14 @@ export function DialogImage() {
             ) : (
                <div className="text-center text-xl text-white">Not yet scheduled</div>
             )}
-
+           {isauthenticated ? (
             <Button
                className="absolute bottom-4 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 focus:outline-none"
-               style={{ bottom: '20px' }}
-               onClick = {() =>setOpenDialog7(true)}
+               onClick={() => setOpenDialog7(true)}
             >
                Upload
             </Button>
+            ) : null}
          </div>
       </DialogContent>
    </Dialog>
