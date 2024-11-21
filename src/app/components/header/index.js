@@ -147,16 +147,21 @@ function Header() {
           </SheetTitle>
         </SheetHeader>
         <div className="grid gap-2 py-6">
-          {optionsItems.map((optionsItem) => (
-            <Link
-              key={optionsItem.label}
-              href={optionsItem.path}
-              onClick={() => setOpenSheet(false)}
-              className="flex w-full items-center py-2 text-lg font-semibold text-green-800 hover:text-green-700 transition duration-200 pl-4"
-            >
-              {optionsItem.label}
-            </Link>
-          ))}
+          {optionsItems.map((optionsItem) => {
+            if (optionsItem.label === "Source code" && !isauthenticated) {
+              return null; // Skip rendering this item if not authenticated
+            }
+            return (
+              <Link
+                key={optionsItem.label}
+                href={optionsItem.path}
+                onClick={() => setOpenSheet(false)}
+                className="flex w-full items-center py-2 text-lg font-semibold text-green-800 hover:text-green-700 transition duration-200 pl-4"
+              >
+                {optionsItem.label}
+              </Link>
+            );
+          })}
         </div>
         <SheetFooter className="p-4 text-center">
           {isauthenticated ? (
@@ -191,18 +196,22 @@ function Header() {
             {isauthenticated ? "Editor" : "Guest"}
           </SheetTitle>
         </SheetHeader>
-
         <div className="grid gap-2 py-6">
-          {optionsItems.map((optionsItem, ) => (
-            <Link
-              key={optionsItem.label}
-              href={optionsItem.path}
-              onClick={() => setOpenSheet(false)}
-              className="flex w-full items-center py-2 text-lg font-semibold text-green-800 hover:text-green-700 transition duration-200 pl-4"
-            >
-              {optionsItem.label}
-            </Link>
-          ))}
+          {optionsItems.map((optionsItem) => {
+            if (optionsItem.label === "Source code" && !isauthenticated) {
+              return null; // Skip rendering this item if not authenticated
+            }
+            return (
+              <Link
+                key={optionsItem.label}
+                href={optionsItem.path}
+                onClick={() => setOpenSheet(false)}
+                className="flex w-full items-center py-2 text-lg font-semibold text-green-800 hover:text-green-700 transition duration-200 pl-4"
+              >
+                {optionsItem.label}
+              </Link>
+            );
+          })}
         </div>
         <SheetFooter className="p-4 text-center">
           {isauthenticated ? (

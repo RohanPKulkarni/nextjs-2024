@@ -88,7 +88,7 @@ export default function TextAnimation({aidssemesters,aimlsemesters}) {
 
   return (
     <div className="lg:w-1/2 flex flex-col justify-center items-start space-y-8 p-8">
-      <h1 className="text-4xl mt-4 md:mt-0 mr-8 md:mx-auto lg:text-7xl font-bold leading-tight max-w-full font-mono">
+      <h1 className="text-4xl mt-4 lg:mt-0 mr-8 sm:mx-auto sm:text-6xl lg:text-7xl font-bold leading-tight max-w-full font-mono">
         <div>
           {firstLine.map((letter, index) => (
             <span
@@ -118,7 +118,7 @@ export default function TextAnimation({aidssemesters,aimlsemesters}) {
           ))}
         </div>
       </h1>
-      <div className="flex justify-center items-center w-[80%] h-auto sm:hidden">
+      <div className="flex justify-center items-center sm:ml-16 lg:ml-0 w-[80%] sm:w-[70%] lg:w-[80%] h-auto lg:hidden">
         <img
           src="/images/webdesign2.png"
           alt="Web Design Illustration"
@@ -126,8 +126,8 @@ export default function TextAnimation({aidssemesters,aimlsemesters}) {
         />
       </div>
 
-      <div className="relative flex flex-col items-center lg:items-start ml-12 md:ml-16">
-    <div className="relative w-48 sm:w-sm md:w-[280px] lg:w-[380px]">
+      <div className="relative flex flex-col items-center lg:items-start ml-12 sm:ml-32 md:ml-36 lg:ml-16">
+    <div className="relative w-48 sm:w-[340px] md:w-[360px] lg:w-[380px]">
       <Input
         type="text"
         placeholder="Search course"
