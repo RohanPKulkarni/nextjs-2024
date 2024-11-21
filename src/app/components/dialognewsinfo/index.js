@@ -51,7 +51,7 @@ export default function NewsDialog(){
   return (
     <div>
     <Dialog open={openDialog} onOpenChange={setOpenDialog}>
-    <DialogTrigger>
+    <DialogTrigger asChild>
     {isauthenticated && ( 
           <Button
             className="mt-3 mb-4 bg-blue-600 text-white hover:bg-blue-800 transition-colors duration-300 flex items-center justify-center px-4 py-2 rounded-lg shadow-md mx-auto"

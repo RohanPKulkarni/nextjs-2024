@@ -5,6 +5,7 @@ import {Dialog,DialogContent,DialogDescription,DialogFooter,DialogHeader,DialogT
 import { SemInfoContext } from "../context";
 import { useContext } from "react";
 import ImageUploadDialog from "../dialogupload";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 
 export function DialogImage() {
@@ -21,6 +22,11 @@ export function DialogImage() {
          </DialogClose>
       </DialogHeader>  
       <DialogContent className="w-[90vw] h-[80vh] max-w-[800px] max-h-[600px] bg-transparent border-none shadow-none focus:outline-none">
+         <VisuallyHidden>
+            <DialogTitle>
+               Schedule Image
+            </DialogTitle>
+         </VisuallyHidden>
          <div className="relative flex justify-center items-center h-full">
             {imgsrc ? (
                <img

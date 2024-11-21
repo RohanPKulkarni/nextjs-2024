@@ -32,9 +32,15 @@ export default function RootLayout({ children }) {
           <link rel="manifest" href="/manifest.json" />
           <meta name="theme-color" content="#000000" />
           <link rel="apple-touch-icon" href="/images/applogo192.png" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Roboto:wght@300;400;500;700;900&display=swap"
+            rel="stylesheet"
+          />
+          
+          
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased  bg-slate-950 `}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
         <SemInfoProvider>
           <CommonLayout

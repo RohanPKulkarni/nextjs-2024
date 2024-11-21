@@ -37,7 +37,7 @@ export function Dialogdelete(){
 
   return(
     <div>
-      <Dialog open={openDialog5} onOpenChange={setOpenDialog5} className="bg-slate-900 text-white border-2 border-white">
+      <Dialog open={openDialog5} onOpenChange={setOpenDialog5} className="bg-gray-800 text-white border-2 border-white">
         <DialogContent className="bg-slate-900 text-white">
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold">Confirm Deletion</DialogTitle>
