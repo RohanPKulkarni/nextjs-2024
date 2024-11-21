@@ -20,7 +20,7 @@ export default function Branchcard(){
   }
 
   return(
-    <div className="mt-8 md:ml-4 grid grid-cols-1 gap-y-4">
+    <div className="mt-8 ml-4 grid grid-cols-1 gap-y-4">
       <Button
         onClick={() => handlecardclick("aids")}
         className="w-[92%] px-2 py-2 md:px-8 md:py-6 text-xs md:text-md lg:text-lg font-semibold text-white bg-black rounded-lg border-2 border-white shadow-lg hover:bg-gray-800 hover:shadow-xl transition duration-300 focus:outline-none focus:ring-4 focus:ring-gray-400 focus:ring-offset-2 lg:ml-8 mx-auto mr-8 md:mr-0"
