@@ -126,7 +126,7 @@ export default function TextAnimation({aidssemesters,aimlsemesters}) {
         />
       </div>
 
-      <div className="relative flex flex-col items-center lg:items-start ml-12 lg:ml-16">
+      <div className="relative flex flex-col items-center lg:items-start ml-12 md:ml-16">
     <div className="relative w-48 sm:w-sm md:w-[280px] lg:w-[380px]">
       <Input
         type="text"
