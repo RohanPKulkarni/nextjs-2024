@@ -7,6 +7,7 @@ import { Search } from "lucide-react";
 import { useContext } from 'react';
 import { SemInfoContext } from "../context";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 
 export default function TextAnimation({aidssemesters,aimlsemesters}) {
@@ -87,7 +88,7 @@ export default function TextAnimation({aidssemesters,aimlsemesters}) {
 
   return (
     <div className="lg:w-1/2 flex flex-col justify-center items-start space-y-8 p-8">
-      <h1 className="text-4xl mr-8 md:mx-auto md:text-7xl font-bold leading-tight max-w-full font-mono">
+      <h1 className="text-4xl mt-4 md:mt-0 mr-8 md:mx-auto lg:text-7xl font-bold leading-tight max-w-full font-mono">
         <div>
           {firstLine.map((letter, index) => (
             <span
@@ -117,29 +118,37 @@ export default function TextAnimation({aidssemesters,aimlsemesters}) {
           ))}
         </div>
       </h1>
-    <div className="relative flex flex-col items-center lg:items-start ml-8 lg:ml-16">
-  <div className="relative w-48 sm:w-sm md:w-[280px] lg:w-[380px]">
-    <Input
-      type="text"
-      placeholder="Search course"
-      value={inputcourse}
-      onChange={(event) => setInputcourse(event.target.value)}
-      onFocus={() => setIsFocused(true)}
-      onBlur={() => {
-        setTimeout(() => {
-          setIsFocused(false);
-        }, 300); 
-      }}  
-      className="text-green-800 w-full p-2 sm:p-3 md:p-3 lg:p-3 bg-transparent border-2 border-black rounded-md shadow-sm focus:outline-none focus:border-black focus:ring-0 placeholder:text-gray-700"
-    />
-    <button onClick={() =>  {
-    if (filteredCourses.length > 0) {
-      handlesearch(filteredCourses[0].code);
-    }
-    }} className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white text-black p-1.5 rounded-full shadow-sm transition duration-200">
-      <Search className="h-4 w-4 text-black"/>
-    </button>
-  </div>
+      <div className="flex justify-center items-center w-[80%] h-auto sm:hidden">
+        <img
+          src="/images/webdesign2.png"
+          alt="Web Design Illustration"
+          className="object-contain max-w-full h-auto"
+        />
+      </div>
+
+      <div className="relative flex flex-col items-center lg:items-start ml-8 lg:ml-16">
+    <div className="relative w-48 sm:w-sm md:w-[280px] lg:w-[380px]">
+      <Input
+        type="text"
+        placeholder="Search course"
+        value={inputcourse}
+        onChange={(event) => setInputcourse(event.target.value)}
+        onFocus={() => setIsFocused(true)}
+        onBlur={() => {
+          setTimeout(() => {
+            setIsFocused(false);
+          }, 300); 
+        }}  
+        className="text-green-800 w-full p-2 sm:p-3 md:p-3 lg:p-3 bg-transparent border-2 border-black rounded-md shadow-sm focus:outline-none focus:border-black focus:ring-0 placeholder:text-gray-700"
+      />
+      <button onClick={() =>  {
+      if (filteredCourses.length > 0) {
+        handlesearch(filteredCourses[0].code);
+      }
+      }} className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white text-black p-1.5 rounded-full shadow-sm transition duration-200">
+        <Search className="h-4 w-4 text-black"/>
+      </button>
+    </div>
   
     {isFocused && inputcourse && (
       <div className="absolute top-full mt-2 w-full bg-gray-200 border-2 border-black px-4 pt-1 rounded-md shadow-lg min-h-[50px] max-h-[200px] overflow-y-auto max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg z-10">

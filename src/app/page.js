@@ -41,7 +41,7 @@ export default async function Home() {
 
       {/* Right Section: Background Image */}
       <div
-        className="w-1/2 bg-contain bg-right bg-no-repeat flex items-center justify-center"
+        className="hidden sm:flex w-1/2 bg-contain bg-right bg-no-repeat items-center justify-center"
         style={{
           backgroundImage: "url('/images/webdesign2.png')",
           backgroundPosition: "center", // Center the image
