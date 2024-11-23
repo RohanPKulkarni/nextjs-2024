@@ -31,9 +31,6 @@ export default function Dialogbox() {
               {selectedCardData.credits}
             </p>
           </div>
-          <DialogClose className="absolute top-4 right-4 text-black focus:outline-none">
-            ✕
-          </DialogClose>
         </DialogHeader>
 
         <div className="mt-2 text-lg font-bold text-black dark:text-gray-300">
