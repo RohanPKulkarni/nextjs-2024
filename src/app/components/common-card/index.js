@@ -96,7 +96,7 @@ export default function Commoncard({name , credits, incharge, linker, code, pyql
               e.stopPropagation();
               handledialog2(lablink);
             }}
-            className="custom-shadow ml-1 border-2 border-black bg-transparent hover:bg-transparent text-black hover:text-gray-500 shadow-md transition-all px-4 py-3 rounded-lg font-semibold"
+            className="custom-shadow border-2 border-black bg-transparent hover:bg-transparent text-black hover:text-gray-500 shadow-md transition-all px-4 py-3 rounded-lg font-semibold"
           >
             Lab Code
           </Button>
