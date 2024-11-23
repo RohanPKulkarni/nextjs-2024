@@ -43,7 +43,7 @@ export default function Installation() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center mt-8">
+    <div className="flex flex-col items-center justify-center mt-12">
       <Button
         className="px-6 py-2 text-black underline border-2 border-black bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none"
         onClick={handleInstallClick}

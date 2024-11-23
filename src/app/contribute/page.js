@@ -1,3 +1,4 @@
+import Installation from "../components/installation";
 
 export default function Soon() {
   return (
@@ -17,6 +18,7 @@ export default function Soon() {
       >
         rohanpk1818@gmail.com
       </a>
+      <Installation/>
     </div>
   </div>
   );
