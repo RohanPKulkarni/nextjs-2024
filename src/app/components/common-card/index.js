@@ -36,7 +36,6 @@ export default function Commoncard({name , credits, incharge, linker, code, pyql
   function handleDelete(){
     setSelectedCardData({ name, credits, incharge, linker, code , pyqlink, lablink,_id});
     setOpenDialog5(true);
-
   }
 
   
@@ -87,7 +86,7 @@ export default function Commoncard({name , credits, incharge, linker, code, pyql
               e.stopPropagation();
               handledialog2(pyqlink);
             }} 
-            className="custom-shadow ml-3 border-2 border-black bg-transparent hover:bg-transparent text-black hover:text-gray-500 shadow-md transition-all px-5 py-3 rounded-lg font-semibold">
+            className="custom-shadow ml-2.5 border-2 border-black bg-transparent hover:bg-transparent text-black hover:text-gray-500 shadow-md transition-all px-5 py-3 rounded-lg font-semibold">
             PYQs
           </Button>
           ) : null}
@@ -97,7 +96,7 @@ export default function Commoncard({name , credits, incharge, linker, code, pyql
               e.stopPropagation();
               handledialog2(lablink);
             }}
-            className="custom-shadow ml-2 border-2 border-black bg-transparent hover:bg-transparent text-black hover:text-gray-500 shadow-md transition-all px-5 py-3 rounded-lg font-semibold"
+            className="custom-shadow ml-1 border-2 border-black bg-transparent hover:bg-transparent text-black hover:text-gray-500 shadow-md transition-all px-4 py-3 rounded-lg font-semibold"
           >
             Lab Code
           </Button>
@@ -107,7 +106,7 @@ export default function Commoncard({name , credits, incharge, linker, code, pyql
             e.stopPropagation();
             handledialog2(linker);
           }} 
-          className="custom-shadow mr-3 border-2 border-black bg-transparent hover:bg-transparent text-black hover:text-gray-500 shadow-md transition-all px-5 py-3 rounded-lg font-semibold">
+          className="custom-shadow mr-2.5 border-2 border-black bg-transparent hover:bg-transparent text-black hover:text-gray-500 shadow-md transition-all px-5 py-3 rounded-lg font-semibold">
           Notes
         </Button>
         ) : null}     
