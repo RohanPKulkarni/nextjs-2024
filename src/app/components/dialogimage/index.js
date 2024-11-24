@@ -21,7 +21,7 @@ export function DialogImage() {
             ✕
          </DialogClose>
       </DialogHeader>  
-      <DialogContent className="w-[90vw] h-[80vh] max-w-[800px] max-h-[600px] bg-transparent border-none shadow-none focus:outline-none">
+      <DialogContent className="w-[90vw] h-[80vh] max-w-[800px] max-h-[90vh] bg-transparent border-none shadow-none focus:outline-none overflow-auto">
          <VisuallyHidden>
             <DialogTitle>
                Schedule Image
