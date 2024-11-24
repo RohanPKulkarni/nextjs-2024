@@ -17,7 +17,7 @@ export function DialogImage() {
     <div>
    <Dialog open={openDialog2} onOpenChange={setOpenDialog2}>
       <DialogHeader className="relative">
-         <DialogClose className="absolute top-3 right-3 text-white focus:outline-none text-xl">
+         <DialogClose className="absolute top-3 right-3 text-black bg-gray-200 rounded-full p-2 hover:bg-gray-300 focus:outline-none text-xl">
             ✕
          </DialogClose>
       </DialogHeader>  
