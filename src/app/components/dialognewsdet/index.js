@@ -9,7 +9,7 @@ import { deleteaidsnews,deleteaimlnews } from "@/actions";
 
 export function DialogNews(){
 
-  const {newsdetails2,openDialog6,setOpenDialog6,branchdrop,seminfo,isauthenticated} = useContext(SemInfoContext);
+  const {newsdetails2,openDialog6,setOpenDialog6,branchdrop,seminfo,isauthenticated,isauthenticated1,isauthenticated2,isauthenticated3,isauthenticated4} = useContext(SemInfoContext);
 
 
   async function handledelete(){
@@ -49,7 +49,12 @@ export function DialogNews(){
                 Cancel
               </Button>
             </DialogClose>
-            {isauthenticated?(
+            {isauthenticated || (
+            (isauthenticated1 && (seminfo === "1st" || seminfo === "2nd")) ||
+            (isauthenticated2 && (seminfo === "3rd" || seminfo === "4th")) ||
+            (isauthenticated3 && (seminfo === "5th" || seminfo === "6th")) ||
+            (isauthenticated4 && (seminfo === "7th" || seminfo === "8th"))
+          )?(
               <Button
               variant="destructive"
               className="bg-red-600 text-white hover:bg-red-700"

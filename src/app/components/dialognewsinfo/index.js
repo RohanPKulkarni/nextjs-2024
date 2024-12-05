@@ -11,7 +11,7 @@ import { addaidsnews,addaimlnews } from "@/actions";
 
 export default function NewsDialog(){
 
-  const { newsdetails,setNewsDetails,branchdrop,seminfo,isauthenticated } = useContext(SemInfoContext);
+  const { newsdetails,setNewsDetails,branchdrop,seminfo,isauthenticated,isauthenticated1,isauthenticated2,isauthenticated3,isauthenticated4 } = useContext(SemInfoContext);
 
   const [openDialog,setOpenDialog] = useState(false);
 
@@ -52,7 +52,12 @@ export default function NewsDialog(){
     <div>
     <Dialog open={openDialog} onOpenChange={setOpenDialog}>
     <DialogTrigger asChild>
-    {isauthenticated && ( 
+    {(isauthenticated || (
+      (isauthenticated1 && (seminfo === "1st" || seminfo === "2nd")) ||
+      (isauthenticated2 && (seminfo === "3rd" || seminfo === "4th")) ||
+      (isauthenticated3 && (seminfo === "5th" || seminfo === "6th")) ||
+      (isauthenticated4 && (seminfo === "7th" || seminfo === "8th"))
+    )) && ( 
           <Button
             className="mt-3 mb-4 bg-blue-600 text-white hover:bg-blue-800 transition-colors duration-300 flex items-center justify-center px-4 py-2 rounded-lg shadow-md mx-auto"
           >

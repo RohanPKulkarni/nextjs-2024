@@ -22,8 +22,7 @@ async function Aids(){
         <EditorDialog/>
         <Calender />
         <DialogImage/>     
-        <DialogNews/>
-               
+        <DialogNews/>        
       </div>
     
   );

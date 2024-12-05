@@ -18,7 +18,7 @@ function Header() {
   
   const [openSheet,setOpenSheet] = useState(false);
 
-  const { setSelectedCardData,branchdrop,setBranchdrop,isauthenticated,setIsAuthenticated } = useContext(SemInfoContext);
+  const { setSelectedCardData,branchdrop,setBranchdrop,isauthenticated,setIsAuthenticated,isauthenticated1,setIsAuthenticated1,isauthenticated2,setIsAuthenticated2,isauthenticated3,setIsAuthenticated3,isauthenticated4,setIsAuthenticated4 } = useContext(SemInfoContext);
   
   const router = useRouter();
   
@@ -66,7 +66,15 @@ function Header() {
 
   const handleLogout = () => {
     setIsAuthenticated(false);
+    setIsAuthenticated1(false);
+    setIsAuthenticated2(false);
+    setIsAuthenticated3(false);
+    setIsAuthenticated4(false);
     localStorage.removeItem('isauthenticated'); 
+    localStorage.removeItem('isauthenticated1'); 
+    localStorage.removeItem('isauthenticated2'); 
+    localStorage.removeItem('isauthenticated3'); 
+    localStorage.removeItem('isauthenticated4'); 
   };
 
   return (
@@ -143,12 +151,12 @@ function Header() {
       <SheetContent side="right" className="bg-gray-200 border border-black rounded-md shadow-lg">
         <SheetHeader>
           <SheetTitle className="text-2xl text-black">
-              {isauthenticated ? "Editor" : "Guest"}
+              {isauthenticated || isauthenticated1 || isauthenticated2 || isauthenticated3 || isauthenticated4 ? "Editor" : "Guest"}
           </SheetTitle>
         </SheetHeader>
         <div className="grid gap-2 py-6">
           {optionsItems.map((optionsItem) => {
-            if (optionsItem.label === "Source code" && !isauthenticated) {
+            if (optionsItem.label === "Source code" && !isauthenticated||isauthenticated1||isauthenticated2||isauthenticated3||isauthenticated4) {
               return null; // Skip rendering this item if not authenticated
             }
             return (
@@ -164,7 +172,7 @@ function Header() {
           })}
         </div>
         <SheetFooter className="p-4 text-center">
-          {isauthenticated ? (
+          {isauthenticated || isauthenticated1 || isauthenticated2 || isauthenticated3 || isauthenticated4 ? (
             <Button
               onClick={() => setIsAuthenticated(false)}
               className="px-4 py-2 text-black bg-red-600 rounded-md hover:bg-red-700 transition duration-200"
@@ -193,7 +201,7 @@ function Header() {
       <SheetContent side="right" className="bg-gray-200 border border-black rounded-md shadow-lg focus:outline-none ">
         <SheetHeader>
           <SheetTitle className="text-2xl text-black">
-            {isauthenticated ? "Editor" : "Guest"}
+            {isauthenticated || isauthenticated1 || isauthenticated2 || isauthenticated3 || isauthenticated4 ? "Editor" : "Guest"}
           </SheetTitle>
         </SheetHeader>
         <div className="grid gap-2 py-6">
@@ -214,7 +222,7 @@ function Header() {
           })}
         </div>
         <SheetFooter className="p-4 text-center">
-          {isauthenticated ? (
+          {isauthenticated || isauthenticated1 || isauthenticated2 || isauthenticated3 || isauthenticated4 ? (
             <Button
               onClick={handleLogout}
               className="px-4 py-2 text-black bg-red-600 rounded-md hover:bg-red-700 transition duration-200"

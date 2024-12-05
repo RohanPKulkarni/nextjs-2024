@@ -12,7 +12,7 @@ import { Dialogdelete } from "../dialogdelete";
 
 export default function Commoncard({name , credits, incharge, linker, code, pyqlink, lablink,_id}) {
 
-  const { setOpenDialog, setSelectedCardData,isauthenticated,setEditorCardData,setOpenDialog4,editorCardData,setOpenDialog5 } = useContext(SemInfoContext);
+  const { setOpenDialog, setSelectedCardData,seminfo,isauthenticated,isauthenticated1,isauthenticated2,isauthenticated3,isauthenticated4,setEditorCardData,setOpenDialog4,editorCardData,setOpenDialog5 } = useContext(SemInfoContext);
 
   function handleCardClick() {
     setOpenDialog(true);
@@ -43,28 +43,58 @@ export default function Commoncard({name , credits, incharge, linker, code, pyql
   return (
     <div>
       <Card onClick={() => handleCardClick()} className="shadow-sm shadow-gray-300 flex flex-col gap-8 rounded-2xl p-2 py-6 transition duration-300 hover:shadow-2xl hover:shadow-gray-600/10 cursor-pointer transform hover:-translate-y-2 bg-transparent border-4 border-black sm:p-8 md:p-8 lg:p-8">
-      {isauthenticated && (
-        <>
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              handleEdit();
-            }}
-            className="absolute top-2 right-2 text-black hover:text-gray-600"
-          >
-            <Pencil />
-          </button>
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              handleDelete(); 
-            }}
-            className="absolute top-2 left-2 text-black hover:text-gray-600"
-          >
-            <Trash />
-          </button>
-        </>
-      )}
+      {isauthenticated ? (
+  <>
+    {/* Buttons for all semesters */}
+    <button
+      onClick={(e) => {
+        e.stopPropagation();
+        handleEdit();
+      }}
+      className="absolute top-2 right-2 text-black hover:text-gray-600"
+    >
+      <Pencil />
+    </button>
+    <button
+      onClick={(e) => {
+        e.stopPropagation();
+        handleDelete();
+      }}
+      className="absolute top-2 left-2 text-black hover:text-gray-600"
+    >
+      <Trash />
+    </button>
+  </>
+) : (
+  <>
+    {(isauthenticated1 && (seminfo === "1st" || seminfo === "2nd")) ||
+    (isauthenticated2 && (seminfo === "3rd" || seminfo === "4th")) ||
+    (isauthenticated3 && (seminfo === "5th" || seminfo === "6th")) ||
+    (isauthenticated4 && (seminfo === "7th" || seminfo === "8th")) ? (
+      <>
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            handleEdit();
+          }}
+          className="absolute top-2 right-2 text-black hover:text-gray-600"
+        >
+          <Pencil />
+        </button>
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            handleDelete();
+          }}
+          className="absolute top-2 left-2 text-black hover:text-gray-600"
+        >
+          <Trash />
+        </button>
+      </>
+    ) : null}
+  </>
+)}
+
         <CardHeader className="p-0 mx-auto">
           <CardTitle className="text-xl max-w-[300px] truncate font-bold text-black">
             <p className = "overflow-hidden overflow-ellipsis whitespace-nowrap">{name}</p>

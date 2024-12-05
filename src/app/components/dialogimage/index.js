@@ -10,7 +10,7 @@ import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 export function DialogImage() {
 
-  const { openDialog2, setOpenDialog2,imgsrc,setOpenDialog7,isauthenticated } = useContext(SemInfoContext);
+  const { openDialog2, setOpenDialog2,imgsrc,setOpenDialog7,isauthenticated,isauthenticated1,isauthenticated2,isauthenticated3,isauthenticated4,seminfo } = useContext(SemInfoContext);
   
 
   return (
@@ -38,7 +38,12 @@ export function DialogImage() {
             ) : (
                <div className="text-center text-xl text-white">Not yet scheduled</div>
             )}
-           {isauthenticated ? (
+           {isauthenticated || (
+               (isauthenticated1 && (seminfo === "1st" || seminfo === "2nd")) ||
+               (isauthenticated2 && (seminfo === "3rd" || seminfo === "4th")) ||
+               (isauthenticated3 && (seminfo === "5th" || seminfo === "6th")) ||
+               (isauthenticated4 && (seminfo === "7th" || seminfo === "8th"))
+            )? (
             <Button
                className="absolute bottom-4 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 focus:outline-none"
                onClick={() => setOpenDialog7(true)}

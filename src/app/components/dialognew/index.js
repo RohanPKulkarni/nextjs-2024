@@ -12,7 +12,7 @@ import { addnewaidssemesters,addnewaimlsemesters } from "@/actions";
 
 export default function EditorDialog(){
 
-  const { editorCardData,openDialog3,setOpenDialog3,branchdrop,seminfo,setEditorCardData,isauthenticated } = useContext(SemInfoContext);
+  const { editorCardData,openDialog3,setOpenDialog3,branchdrop,seminfo,setEditorCardData,isauthenticated,isauthenticated1,isauthenticated2,isauthenticated3,isauthenticated4 } = useContext(SemInfoContext);
 
 
   const handleChange = (event) => {
@@ -58,7 +58,12 @@ export default function EditorDialog(){
 
   return(
     <div>
-      {isauthenticated && (
+      {(isauthenticated || (
+      (isauthenticated1 && (seminfo === "1st" || seminfo === "2nd")) ||
+      (isauthenticated2 && (seminfo === "3rd" || seminfo === "4th")) ||
+      (isauthenticated3 && (seminfo === "5th" || seminfo === "6th")) ||
+      (isauthenticated4 && (seminfo === "7th" || seminfo === "8th"))
+    )) && (
         <div className="mt-8 p-6 rounded-lg transition duration-300">
           <h2 className="text-2xl font-bold text-black mb-2">Add a New Course</h2>
           <p className="text-lg text-black mb-2">
@@ -71,7 +76,12 @@ export default function EditorDialog(){
       )}
       <Dialog open={openDialog3} onOpenChange={setOpenDialog3}>
       <DialogTrigger asChild onClick = {() => handlenewcourse()}>
-      {isauthenticated && ( 
+      {(isauthenticated || (
+      (isauthenticated1 && (seminfo === "1st" || seminfo === "2nd")) ||
+      (isauthenticated2 && (seminfo === "3rd" || seminfo === "4th")) ||
+      (isauthenticated3 && (seminfo === "5th" || seminfo === "6th")) ||
+      (isauthenticated4 && (seminfo === "7th" || seminfo === "8th"))
+    )) && ( 
           <Button
             className="mb-8 ml-8 bg-blue-600 text-white hover:bg-blue-800 transition-colors duration-300 flex items-center justify-center px-4 py-2 rounded-lg shadow-md"
           >
