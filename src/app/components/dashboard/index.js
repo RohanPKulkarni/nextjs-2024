@@ -12,6 +12,15 @@ import {
 } from '@/components/ui/select';
 import 'chart.js/auto';
 
+const branchNamesMap = {
+  AD: 'AI & Data Science',
+  AI: 'AI & Machine Learning',
+  CS: 'Computer Science',
+  IS: 'Information Science',
+  CI: 'CS & AI(Machine Learning)',
+  CY: 'CS & Cyber Security',
+};
+
 const Dashboard = () => {
   const [avgSgpaByBranch, setAvgSgpaByBranch] = useState({});
   const [avgSgpaBySemester, setAvgSgpaBySemester] = useState({});
@@ -41,12 +50,12 @@ const Dashboard = () => {
       setAvgSgpaBySemester(semesterData);
 
       const top3Data = await fetch('/preprocessed/top3_students.json').then(r => r.json());
-      const allBranches = Object.keys(top3Data).filter(b => b !== 'Unknown');
+      const allBranches = Object.keys(top3Data).filter(b => b !== 'Unknown').filter(b => Object.keys(branchNamesMap).includes(b));
       setBranches(allBranches);
 
       if (allBranches.length > 0) {
         setSelectedBranch(allBranches[0]);
-        const sems = Object.keys(top3Data[allBranches[0]]).map(Number).sort((a, b) => a - b);
+        const sems = Object.keys(top3Data[allBranches[0]]).map(Number).sort((a,b) => a-b);
         setSemesters(sems);
         if (sems.length > 0) {
           setSelectedSemester(sems[0]);
@@ -71,27 +80,37 @@ const Dashboard = () => {
     loadBranchData();
   }, [selectedBranch, selectedSemester]);
 
-  // Helper to truncate long course names
   function truncateText(text, maxLength = 15) {
     if (!text) return '';
     return text.length > maxLength ? text.slice(0, maxLength) + '…' : text;
   }
 
+  // Y axis ticks array [7,8,9,10] explicitly
+  const yAxisTicks = [7, 8, 9, 10];
+
   const yAxisOptions = {
     min: 7,
     max: 10,
+    ticks: {
+      stepSize: 1,
+      callback: (value) => yAxisTicks.includes(value) ? value : null,
+      color: '#374151', // Tailwind slate-700 for y-axis ticks for styling
+    },
     title: {
       display: true,
-      text: 'SGPA',
-      font: { size: 16 }
+      text: 'GPA',
+      font: { size: 16 },
+      color: '#374151',
     },
-    ticks: { stepSize: 1 },
+    grid: {
+      color: '#c5c5c5ff', // Tailwind gray-200 grid lines
+    },
   };
 
   const avgSgpaBranchData = {
-    labels: Object.keys(avgSgpaByBranch),
+    labels: Object.keys(avgSgpaByBranch), // Show only codes like AD, AI, etc
     datasets: [{
-      label: 'Average SGPA',
+      label: 'Average GPA',
       data: Object.values(avgSgpaByBranch).map(Number),
       backgroundColor: 'rgba(37,99,235,0.7)',
       borderRadius: 4,
@@ -107,19 +126,21 @@ const Dashboard = () => {
       tooltip: { enabled: true },
       title: {
         display: true,
-        text: 'SGPA vs Branch',
-        font: { size: 16 }
+        text: 'GPA vs Branch',
+        font: { size: 16 },
+        color: '#1e40af', // Tailwind blue-900 for nice title color
       }
     },
     scales: {
       x: {
-        title: { display: true, text: 'Branch', font: { size: 14 } }
+        title: { display: true, text: 'Branch', font: { size: 14 }, color: '#374151' },
+        ticks: { color: '#4b5563' }, // Tailwind gray-600
       },
       y: yAxisOptions,
     },
   };
 
-  const sortedSemesters = Object.keys(avgSgpaBySemester).sort((a, b) => Number(a) - Number(b));
+  const sortedSemesters = Object.keys(avgSgpaBySemester).sort((a,b) => Number(a) - Number(b));
   const avgSgpaSemesterData = {
     labels: sortedSemesters,
     datasets: [{
@@ -143,22 +164,24 @@ const Dashboard = () => {
       title: {
         display: true,
         text: 'SGPA vs Semester',
-        font: { size: 16 }
+        font: { size: 16 },
+        color: '#a16207', // Tailwind yellow-700
       }
     },
     scales: {
       x: {
-        title: { display: true, text: 'Semester', font: { size: 14 } }
+        title: { display: true, text: 'Semester', font: { size: 14 }, color: '#374151' },
+        ticks: { color: '#4b5563' },
       },
       y: yAxisOptions,
     },
   };
 
-  const branchSemestersSorted = Object.keys(branchSemesterAvg).map(Number).sort((a, b) => a - b);
+  const branchSemestersSorted = Object.keys(branchSemesterAvg).map(Number).sort((a,b) => a-b);
   const branchSgpaSemesterData = {
     labels: branchSemestersSorted,
     datasets: [{
-      label: `${selectedBranch} Avg SGPA`,
+      label: `${branchNamesMap[selectedBranch] || selectedBranch} Avg SGPA`,
       data: branchSemestersSorted.map(s => Number(branchSemesterAvg[s])),
       fill: false,
       borderColor: 'rgba(16,185,129,0.8)',
@@ -177,19 +200,21 @@ const Dashboard = () => {
       tooltip: { enabled: true },
       title: {
         display: true,
-        text: `SGPA vs Semester (${selectedBranch})`,
-        font: { size: 16 }
+        text: `SGPA vs Semester (${branchNamesMap[selectedBranch] || selectedBranch})`,
+        font: { size: 16 },
+        color: '#065f46', // Tailwind green-700
       }
     },
     scales: {
       x: {
-        title: { display: true, text: 'Semester', font: { size: 14 } }
+        title: { display: true, text: 'Semester', font: { size: 14 }, color: '#374151' },
+        ticks: { color: '#4b5563' },
       },
       y: yAxisOptions,
     },
   };
 
-  const maxCourses = windowWidth < 768 ? 9 : 11;
+  const maxCourses = 11;
 
   const meanGradesArr = Object.entries(meanGrades)
     .map(([code, info]) => ({
@@ -198,7 +223,7 @@ const Dashboard = () => {
       averageNumeric: info.averageNumeric || 0,
       studentCount: info.studentCount || 0,
     }))
-    .sort((a, b) => b.studentCount - a.studentCount)
+    .sort((a,b) => b.studentCount - a.studentCount)
     .slice(0, maxCourses);
 
   const courseGradeData = {
@@ -217,43 +242,44 @@ const Dashboard = () => {
   const courseBarOptions = {
     responsive: true,
     maintainAspectRatio: false,
-    indexAxis: windowWidth < 640 ? 'y' : 'x', // horizontal on small screens
+    indexAxis: windowWidth < 640 ? 'y' : 'x',
     plugins: {
       legend: { display: false },
       tooltip: { enabled: true },
       title: {
         display: true,
         text: 'Course vs Numeric Grade',
-        font: { size: 16 }
+        font: { size: 16 },
+        color: '#d97706', // Tailwind orange-600
       }
     },
     scales: {
       x: windowWidth < 640 ? {
         ...yAxisOptions,
-        title: { display: true, text: 'Average Numeric Grade', font: { size: 14 } },
-        grid: { display: true },
+        title: { display: true, text: 'Average Numeric Grade', font: { size: 14 }, color: '#374151' },
+        grid: { display: true, color: '#e5e7eb' },
         min: 7,
         max: 10,
-        ticks: { stepSize: 1 },
+        ticks: { stepSize: 1, color: '#4b5563' },
       } : {
-        title: { display: true, text: 'Course', font: { size: 14 } },
-        ticks: { maxRotation: 45, minRotation: 30, autoSkip: false },
+        title: { display: true, text: 'Course', font: { size: 14 }, color: '#374151' },
+        ticks: { maxRotation: 45, minRotation: 30, autoSkip: false, color: '#4b5563' },
         grid: { display: false },
       },
       y: windowWidth < 640 ? {
-        title: { display: true, text: 'Course', font: { size: 14 } },
-        ticks: { autoSkip: false },
+        title: { display: true, text: '', font: { size: 14 }, color: '#374151' },
+        ticks: { autoSkip: false, color: '#4b5563' },
         grid: { display: false },
       } : {
         ...yAxisOptions,
-        title: { display: true, text: 'Average Numeric Grade', font: { size: 14 } },
-        grid: { display: true }
-      }
+        title: { display: true, text: 'Average Numeric Grade', font: { size: 14 }, color: '#374151' },
+        grid: { display: true, color: '#e5e7eb' },
+      },
     },
   };
 
   return (
-    <main className="max-w-7xl mx-auto p-2 md:p-6 space-y-8">
+    <main className="max-w-7xl mx-auto p-2 md:p-6 space-y-8 bg-gray-50 min-h-screen">
       <h1 className="text-xl sm:text-2xl md:text-4xl font-extrabold tracking-tight text-blue-900 mb-6 text-center break-words">
         Academic Dashboard
       </h1>
@@ -271,23 +297,26 @@ const Dashboard = () => {
         </Card>
       </section>
 
-      <Card className="p-4 rounded-xl shadow-lg bg-white">
-        <div className="flex flex-col md:flex-row items-center md:space-x-8 space-y-4 md:space-y-0 mb-6">
+      <Card className="p-6 rounded-xl shadow-lg bg-white space-y-6">
+        <h2 className="text-2xl font-semibold text-center text-gray-700">Branch Wise Data</h2>
+        <div className="flex flex-col md:flex-row items-center md:space-x-8 space-y-4 md:space-y-0">
           <div className="flex items-center space-x-2">
             <span className="font-semibold">Branch:</span>
             <Select value={selectedBranch} onValueChange={setSelectedBranch}>
-              <SelectTrigger className="w-32">
+              <SelectTrigger className="w-48">
                 <SelectValue placeholder="Select branch" />
               </SelectTrigger>
               <SelectContent>
-                {branches.map(branch => (
-                  <SelectItem key={branch} value={branch}>{branch}</SelectItem>
+                {Object.entries(branchNamesMap).map(([code, name]) => (
+                  <SelectItem key={code} value={code}>
+                    {code} - {name}
+                  </SelectItem>
                 ))}
               </SelectContent>
             </Select>
           </div>
           <div className="flex items-center space-x-2">
-            <label className="font-semibold" htmlFor="semester-select">Semester:</label>
+            <label htmlFor="semester-select" className="font-semibold">Semester:</label>
             <Select
               id="semester-select"
               value={String(selectedSemester)}
@@ -306,10 +335,10 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-          {/* Top 3 Students stylish text list */}
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Top 3 Students SGPA */}
           <div className="rounded-xl bg-green-50 p-6 flex flex-col justify-center shadow-md">
-            <h3 className="text-xl font-semibold mb-4 text-green-800 text-center">Top 3 Students</h3>
+            <h3 className="text-xl font-semibold mb-4 text-green-800 text-center">Top 3 Students SGPA</h3>
             {topStudents.length > 0 ? (
               <ol className="list-decimal list-inside space-y-3 text-gray-800">
                 {topStudents.map(({ Name, USN, SGPA }) => (
@@ -343,7 +372,7 @@ const Dashboard = () => {
           <h3 className="text-lg font-semibold mb-4 text-orange-800 text-center">
             Course Grade Distribution
           </h3>
-          <div className="w-full min-w-[320px] overflow-auto h-64 md:h-72 px-1 md:px-0 pr-12">
+          <div className="w-full min-w-[320px] overflow-auto h-64 md:h-72 px-1 md:px-0 pr-16">
             {meanGradesArr.length > 0 ? (
               <Bar
                 data={courseGradeData}

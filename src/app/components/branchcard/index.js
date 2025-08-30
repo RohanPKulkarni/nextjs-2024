@@ -27,21 +27,21 @@ export default function Branchcard(){
     <div className="mt-8 mx-auto grid grid-cols-1 gap-y-4">
   <Button
     onClick={() => handlecardclick("aids")}
-    className="w-[92%] px-2 py-2 sm:px-8 sm:py-6 text-xs sm:text-lg lg:text-lg font-semibold text-white bg-black rounded-lg border-2 border-white shadow-lg hover:bg-gray-800 hover:shadow-xl transition duration-300 focus:outline-none focus:ring-4 focus:ring-gray-400 focus:ring-offset-2 lg:ml-8 mx-auto mr-8 sm:mr-0"
+    className="w-[92%] px-2 py-2 sm:px-8 sm:py-6 text-xs sm:text-lg lg:text-lg font-semibold text-white bg-black rounded-lg border-2 border-white shadow-lg hover:bg-gray-800 hover:shadow-xl transition duration-300 focus:outline-none focus:ring-4 focus:ring-gray-400 focus:ring-offset-2  mx-auto mr-8 sm:mr-0"
   >
-    Artificial Intelligence & Data Science
+    AI & Data Science
   </Button>
   <Button
     onClick={() => handlecardclick("aiml")}
-    className="w-[92%] px-2 py-2 sm:px-8 sm:py-6 text-xs sm:text-lg lg:text-lg font-semibold text-white bg-black rounded-lg border-2 border-white shadow-lg hover:bg-gray-800 hover:shadow-xl transition duration-300 focus:outline-none focus:ring-4 focus:ring-gray-400 focus:ring-offset-2 lg:ml-8 mx-auto mr-8 sm:mr-0"
+    className="w-[92%] px-2 py-2 sm:px-8 sm:py-6 text-xs sm:text-lg lg:text-lg font-semibold text-white bg-black rounded-lg border-2 border-white shadow-lg hover:bg-gray-800 hover:shadow-xl transition duration-300 focus:outline-none focus:ring-4 focus:ring-gray-400 focus:ring-offset-2  mx-auto mr-8 sm:mr-0"
   >
-    Artificial Intelligence & Machine Learning
+    AI & Machine Learning
   </Button>
   <Button
     onClick={() => handleresults()}
-    className="w-[92%] px-2 py-2 sm:px-8 sm:py-6 text-xs sm:text-lg lg:text-lg font-semibold text-white bg-black rounded-lg border-2 border-white shadow-lg hover:bg-gray-800 hover:shadow-xl transition duration-300 focus:outline-none focus:ring-4 focus:ring-gray-400 focus:ring-offset-2 lg:ml-8 mx-auto mr-8 sm:mr-0"
+    className="w-[92%] px-2 py-2 sm:px-8 sm:py-6 text-xs sm:text-lg lg:text-lg font-semibold text-white bg-black rounded-lg border-2 border-white shadow-lg hover:bg-gray-800 hover:shadow-xl transition duration-300 focus:outline-none focus:ring-4 focus:ring-gray-400 focus:ring-offset-2  mx-auto mr-8 sm:mr-0"
   >
-    Results
+    Results - 2025
   </Button>
 </div>
 
