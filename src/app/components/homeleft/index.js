@@ -148,7 +148,7 @@ export default function TextAnimation({aidssemesters,aimlsemesters}) {
             setIsFocused(false);
           }, 300);
         }}
-        className="pl-2 text-green-800 w-full p-2 sm:p-3 md:p-3 lg:p-3 bg-transparent border-2 border-black rounded-md shadow-sm focus:outline-none focus:border-black focus:ring-0 placeholder:text-gray-700"
+        className="ml-4 text-green-800 w-full  sm:p-3 md:p-3 lg:p-3 bg-transparent border-2 border-black rounded-md shadow-sm focus:outline-none focus:border-black focus:ring-0 placeholder:text-gray-700"
       />
       <button onClick={() => {
         if (filteredCourses.length > 0) {
