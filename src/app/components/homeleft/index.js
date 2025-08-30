@@ -136,7 +136,7 @@ export default function TextAnimation({aidssemesters,aimlsemesters}) {
       </div>
 
       <div className="relative flex flex-col items-center lg:items-start ml-4 sm:mx-auto">
-        <div className="relative w-52 sm:w-[330px] md:w-[360px] lg:w-[380px] mr-4 sm:ml-0">
+        <div className="relative w-52 sm:w-[330px] md:w-[360px] lg:w-[380px] sm:ml-0">
       <Input
         type="text"
         placeholder="Search course"
@@ -148,7 +148,7 @@ export default function TextAnimation({aidssemesters,aimlsemesters}) {
             setIsFocused(false);
           }, 300);
         }}
-        className="text-green-800 w-full p-2 sm:p-3 md:p-3 lg:p-3 bg-transparent border-2 border-black rounded-md shadow-sm focus:outline-none focus:border-black focus:ring-0 placeholder:text-gray-700"
+        className="pl-2 text-green-800 w-full p-2 sm:p-3 md:p-3 lg:p-3 bg-transparent border-2 border-black rounded-md shadow-sm focus:outline-none focus:border-black focus:ring-0 placeholder:text-gray-700"
       />
       <button onClick={() => {
         if (filteredCourses.length > 0) {
