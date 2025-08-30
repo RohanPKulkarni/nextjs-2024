@@ -89,35 +89,44 @@ export default function TextAnimation({aidssemesters,aimlsemesters}) {
   return (
     <div className="lg:w-1/2 flex flex-col justify-center items-start space-y-8 p-8">
       <h1 className="text-4xl mt-4 sm:mt-0 mr-8 sm:mx-auto sm:text-6xl lg:text-7xl font-bold leading-tight max-w-full font-mono">
-        <div>
-          {firstLine.map((letter, index) => (
-            <span
-              key={`first-${index}`}
-              className={`inline-block opacity-0 transform translate-y-3 animate-reveal ${
-                letter === " " ? "w-2" : ""
-              }${index < 8 ? 'text-orange-700' : ''}`}
-              style={{ animationDelay: `${index * 0.05}s` }}
-            >
-              {letter === " " ? "\u00A0" : letter}
-            </span>
-          ))}
-        </div>
-        <div>
-          {secondLine.map((letter, index) => (
-            <span
-              key={`second-${index}`}
-              className={`inline-block opacity-0 transform translate-y-3 animate-reveal ${
-                letter === " " ? "w-2" : ""
-              }`}
-              style={{
-                animationDelay: `${(firstLine.length + index) * 0.05}s`,
-              }}
-            >
-              {letter === " " ? "\u00A0" : letter}
-            </span>
-          ))}
+        {/* Small screens (only NoteRIT) */}
+        <span className="lg:hidden text-orange-700 ml-12 block text-center">
+          NoteRIT
+        </span>
+
+        {/* Large screens (full text with animation) */}
+        <div className="hidden lg:block">
+          <div>
+            {firstLine.map((letter, index) => (
+              <span
+                key={`first-${index}`}
+                className={`inline-block opacity-0 transform translate-y-3 animate-reveal ${
+                  letter === " " ? "w-2" : ""
+                }${index < 8 ? 'text-orange-700' : ''}`}
+                style={{ animationDelay: `${index * 0.05}s` }}
+              >
+                {letter === " " ? "\u00A0" : letter}
+              </span>
+            ))}
+          </div>
+          <div>
+            {secondLine.map((letter, index) => (
+              <span
+                key={`second-${index}`}
+                className={`inline-block opacity-0 transform translate-y-3 animate-reveal ${
+                  letter === " " ? "w-2" : ""
+                }`}
+                style={{
+                  animationDelay: `${(firstLine.length + index) * 0.05}s`,
+                }}
+              >
+                {letter === " " ? "\u00A0" : letter}
+              </span>
+            ))}
+          </div>
         </div>
       </h1>
+
       <div className="flex justify-center items-center sm:mx-auto lg:ml-0 w-[80%] sm:w-[70%] lg:w-[80%] h-auto lg:hidden">
         <img
           src="/images/webdesign2.png"

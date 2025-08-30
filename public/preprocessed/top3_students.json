@@ -1,0 +1,746 @@
+{
+  "AD": {
+    "2": [
+      {
+        "Name": "MAANYA K",
+        "USN": "1MS24AD037",
+        "SGPA": 10
+      },
+      {
+        "Name": "NISHTHA KAUSHIK",
+        "USN": "1MS24AD044",
+        "SGPA": 10
+      },
+      {
+        "Name": "BHOOMIKA K KOTTARY",
+        "USN": "1MS24AD017",
+        "SGPA": 9.95
+      }
+    ],
+    "3": [
+      {
+        "Name": "SURAJ PRATAP SINGH",
+        "USN": "1MS23AD057",
+        "SGPA": 9.85
+      },
+      {
+        "Name": "MIR SHAHAAN ABBAS ABEDI",
+        "USN": "1MS23AD039",
+        "SGPA": 9.76
+      },
+      {
+        "Name": "PRANJAL ARORA",
+        "USN": "1MS23AD044",
+        "SGPA": 9.76
+      }
+    ],
+    "4": [
+      {
+        "Name": "ALAN SHREYAS FERNANDES",
+        "USN": "1MS23AD008",
+        "SGPA": 10
+      },
+      {
+        "Name": "SURAJ PRATAP SINGH",
+        "USN": "1MS23AD057",
+        "SGPA": 10
+      },
+      {
+        "Name": "VAIBHAV NAUTIYAL",
+        "USN": "1MS23AD060",
+        "SGPA": 9.95
+      }
+    ],
+    "5": [
+      {
+        "Name": "SHAKTHIVEL M",
+        "USN": "1MS22AD050",
+        "SGPA": 9.86
+      },
+      {
+        "Name": "DHAVALA T S",
+        "USN": "1MS22AD021",
+        "SGPA": 9.68
+      },
+      {
+        "Name": "K MARUTHI",
+        "USN": "1MS22AD029",
+        "SGPA": 9.68
+      }
+    ],
+    "6": [
+      {
+        "Name": "BHAVIK UTTAM OSWAL",
+        "USN": "1MS22AD017",
+        "SGPA": 9.86
+      },
+      {
+        "Name": "SHAKTHIVEL M",
+        "USN": "1MS22AD050",
+        "SGPA": 9.68
+      },
+      {
+        "Name": "KSHITIJA K",
+        "USN": "1MS22AD032",
+        "SGPA": 9.59
+      }
+    ],
+    "7": [
+      {
+        "Name": "AMRUT KOTRANNAVAR",
+        "USN": "1MS21AD010",
+        "SGPA": 9.82
+      },
+      {
+        "Name": "ANKIT U PATIL",
+        "USN": "1MS21AD011",
+        "SGPA": 9.64
+      },
+      {
+        "Name": "CHETAN REDDY K",
+        "USN": "1MS21AD017",
+        "SGPA": 9.64
+      }
+    ],
+    "8": [
+      {
+        "Name": "AADHITHYA SHANKAR",
+        "USN": "1MS21AD001",
+        "SGPA": 10
+      },
+      {
+        "Name": "AAKASH REDDY KARUR",
+        "USN": "1MS21AD002",
+        "SGPA": 10
+      },
+      {
+        "Name": "AARON DANE PINTO",
+        "USN": "1MS21AD003",
+        "SGPA": 10
+      }
+    ]
+  },
+  "AI": {
+    "2": [
+      {
+        "Name": "HARSHA PRASAD",
+        "USN": "1MS24AI026",
+        "SGPA": 10
+      },
+      {
+        "Name": "TATA SAI GEETHIKA",
+        "USN": "1MS24AI050",
+        "SGPA": 9.9
+      },
+      {
+        "Name": "SUHANI AGRAWAL",
+        "USN": "1MS24AI060",
+        "SGPA": 9.9
+      }
+    ],
+    "3": [
+      {
+        "Name": "ARUN N",
+        "USN": "1MS23AI009",
+        "SGPA": 9.85
+      },
+      {
+        "Name": "SUMA PRAKASH MUNGARWADI",
+        "USN": "1MS23AI064",
+        "SGPA": 9.85
+      },
+      {
+        "Name": "KOMAL RAY",
+        "USN": "1MS23AI075",
+        "SGPA": 9.71
+      }
+    ],
+    "4": [
+      {
+        "Name": "Y SRIVARSHITA",
+        "USN": "1MS23AI071",
+        "SGPA": 9.7
+      },
+      {
+        "Name": "ARUN N",
+        "USN": "1MS23AI009",
+        "SGPA": 9.65
+      },
+      {
+        "Name": "DHRUV AGRAWAL",
+        "USN": "1MS23AI019",
+        "SGPA": 9.65
+      }
+    ],
+    "5": [
+      {
+        "Name": "NEELAM BIND",
+        "USN": "1MS22AI039",
+        "SGPA": 9.72
+      },
+      {
+        "Name": "DHANYASHREE S HEGDE",
+        "USN": "1MS22AI014",
+        "SGPA": 9.68
+      },
+      {
+        "Name": "TEENA JOSEPH",
+        "USN": "1MS22AI064",
+        "SGPA": 9.68
+      }
+    ],
+    "6": [
+      {
+        "Name": "ANIKET GUPTA",
+        "USN": "1MS22AI007",
+        "SGPA": 10
+      },
+      {
+        "Name": "A PRANAV KOUNDINYA",
+        "USN": "1MS22AI001",
+        "SGPA": 9.86
+      },
+      {
+        "Name": "DHANYASHREE S HEGDE",
+        "USN": "1MS22AI014",
+        "SGPA": 9.86
+      }
+    ],
+    "7": [
+      {
+        "Name": "HARSHITHA POPURI",
+        "USN": "1MS21AI021",
+        "SGPA": 10
+      },
+      {
+        "Name": "HRISHIKESH K HARITAS",
+        "USN": "1MS21AI022",
+        "SGPA": 10
+      },
+      {
+        "Name": "PADMAPRIYA R",
+        "USN": "1MS21AI038",
+        "SGPA": 10
+      }
+    ],
+    "8": [
+      {
+        "Name": "ABHAY KARTHIK D",
+        "USN": "1MS21AI002",
+        "SGPA": 10
+      },
+      {
+        "Name": "ABHIJEET YADAV",
+        "USN": "1MS21AI003",
+        "SGPA": 10
+      },
+      {
+        "Name": "ADITHYA NARAYANA HOLLA",
+        "USN": "1MS21AI004",
+        "SGPA": 10
+      }
+    ]
+  },
+  "CS": {
+    "0": [
+      {
+        "Name": "DHRUV GUPTA",
+        "USN": "1MS23CS059",
+        "SGPA": 9.42
+      },
+      {
+        "Name": "GAURAV MISHRA",
+        "USN": "1MS23CS066",
+        "SGPA": 9.33
+      },
+      {
+        "Name": "BADAPATI THEJESWAR",
+        "USN": "1MS23CS034",
+        "SGPA": 9.28
+      }
+    ],
+    "2": [
+      {
+        "Name": "ARPITHA R",
+        "USN": "1MS24CS041",
+        "SGPA": 10
+      },
+      {
+        "Name": "N SATVIK",
+        "USN": "1MS24CS105",
+        "SGPA": 10
+      },
+      {
+        "Name": "N SHRIRAM RAO",
+        "USN": "1MS24CS106",
+        "SGPA": 10
+      }
+    ],
+    "3": [
+      {
+        "Name": "MONISHA J",
+        "USN": "1MS23CS117",
+        "SGPA": 10
+      },
+      {
+        "Name": "RISSHAB SRINIVAS RAMESH",
+        "USN": "1MS23CS152",
+        "SGPA": 10
+      },
+      {
+        "Name": "VENKATACHALA V",
+        "USN": "1MS23CS211",
+        "SGPA": 10
+      }
+    ],
+    "4": [
+      {
+        "Name": "RISSHAB SRINIVAS RAMESH",
+        "USN": "1MS23CS152",
+        "SGPA": 9.85
+      },
+      {
+        "Name": "GAURAV MISHRA",
+        "USN": "1MS23CS066",
+        "SGPA": 9.7
+      },
+      {
+        "Name": "POOJA B",
+        "USN": "1MS23CS130",
+        "SGPA": 9.7
+      }
+    ],
+    "5": [
+      {
+        "Name": "SOORAJ SAJJAN",
+        "USN": "1MS22CS146",
+        "SGPA": 9.81
+      },
+      {
+        "Name": "SARANG R",
+        "USN": "1MS22CS168",
+        "SGPA": 9.81
+      },
+      {
+        "Name": "ANANYA A",
+        "USN": "1MS22CS165",
+        "SGPA": 9.77
+      }
+    ],
+    "6": [
+      {
+        "Name": "SHREYAS NAGABHUSHAN",
+        "USN": "1MS22CS139",
+        "SGPA": 9.86
+      },
+      {
+        "Name": "IFRAH NAAZ",
+        "USN": "1MS22CS064",
+        "SGPA": 9.68
+      },
+      {
+        "Name": "RASHMI B",
+        "USN": "1MS22CS112",
+        "SGPA": 9.68
+      }
+    ],
+    "7": [
+      {
+        "Name": "AMALA RASHMI KUMAR",
+        "USN": "1MS21CS144",
+        "SGPA": 9.76
+      },
+      {
+        "Name": "M VINAY",
+        "USN": "1MS21CS068",
+        "SGPA": 9.58
+      },
+      {
+        "Name": "SAANVI NAIR",
+        "USN": "1MS21CS110",
+        "SGPA": 9.58
+      }
+    ],
+    "8": [
+      {
+        "Name": "ADARSH",
+        "USN": "1MS21CS003",
+        "SGPA": 10
+      },
+      {
+        "Name": "AFIYA KHADIR",
+        "USN": "1MS21CS006",
+        "SGPA": 10
+      },
+      {
+        "Name": "AJAY JAYAPRAKASH",
+        "USN": "1MS21CS009",
+        "SGPA": 10
+      }
+    ]
+  },
+  "IS": {
+    "2": [
+      {
+        "Name": "AKSHAY A",
+        "USN": "1MS24IS013",
+        "SGPA": 9.9
+      },
+      {
+        "Name": "PATEL JASHMIN KUMAR",
+        "USN": "1MS24IS081",
+        "SGPA": 9.9
+      },
+      {
+        "Name": "RAVNISH SHEKHAR",
+        "USN": "1MS24IS094",
+        "SGPA": 9.85
+      }
+    ],
+    "3": [
+      {
+        "Name": "PRINCE KHATRI",
+        "USN": "1MS23IS097",
+        "SGPA": 10
+      },
+      {
+        "Name": "SUMAN MULLA",
+        "USN": "1MS23IS130",
+        "SGPA": 10
+      },
+      {
+        "Name": "ALAPATI NIKHILA DIVYA",
+        "USN": "1MS23IS010",
+        "SGPA": 9.95
+      }
+    ],
+    "4": [
+      {
+        "Name": "MANASVI K",
+        "USN": "1MS23IS063",
+        "SGPA": 10
+      },
+      {
+        "Name": "ALAPATI NIKHILA DIVYA",
+        "USN": "1MS23IS010",
+        "SGPA": 9.85
+      },
+      {
+        "Name": "PRANAV SREEHARSHA",
+        "USN": "1MS23IS093",
+        "SGPA": 9.85
+      }
+    ],
+    "5": [
+      {
+        "Name": "HARSHINI H L",
+        "USN": "1MS22IS045",
+        "SGPA": 9.72
+      },
+      {
+        "Name": "ANVITHA ACHARYA U",
+        "USN": "1MS22IS024",
+        "SGPA": 9.54
+      },
+      {
+        "Name": "KAMSALA SREE VAISHNAVI",
+        "USN": "1MS22IS057",
+        "SGPA": 9.54
+      }
+    ],
+    "6": [
+      {
+        "Name": "ADITHYA V",
+        "USN": "1MS22IS011",
+        "SGPA": 9.72
+      },
+      {
+        "Name": "CHIRUDEEP KURALLA",
+        "USN": "1MS22IS034",
+        "SGPA": 9.72
+      },
+      {
+        "Name": "JASWANTH T",
+        "USN": "1MS22IS050",
+        "SGPA": 9.72
+      }
+    ],
+    "7": [
+      {
+        "Name": "SUHAS R",
+        "USN": "1MS21IS106",
+        "SGPA": 10
+      },
+      {
+        "Name": "H KRITIKA",
+        "USN": "1MS21IS038",
+        "SGPA": 9.82
+      },
+      {
+        "Name": "TEJASHWINI HIREMATH",
+        "USN": "1MS21IS115",
+        "SGPA": 9.82
+      }
+    ],
+    "8": [
+      {
+        "Name": "A SAI BHUVAN",
+        "USN": "1MS21IS001",
+        "SGPA": 10
+      },
+      {
+        "Name": "AAKRITI BALI",
+        "USN": "1MS21IS002",
+        "SGPA": 10
+      },
+      {
+        "Name": "AAROHI JAIN",
+        "USN": "1MS21IS003",
+        "SGPA": 10
+      }
+    ]
+  },
+  "CI": {
+    "2": [
+      {
+        "Name": "SINCHANA JEPPU",
+        "USN": "1MS24CI124",
+        "SGPA": 10
+      },
+      {
+        "Name": "LISHIKA MEGHANI",
+        "USN": "1MS24CI065",
+        "SGPA": 9.95
+      },
+      {
+        "Name": "ARJUN VINOD",
+        "USN": "1MS24CI022",
+        "SGPA": 9.9
+      }
+    ],
+    "3": [
+      {
+        "Name": "BHAVANASI SATVIKA",
+        "USN": "1MS23CI021",
+        "SGPA": 10
+      },
+      {
+        "Name": "BHOOMIKA M M",
+        "USN": "1MS23CI023",
+        "SGPA": 10
+      },
+      {
+        "Name": "KEERTHI SATISH",
+        "USN": "1MS23CI055",
+        "SGPA": 10
+      }
+    ],
+    "4": [
+      {
+        "Name": "KEERTHI SATISH",
+        "USN": "1MS23CI055",
+        "SGPA": 10
+      },
+      {
+        "Name": "CHAPPIDI LALITH ADITYA REDDY",
+        "USN": "1MS23CI145",
+        "SGPA": 9.95
+      },
+      {
+        "Name": "KHUSHI KUMARI M",
+        "USN": "1MS23CI056",
+        "SGPA": 9.85
+      }
+    ],
+    "5": [
+      {
+        "Name": "APOORVA NAYAK",
+        "USN": "1MS22CI013",
+        "SGPA": 9.86
+      },
+      {
+        "Name": "SHARANYA RAJ VERMA",
+        "USN": "1MS22CI061",
+        "SGPA": 9.68
+      },
+      {
+        "Name": "PRATEEK P",
+        "USN": "1MS22CI050",
+        "SGPA": 9.63
+      }
+    ],
+    "6": [
+      {
+        "Name": "APOORVA NAYAK",
+        "USN": "1MS22CI013",
+        "SGPA": 9.86
+      },
+      {
+        "Name": "RAKSHITA V",
+        "USN": "1MS22CI052",
+        "SGPA": 9.86
+      },
+      {
+        "Name": "SANJAY SURESH U",
+        "USN": "1MS23CI406",
+        "SGPA": 9.86
+      }
+    ],
+    "7": [
+      {
+        "Name": "TEJASHWINI RAVI",
+        "USN": "1MS21CI062",
+        "SGPA": 9.58
+      },
+      {
+        "Name": "VATSAL SINGH",
+        "USN": "1MS21CI063",
+        "SGPA": 9.58
+      },
+      {
+        "Name": "ADVIKA GUPTA",
+        "USN": "1MS21CI003",
+        "SGPA": 9.47
+      }
+    ],
+    "8": [
+      {
+        "Name": "ABHAY KUMAR GUPTA",
+        "USN": "1MS21CI001",
+        "SGPA": 10
+      },
+      {
+        "Name": "ADVIKA GUPTA",
+        "USN": "1MS21CI003",
+        "SGPA": 10
+      },
+      {
+        "Name": "ANIRUDDH MANTRALA",
+        "USN": "1MS21CI004",
+        "SGPA": 10
+      }
+    ]
+  },
+  "CY": {
+    "2": [
+      {
+        "Name": "MANSI L GONU",
+        "USN": "1MS24CY034",
+        "SGPA": 9.85
+      },
+      {
+        "Name": "ANIKA TEJA REDDY",
+        "USN": "1MS24CY011",
+        "SGPA": 9.8
+      },
+      {
+        "Name": "PREETHA B",
+        "USN": "1MS24CY049",
+        "SGPA": 9.8
+      }
+    ],
+    "3": [
+      {
+        "Name": "P P VISHALAACHI",
+        "USN": "1MS23CY075",
+        "SGPA": 9.71
+      },
+      {
+        "Name": "BHAVANA N RAJ",
+        "USN": "1MS23CY010",
+        "SGPA": 9.61
+      },
+      {
+        "Name": "SOHAN SHETTY",
+        "USN": "1MS23CY063",
+        "SGPA": 9.57
+      }
+    ],
+    "4": [
+      {
+        "Name": "P P VISHALAACHI",
+        "USN": "1MS23CY075",
+        "SGPA": 9.85
+      },
+      {
+        "Name": "V SRI NANDIKA",
+        "USN": "1MS23CY069",
+        "SGPA": 9.5
+      },
+      {
+        "Name": "SANJANA",
+        "USN": "1MS23CY056",
+        "SGPA": 9.35
+      }
+    ],
+    "5": [
+      {
+        "Name": "SWAPNIL RAO",
+        "USN": "1MS22CY070",
+        "SGPA": 10
+      },
+      {
+        "Name": "HARSHITHA PRADEEP",
+        "USN": "1MS22CY029",
+        "SGPA": 9.45
+      },
+      {
+        "Name": "SIDRAH SAIF",
+        "USN": "1MS22CY067",
+        "SGPA": 9.45
+      }
+    ],
+    "6": [
+      {
+        "Name": "SWAPNIL RAO",
+        "USN": "1MS22CY070",
+        "SGPA": 9.59
+      },
+      {
+        "Name": "CHAITHANYA R",
+        "USN": "1MS22CY018",
+        "SGPA": 9.54
+      },
+      {
+        "Name": "UJJWAL KUMAR JHA",
+        "USN": "1MS22CY081",
+        "SGPA": 9.54
+      }
+    ],
+    "7": [
+      {
+        "Name": "PERUGU GUNAVARDHAN REDDY",
+        "USN": "1MS21CY035",
+        "SGPA": 9.64
+      },
+      {
+        "Name": "KASHISH CHAPLOT",
+        "USN": "1MS21CY021",
+        "SGPA": 9.47
+      },
+      {
+        "Name": "AASTHA TRIPATHI",
+        "USN": "1MS21CY001",
+        "SGPA": 9.41
+      }
+    ],
+    "8": [
+      {
+        "Name": "AASTHA TRIPATHI",
+        "USN": "1MS21CY001",
+        "SGPA": 10
+      },
+      {
+        "Name": "ABDUR REHMAN",
+        "USN": "1MS21CY002",
+        "SGPA": 10
+      },
+      {
+        "Name": "ABHINAV B M",
+        "USN": "1MS21CY003",
+        "SGPA": 10
+      }
+    ]
+  },
+  "Unknown": {}
+}
